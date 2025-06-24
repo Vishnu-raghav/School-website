@@ -1,0 +1,15 @@
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.infinite-scroll {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  animation: scrollLeft 25s linear infinite;
+}

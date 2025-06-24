@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import {Link, NavLink} from "react-router-dom"
 function Header() {
   const [open, setOpen] = useState(false);
 
@@ -52,11 +52,21 @@ function Header() {
       <div className="bg-blue-950 px-6 md:px-12 py-2 flex items-center justify-between text-white">
         {/* Left: Desktop Nav Links */}
         <div className="hidden md:flex gap-6 text-sm font-medium">
+          <Link to= '/'>
           <p className="hover:text-yellow-300 cursor-pointer">Home</p>
+          </Link>
+          <Link to="About">
           <p className="hover:text-yellow-300 cursor-pointer">About</p>
+          </Link>
+          <Link to="Infrastructure">
           <p className="hover:text-yellow-300 cursor-pointer">Infrastructure</p>
+          </Link>
+          <Link to="Gallery">
           <p className="hover:text-yellow-300 cursor-pointer">Gallery</p>
+          </Link>
+          <Link to="Contact">
           <p className="hover:text-yellow-300 cursor-pointer">Contact</p>
+          </Link>
         </div>
 
         {/* Right: Burger for mobile */}
@@ -80,11 +90,21 @@ function Header() {
           </button>
         </div>
         <ul className="flex flex-col gap-4 p-4 text-sm">
+          <Link to="/">
           <li onClick={() => setOpen(false)} className="hover:text-yellow-200 cursor-pointer">Home</li>
+          </Link>
+          <Link to="/About">
           <li onClick={() => setOpen(false)} className="hover:text-yellow-200 cursor-pointer">About</li>
+          </Link>
+          <Link to="Infrastructure">
           <li onClick={() => setOpen(false)} className="hover:text-yellow-200 cursor-pointer">Infrastructure</li>
+          </Link>
+          <Link to="Gallery">
           <li onClick={() => setOpen(false)} className="hover:text-yellow-200 cursor-pointer">Gallery</li>
+          </Link>
+          <Link to="Contact">
           <li onClick={() => setOpen(false)} className="hover:text-yellow-200 cursor-pointer">Contact</li>
+          </Link>
         </ul>
       </div>
     </div>
