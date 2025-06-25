@@ -1,69 +1,81 @@
+import { NavLink } from "react-router-dom";
 import Map from "./Map";
 
 function Footer() {
   return (
-    <footer className="bg-black text-white text-sm">
-      {/* Contact Header */}
-      <div className=" px-6 py-6 text-white">
-        <h1 className="text-xl font-bold">Get In Touch With Us</h1>
+    <footer className="bg-[#0f172a] text-gray-300">
+      {/* Top Strip */}
+      <div className="px-6 py-8 text-center bg-gradient-to-r from-blue-900 to-blue-700">
+        <h1 className="text-2xl font-bold tracking-wide text-white">Get In Touch With Us</h1>
+        <p className="mt-1 text-blue-200">We’d love to hear from you anytime.</p>
       </div>
 
       {/* Main Footer Content */}
-      <div className="px-6 py-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3 bg-gray-900">
-        {/* Left - Contact Info */}
+      <div className="px-6 py-12 grid gap-12 md:grid-cols-2 lg:grid-cols-3 bg-[#1e293b]">
+        {/* Contact Info */}
         <div>
-          <p className="text-lg font-semibold mb-2">Krishna Public School</p>
-          <p className="mb-3 w-72">Galli No.5, Saraswati Colony, Sehatpur, Faridabad, Haryana 121003</p>
-          
-          <div className="flex items-center gap-2 mb-1">
-            <i className="fa-solid fa-phone-flip"></i>
-            <p>0129-2560378</p>
-          </div>
-          <div className="flex items-center gap-2 mb-1">
-            <i className="fa-solid fa-envelope"></i>
-            <p>vishnur125@gmail.com</p>
-          </div>
-          <div className="flex items-center gap-2 mb-3">
-            <i className="fa-solid fa-earth-africa"></i>
-            <p>krishnapublicschool.net</p>
-          </div>
+          <h2 className="text-xl font-semibold text-white mb-4">Krishna Public School</h2>
+          <p className="mb-4 max-w-sm">
+            Galli No.5, Saraswati Colony, Sehatpur, Faridabad, Haryana 121003
+          </p>
+          <ul className="space-y-2 text-sm">
+            <li className="flex items-center gap-2">
+              <i className="fa-solid fa-phone text-sky-400"></i> 0129-2560378
+            </li>
+            <li className="flex items-center gap-2">
+              <i className="fa-solid fa-envelope text-sky-400"></i> vishnur125@gmail.com
+            </li>
+            <li className="flex items-center gap-2">
+              <i className="fa-solid fa-globe text-sky-400"></i> krishnapublicschool.net
+            </li>
+          </ul>
 
-          <p className="font-medium mb-1">Connect With Us</p>
-          <div className="flex gap-3 text-lg">
-            <a href="#"><i className="fa-brands fa-square-facebook"></i></a>
-            <a href="#"><i className="fa-brands fa-instagram"></i></a>
-            <a href="#"><i className="fa-brands fa-youtube"></i></a>
+          <div className="mt-5">
+            <p className="font-semibold mb-2 text-white">Follow Us</p>
+            <div className="flex gap-4 text-xl">
+              <a href="#"><i className="fa-brands fa-facebook hover:text-blue-500"></i></a>
+              <a href="#"><i className="fa-brands fa-instagram hover:text-pink-500"></i></a>
+              <a href="#"><i className="fa-brands fa-youtube hover:text-red-500"></i></a>
+            </div>
           </div>
         </div>
 
-        {/* Middle - Links */}
+        {/* Quick Links */}
         <div>
-          <p className="font-semibold text-lg mb-3">Useful Links</p>
-          <div className="flex flex-col gap-2">
-            <p className="border-b border-dotted border-gray-400 pb-1 hover:text-yellow-300">Home</p>
-            <p className="border-b border-dotted border-gray-400 pb-1 hover:text-yellow-300">About</p>
-            <p className="border-b border-dotted border-gray-400 pb-1 hover:text-yellow-300">Certificate</p>
-            <p className="border-b border-dotted border-gray-400 pb-1 hover:text-yellow-300">Contact</p>
-          </div>
+          <h2 className="text-xl font-semibold text-white mb-4">Quick Links</h2>
+          <ul className="space-y-3 text-gray-300 text-sm">
+            <li>
+              <NavLink to="/" className="hover:text-sky-400 transition">Home</NavLink>
+            </li>
+            <li>
+              <NavLink to="/About" className="hover:text-sky-400 transition">About</NavLink>
+            </li>
+            <li>
+              <NavLink to="/Admission" className="hover:text-sky-400 transition">Admission</NavLink>
+            </li>
+            <li>
+              <NavLink to="/Contact" className="hover:text-sky-400 transition">Contact</NavLink>
+            </li>
+          </ul>
         </div>
 
-        {/* Right - Google Map */}
-        <div className="text-center">
-          <p className="font-semibold text-lg mb-3">Google Map</p>
-          <div className="w-full h-48 mx-auto rounded overflow-hidden border border-gray-400">
+        {/* Map Section */}
+        <div>
+          <h2 className="text-xl font-semibold text-white mb-4 text-center lg:text-left">Our Location</h2>
+          <div className="w-full h-48 rounded overflow-hidden border border-gray-700">
             <Map />
           </div>
         </div>
       </div>
 
-      {/* Copyright */}
-      <div className="bg-neutral-800 py-3 text-center">
+      {/* Bottom Bar */}
+      <div className="bg-[#0f172a] py-4 text-center text-gray-500 text-sm border-t border-slate-700">
         © 2025 Krishna Public School — Powered by{" "}
         <a
           href="https://www.linkedin.com/in/vishnu-raghav-093017261/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-blue-400 underline hover:text-blue-300"
+          className="text-sky-400 underline hover:text-sky-300"
         >
           Vishnu
         </a>
