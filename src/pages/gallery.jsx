@@ -1,87 +1,3 @@
-// import { useEffect, useRef, useState } from "react";
-
-// const categories = {
-//   Campus: [Campus1, Campus2, Campus3],
-//   Classroom: [Class1, Class2],
-//   Events: [Event1, Event2, Event3, Event4],
-//   Sports: [Sport1, Sport2],
-//   Labs: [Lab1, Lab2, Lab3],
-// };
-
-// const Gallery = () => {
-//   const [activeTab, setActiveTab] = useState("Campus");
-//   const [fade, setFade] = useState(true);
-//   const imagesRef = useRef(null);
-
-//   const handleTabChange = (tab) => {
-//     // Start fade-out
-//     setFade(false);
-//     setTimeout(() => {
-//       setActiveTab(tab);
-//       setFade(true); // Fade-in new images
-//     }, 200); // wait before switching tab
-//   };
-
-//   useEffect(() => {
-//     if (imagesRef.current) {
-//       imagesRef.current.scrollIntoView({ behavior: "smooth" });
-//     }
-//   }, [activeTab]);
-
-//   return (
-//     <div className="w-full px-6 py-12 bg-gradient-to-b from-[#e6f0ff] via-white to-[#d6e6f9] min-h-screen">
-//       <div className="max-w-7xl mx-auto">
-//         <h1 className="text-4xl md:text-5xl font-bold text-center text-blue-900 mb-10 underline decoration-blue-300">
-//           📸 Gallery Showcase
-//         </h1>
-
-//         {/* Tabs */}
-//         <div className="flex flex-wrap justify-center gap-4 mb-8">
-//           {Object.keys(categories).map((category) => (
-//             <button
-//               key={category}
-//               onClick={() => handleTabChange(category)}
-//               className={`px-4 py-2 rounded-full font-medium border-2 transition duration-200 ${
-//                 activeTab === category
-//                   ? "bg-blue-600 text-white border-blue-600"
-//                   : "bg-white text-blue-700 border-blue-300 hover:bg-blue-100"
-//               }`}
-//             >
-//               {category}
-//             </button>
-//           ))}
-//         </div>
-
-//         {/* Images */}
-//         <div
-//           ref={imagesRef}
-//           className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 transition-opacity duration-500 ${
-//             fade ? "opacity-100" : "opacity-0"
-//           }`}
-//         >
-//           {categories[activeTab].map((img, index) => (
-//             <div
-//               key={index}
-//               className="overflow-hidden rounded-xl shadow-md border border-blue-100"
-//             >
-//               <img
-//                 src={img}
-//                 alt={`img-${activeTab}-${index}`}
-//                 className="w-full h-64 object-cover"
-//               />
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Gallery;
-
-
-
-
 import { useEffect, useRef, useState } from "react";
 import Campus1 from "../assets/campus.jpg";
 import Campus2 from "../assets/campus2.jpg";
@@ -115,6 +31,14 @@ const Gallery = () => {
   const [currentImage, setCurrentImage] = useState(null);
   const [imageIndex, setImageIndex] = useState(0);
 
+  const handleTabChange = (tab) => {
+    setFade(false);
+    setTimeout(() => {
+      setActiveTab(tab);
+      setFade(true);
+    }, 200);
+  };
+
   const openModal = (img, index) => {
     setCurrentImage(img);
     setImageIndex(index);
@@ -128,25 +52,17 @@ const Gallery = () => {
   };
 
   const showNext = () => {
-    const images = categories[activeTab];
-    const nextIndex = (imageIndex + 1) % images.length;
+    const imgs = categories[activeTab];
+    const nextIndex = (imageIndex + 1) % imgs.length;
     setImageIndex(nextIndex);
-    setCurrentImage(images[nextIndex]);
+    setCurrentImage(imgs[nextIndex]);
   };
 
   const showPrev = () => {
-    const images = categories[activeTab];
-    const prevIndex = (imageIndex - 1 + images.length) % images.length;
+    const imgs = categories[activeTab];
+    const prevIndex = (imageIndex - 1 + imgs.length) % imgs.length;
     setImageIndex(prevIndex);
-    setCurrentImage(images[prevIndex]);
-  };
-
-  const handleTabChange = (tab) => {
-    setFade(false);
-    setTimeout(() => {
-      setActiveTab(tab);
-      setFade(true);
-    }, 200);
+    setCurrentImage(imgs[prevIndex]);
   };
 
   useEffect(() => {
@@ -154,6 +70,15 @@ const Gallery = () => {
       imagesRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [activeTab]);
+
+  // Close modal with Escape key
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") closeModal();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   return (
     <div className="w-full px-6 py-12 bg-gradient-to-b from-[#e6f0ff] via-white to-[#d6e6f9] min-h-screen">
@@ -179,7 +104,7 @@ const Gallery = () => {
           ))}
         </div>
 
-        {/* Images Grid */}
+        {/* Images */}
         <div
           ref={imagesRef}
           className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 transition-opacity duration-500 ${
@@ -206,33 +131,45 @@ const Gallery = () => {
 
         {/* Modal */}
         {modalOpen && (
-          <div className="fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
-            <button
-              onClick={closeModal}
-              className="absolute top-6 right-6 text-white text-3xl"
+          <div
+            className="fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4"
+            onClick={closeModal}
+          >
+            <div
+              onClick={(e) => e.stopPropagation()}
+              className="relative max-w-3xl w-full"
             >
-              &times;
-            </button>
+              {/* Close button */}
+              <button
+                onClick={closeModal}
+                className="absolute top-2 right-2 text-white text-3xl z-10"
+              >
+                &times;
+              </button>
 
-            <button
-              onClick={showPrev}
-              className="absolute left-4 text-white text-4xl hover:scale-110 transition"
-            >
-              ‹
-            </button>
+              {/* Prev */}
+              <button
+                onClick={showPrev}
+                className="absolute left-2 top-1/2 transform -translate-y-1/2 text-white text-4xl hover:scale-110 transition z-10"
+              >
+                ‹
+              </button>
 
-            <img
-              src={currentImage}
-              alt="modal"
-              className="max-w-full max-h-[90vh] rounded shadow-lg"
-            />
+              {/* Image */}
+              <img
+                src={currentImage}
+                alt="modal"
+                className="max-h-[80vh] w-full object-contain rounded"
+              />
 
-            <button
-              onClick={showNext}
-              className="absolute right-4 text-white text-4xl hover:scale-110 transition"
-            >
-              ›
-            </button>
+              {/* Next */}
+              <button
+                onClick={showNext}
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 text-white text-4xl hover:scale-110 transition z-10"
+              >
+                ›
+              </button>
+            </div>
           </div>
         )}
       </div>
