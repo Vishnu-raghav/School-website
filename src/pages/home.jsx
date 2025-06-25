@@ -42,7 +42,8 @@ function Home() {
           name="keywords"
           content="Krishna Public School, Best School in Kanpur, School Near Me, CBSE School, Admissions, Top School, Smart Class, Transport, Private School Kanpur"
         />
-        <link rel="canonical" href="https://yourdomain.com/" />
+         <meta property="og:image" content="/preview.jpg" />
+        <link rel="canonical" href="https://krishnapublicschool.net/" />
         <script type="application/ld+json">{`
           {
             "@context": "https://schema.org",
@@ -58,7 +59,7 @@ function Home() {
             },
             "telephone": "9711208294",
             "email": "vishnur1225@gmail.com",
-            "url": "https://yourdomain.com"
+            "url": "https://krishnapublicschool.net/"
           }
         `}</script>
       </Helmet>

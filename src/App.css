@@ -1,4 +1,4 @@
-@keyframes scroll-left {
+/* @keyframes scroll-left {
   0% {
     transform: translateX(0%);
   }
@@ -9,7 +9,7 @@
 
 .infinite-scroll-wrapper {
   display: flex;
-  width: 200%; /* Twice the width so content can repeat */
+  width: 200%; 
   animation: scroll-left 25s linear infinite;
 }
 
@@ -33,4 +33,51 @@
   to {
     opacity: 1;
   }
+} */
+
+
+
+
+
+
+
+/* Smooth scroll-in animation for route transitions */
+@keyframes fadeInBalanced {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-enter {
+  opacity: 0;
+  animation: fadeInBalanced 0.4s ease-out forwards;
+}
+
+/* Infinite horizontal scroll animation */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.infinite-scroll-wrapper {
+  display: flex;
+  width: 200%; /* Double the width to allow seamless looping */
+  animation: scroll-left 25s linear infinite;
+}
+
+/* Hide scrollbars (cross-browser) */
+.scrollbar-hide {
+  -ms-overflow-style: none;       /* IE/Edge */
+  scrollbar-width: none;          /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;                  /* Chrome/Safari */
 }

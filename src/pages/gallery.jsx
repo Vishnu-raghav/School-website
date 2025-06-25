@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import { Helmet } from "react-helmet-async";
+
 import Campus1 from "../assets/campus.jpg";
 import Campus2 from "../assets/campus2.jpg";
 import Campus3 from "../assets/campus3.jpg";
@@ -65,23 +67,39 @@ const Gallery = () => {
     setCurrentImage(imgs[prevIndex]);
   };
 
+  // Smooth scroll
   useEffect(() => {
     if (imagesRef.current) {
       imagesRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [activeTab]);
 
-  // Close modal with Escape key
+  // ESC to close modal
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === "Escape") closeModal();
+      if (e.key === "ArrowRight") showNext();
+      if (e.key === "ArrowLeft") showPrev();
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, []);
+  }, [imageIndex, activeTab]);
 
   return (
     <div className="w-full px-6 py-12 bg-gradient-to-b from-[#e6f0ff] via-white to-[#d6e6f9] min-h-screen">
+      {/* ✅ SEO Helmet */}
+      <Helmet>
+        <title>Gallery | Krishna Public School</title>
+        <meta
+          name="description"
+          content="Explore Krishna Public School's vibrant gallery featuring campus, classroom, lab, sports, and event memories. View photos in full screen."
+        />
+        <meta
+          name="keywords"
+          content="Krishna Public School gallery, school events photos, campus pictures, school lab images, classroom gallery"
+        />
+      </Helmet>
+
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-bold text-center text-blue-900 mb-10 underline decoration-blue-300">
           📸 Gallery Showcase
@@ -98,6 +116,8 @@ const Gallery = () => {
                   ? "bg-blue-600 text-white border-blue-600 shadow-md"
                   : "bg-white text-blue-700 border-blue-300 hover:bg-blue-100"
               }`}
+              aria-pressed={activeTab === category}
+              aria-label={`Show ${category} photos`}
             >
               {category}
             </button>
@@ -116,10 +136,13 @@ const Gallery = () => {
               key={index}
               className="relative group overflow-hidden rounded-xl shadow-md border border-blue-100 cursor-pointer"
               onClick={() => openModal(img, index)}
+              role="button"
+              aria-label="Open image in full screen"
             >
               <img
+                loading="lazy"
                 src={img}
-                alt={`img-${activeTab}-${index}`}
+                alt={`Gallery image - ${activeTab} ${index + 1}`}
                 className="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500"
               />
               <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white font-semibold text-lg">
@@ -134,38 +157,39 @@ const Gallery = () => {
           <div
             className="fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4"
             onClick={closeModal}
+            role="dialog"
+            aria-modal="true"
           >
             <div
               onClick={(e) => e.stopPropagation()}
               className="relative max-w-3xl w-full"
             >
-              {/* Close button */}
               <button
                 onClick={closeModal}
                 className="absolute top-2 right-2 text-white text-3xl z-10"
+                aria-label="Close image"
               >
                 &times;
               </button>
 
-              {/* Prev */}
               <button
                 onClick={showPrev}
                 className="absolute left-2 top-1/2 transform -translate-y-1/2 text-white text-4xl hover:scale-110 transition z-10"
+                aria-label="Previous image"
               >
                 ‹
               </button>
 
-              {/* Image */}
               <img
                 src={currentImage}
-                alt="modal"
+                alt="Enlarged school memory"
                 className="max-h-[80vh] w-full object-contain rounded"
               />
 
-              {/* Next */}
               <button
                 onClick={showNext}
                 className="absolute right-2 top-1/2 transform -translate-y-1/2 text-white text-4xl hover:scale-110 transition z-10"
+                aria-label="Next image"
               >
                 ›
               </button>

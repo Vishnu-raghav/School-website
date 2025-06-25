@@ -12,21 +12,28 @@ function App() {
 
   return (
     <>
+      {/* Scroll to top on route change */}
       <ScrollToTop />
-      <Header />
-      {isLoading && <Loader />}
-      
-      <div key={location.pathname} className="fade-enter">
-        <Outlet />
-      </div>
 
+      {/* Global Site Header */}
+      <Header />
+
+      {/* Show loader if app is fetching data */}
+      {isLoading && <Loader />}
+
+      {/* Main Content Area with animation keying */}
+      <main
+        key={location.pathname}
+        className="fade-enter min-h-[70vh] bg-white"
+        aria-live="polite"
+      >
+        <Outlet />
+      </main>
+
+      {/* Global Site Footer */}
       <Footer />
     </>
   );
 }
 
 export default App;
-
-
-
-

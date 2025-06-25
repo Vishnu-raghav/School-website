@@ -9,7 +9,11 @@ import Img2 from '../assets/img3.jpg';
 import Img3 from '../assets/img4.jpg';
 
 function Hero() {
-  const images = [Img1, Img2, Img3];
+  const images = [
+    { src: Img1, alt: 'School front building image' },
+    { src: Img2, alt: 'Students engaged in classroom learning' },
+    { src: Img3, alt: 'Annual sports event at school' },
+  ];
 
   return (
     <div className="w-full h-[80vh]">
@@ -20,17 +24,18 @@ function Hero() {
         loop={true}
         className="h-full"
       >
-        {images.map((src, index) => (
+        {images.map((img, index) => (
           <SwiperSlide key={index}>
             <div className="relative w-full h-full">
               <img
-                src={src}
-                alt={`slide-${index}`}
+                src={img.src}
+                alt={img.alt}
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
 
-              {/* 🌀 Blue Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t  from-black/70 to-black/10 flex items-center justify-center">
+              {/* 🌀 Overlay with Animated Text */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/10 flex items-center justify-center">
                 <motion.div
                   initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -43,9 +48,12 @@ function Hero() {
                   <p className="text-lg md:text-2xl text-blue-100 drop-shadow-md mb-6">
                     Empowering young minds for a brighter future
                   </p>
-                  <button className="px-6 py-3 bg-blue-500 hover:bg-blue-400 text-white font-semibold rounded-full transition duration-300">
+                  <a
+                    href="#about" // 👈 Change this to your actual route
+                    className="inline-block px-6 py-3 bg-blue-500 hover:bg-blue-400 text-white font-semibold rounded-full transition duration-300"
+                  >
                     Explore More
-                  </button>
+                  </a>
                 </motion.div>
               </div>
             </div>
@@ -57,4 +65,3 @@ function Hero() {
 }
 
 export default Hero;
-
