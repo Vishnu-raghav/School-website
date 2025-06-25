@@ -1,4 +1,4 @@
-@keyframes scrollLeft {
+@keyframes scroll-left {
   0% {
     transform: translateX(0%);
   }
@@ -7,13 +7,11 @@
   }
 }
 
-.infinite-scroll {
+.infinite-scroll-wrapper {
   display: flex;
-  gap: 1.5rem;
-  width: max-content;
-  animation: scrollLeft 25s linear infinite;
+  width: 200%; /* Twice the width so content can repeat */
+  animation: scroll-left 25s linear infinite;
 }
-
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
