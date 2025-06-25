@@ -31,9 +31,31 @@ const infrastructure = [
 function Home() {
   return (
     <div>
+      {/* 🔷 Running Feature Strip */}
+      <div className="bg-blue-700 text-white py-3 overflow-x-auto whitespace-nowrap text-center text-sm font-medium animate-pulse">
+        🧑‍🏫 Certified Teachers &nbsp; | &nbsp; 💡 Smart Classes &nbsp; | &nbsp; 🚌 Safe Transport &nbsp; | &nbsp; 🏆 90%+ Results &nbsp; | &nbsp; 🎯 Focus on Personality Development
+      </div>
+
+      {/* 🔷 Hero */}
       <Hero />
 
-      {/* Why Us Section */}
+      {/* 🔷 Award Strip */}
+      <div className="bg-yellow-100 py-3 text-center text-blue-900 font-medium tracking-wide animate-fade-in">
+        🏅 Nationally Recognized School | 🥇 Best in City for Academic Excellence – 2024 | 🎓 100% Result in Boards
+      </div>
+
+      {/* 🔷 CTA Urgency Section */}
+      <section className="bg-red-100 py-8 text-center">
+        <h2 className="text-2xl font-bold text-red-700">🎯 Hurry! Admissions Closing Soon</h2>
+        <p className="text-gray-800 mt-2">Only a few seats left for academic session 2025–26.</p>
+        <Link to="/admission">
+          <button className="mt-4 px-6 py-2 bg-red-600 text-white font-medium rounded-full hover:bg-red-700">
+            🚀 Enroll Now
+          </button>
+        </Link>
+      </section>
+
+      {/* 🔷 Why Us Section */}
       <section className="w-full py-16 px-6 bg-white">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
           <motion.div
@@ -55,9 +77,9 @@ function Home() {
               Why Krishna Public School?
             </h2>
             <p className="text-gray-700 text-lg mb-6 leading-relaxed">
-              Krishna Public School focuses on holistic student development,
-              academic excellence, state-of-the-art facilities, and a nurturing
-              environment that empowers young minds to grow, innovate, and lead.
+              Krishna Public School focuses on holistic student development, academic excellence,
+              state-of-the-art facilities, and a nurturing environment that empowers young minds
+              to grow, innovate, and lead.
             </p>
             <Link to="/about">
               <button className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-full transition duration-300 shadow-md hover:shadow-blue-300">
@@ -68,17 +90,33 @@ function Home() {
         </div>
       </section>
 
-      {/* Toppers Section */}
+      {/* 🔷 Key Stats */}
+      <section className="py-16 bg-gradient-to-br from-white to-blue-50 text-center">
+        <h2 className="text-3xl font-bold text-blue-800 mb-8">📈 Our Track Record</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 max-w-4xl mx-auto gap-6">
+          {[
+            { label: "Students Enrolled", value: "1500+" },
+            { label: "Board Toppers", value: "60+" },
+            { label: "Certified Teachers", value: "80+" },
+            { label: "Years of Excellence", value: "20+" }
+          ].map((stat, idx) => (
+            <div key={idx} className="bg-white rounded-2xl shadow p-6 hover:scale-105 transition">
+              <p className="text-4xl font-bold text-blue-700">{stat.value}</p>
+              <p className="mt-2 text-gray-600 font-medium">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 🔷 Toppers Section */}
       <section className="w-full py-16 px-6 bg-blue-50 overflow-hidden">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-10 relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-gradient-to-r after:from-blue-400 after:to-blue-200">
             Meet Our Toppers
           </h2>
-
           <div className="relative w-full overflow-hidden">
             <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-blue-50 to-transparent z-10 pointer-events-none"></div>
             <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-blue-50 to-transparent z-10 pointer-events-none"></div>
-
             <div className="infinite-scroll">
               {Array(2).fill(toppers).flat().map((topper, index) => (
                 <div
@@ -90,9 +128,7 @@ function Home() {
                     alt={topper.name}
                     className="w-28 h-28 object-cover rounded-full mx-auto mb-4 border-4 border-blue-500"
                   />
-                  <h3 className="text-lg font-semibold text-gray-800">
-                    {topper.name}
-                  </h3>
+                  <h3 className="text-lg font-semibold text-gray-800">{topper.name}</h3>
                   <p className="text-blue-700">{topper.class} Topper</p>
                   <p className="text-gray-600 mt-1 font-medium">{topper.score}</p>
                 </div>
@@ -102,7 +138,7 @@ function Home() {
         </div>
       </section>
 
-      {/* Infrastructure Section */}
+      {/* 🔷 Infrastructure Section */}
       <section className="w-full py-20 px-6 bg-gradient-to-br from-[#e0f2ff] to-[#f0f9ff]">
         <div className="max-w-7xl mx-auto text-center">
           <motion.h2
@@ -147,6 +183,53 @@ function Home() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* 🔷 Principal's Message */}
+      <section className="bg-blue-50 py-14 text-center px-6">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold text-blue-800 mb-4">👨‍🏫 Message from Our Principal</h2>
+          <p className="text-gray-700 text-lg italic">
+            “Every child is a spark of potential. At Krishna Public School, we nurture that spark into brilliance.
+            Our commitment is not just to academics, but to shaping responsible, confident individuals.”
+          </p>
+          <p className="mt-4 font-semibold text-blue-700">– Mr. S. Verma, Principal</p>
+        </div>
+      </section>
+
+      {/* 🔷 Testimonials */}
+      <section className="py-16 bg-white">
+        <h2 className="text-3xl font-bold text-blue-800 text-center mb-10">💬 What Parents Say</h2>
+        <div className="max-w-4xl mx-auto space-y-6">
+          <blockquote className="bg-blue-50 p-6 rounded-xl shadow-md">
+            <p className="text-lg text-gray-700">
+              "The teachers are caring and dedicated. My child has grown in confidence and skills!"
+            </p>
+            <footer className="mt-3 text-right text-blue-600 font-semibold">– Ramesh, Parent of Class 5 Student</footer>
+          </blockquote>
+          <blockquote className="bg-blue-50 p-6 rounded-xl shadow-md">
+            <p className="text-lg text-gray-700">
+              "Best decision ever! My daughter loves the smart classes and activities."
+            </p>
+            <footer className="mt-3 text-right text-blue-600 font-semibold">– Meena, Parent of Nursery Student</footer>
+          </blockquote>
+        </div>
+      </section>
+
+      {/* 🔷 Final CTA Section */}
+      <section className="relative bg-cover bg-center py-20 px-6 text-white" style={{ backgroundImage: `url(${Lab})` }}>
+        <div className="bg-black/60 absolute inset-0 z-0"></div>
+        <div className="relative z-10 text-center max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold mb-4">📚 Invest in Your Child’s Future Today</h2>
+          <p className="text-lg mb-6">
+            Unlock a world of possibilities at Krishna Public School. Apply now and be a part of a nurturing journey toward excellence.
+          </p>
+          <Link to="/admission">
+            <button className="bg-yellow-400 hover:bg-yellow-300 text-blue-900 font-semibold px-8 py-3 rounded-full shadow-lg transition">
+              📝 Apply for Admission
+            </button>
+          </Link>
         </div>
       </section>
     </div>

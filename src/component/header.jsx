@@ -58,8 +58,8 @@ function Header() {
           <Link to="About">
           <p className="hover:text-yellow-300 cursor-pointer">About</p>
           </Link>
-          <Link to="Infrastructure">
-          <p className="hover:text-yellow-300 cursor-pointer">Infrastructure</p>
+          <Link to="Admission">
+          <p className="hover:text-yellow-300 cursor-pointer">Admission</p>
           </Link>
           <Link to="Gallery">
           <p className="hover:text-yellow-300 cursor-pointer">Gallery</p>
@@ -96,8 +96,8 @@ function Header() {
           <Link to="/About">
           <li onClick={() => setOpen(false)} className="hover:text-yellow-200 cursor-pointer">About</li>
           </Link>
-          <Link to="Infrastructure">
-          <li onClick={() => setOpen(false)} className="hover:text-yellow-200 cursor-pointer">Infrastructure</li>
+          <Link to="Admission">
+          <li onClick={() => setOpen(false)} className="hover:text-yellow-200 cursor-pointer">Admission</li>
           </Link>
           <Link to="Gallery">
           <li onClick={() => setOpen(false)} className="hover:text-yellow-200 cursor-pointer">Gallery</li>
