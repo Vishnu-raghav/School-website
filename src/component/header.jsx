@@ -3,6 +3,7 @@ import CustomNavLink from "./CustomNavLink.jsx";
 
 function Header() {
   const [open, setOpen] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "auto";
@@ -15,9 +16,14 @@ function Header() {
     return () => window.removeEventListener("keydown", escHandler);
   }, [open]);
 
+  useEffect(() => {
+    const adminStatus = localStorage.getItem("isAdmin");
+    setIsAdmin(adminStatus === "true");
+  }, []);
+
   return (
     <>
-      {/* 🔹 Logo + Contact */}
+      {/* Logo + Contact */}
       <header className="backdrop-blur-lg bg-white/70 border-b border-gray-200 px-4 sm:px-6 md:px-12 py-4 shadow z-50">
         <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
           {/* Logo + Title */}
@@ -31,7 +37,9 @@ function Header() {
               <h1 className="text-2xl font-bold text-blue-900 font-serif">
                 Krishna Public School
               </h1>
-              <p className="text-gray-600 text-sm">Empowering Future Generations</p>
+              <p className="text-gray-600 text-sm">
+                Empowering Future Generations
+              </p>
             </div>
           </div>
 
@@ -52,14 +60,16 @@ function Header() {
               </div>
               <div>
                 <p className="font-semibold text-blue-900 text-base">Email</p>
-                <p className="text-sm break-all text-gray-700">vishnur1225@gmail.com</p>
+                <p className="text-sm break-all text-gray-700">
+                  vishnur1225@gmail.com
+                </p>
               </div>
             </div>
           </div>
         </div>
       </header>
 
-      {/* 🔹 Navigation Bar */}
+      {/* Navigation Bar */}
       <nav className="sticky top-0 z-40 bg-blue-950 text-white shadow-md">
         <div className="flex items-center justify-between px-4 sm:px-6 md:px-12 py-3">
           {/* Left: Logo & Links */}
@@ -81,6 +91,7 @@ function Header() {
               <CustomNavLink to="/Admission" className="hover:text-yellow-300 transition">Admission</CustomNavLink>
               <CustomNavLink to="/Gallery" className="hover:text-yellow-300 transition">Gallery</CustomNavLink>
               <CustomNavLink to="/Contact" className="hover:text-yellow-300 transition">Contact</CustomNavLink>
+              <CustomNavLink to="/mandatory-disclosure" className="hover:text-yellow-300 transition">Disclosure</CustomNavLink>
             </div>
           </div>
 
@@ -91,16 +102,25 @@ function Header() {
                 🎓 Apply Now
               </button>
             </CustomNavLink>
-            <CustomNavLink to="/admin" title="Admin Panel">
-              <button className="p-2 rounded-full bg-blue-800 hover:bg-blue-700 text-white text-xl shadow hover:scale-110 transition">
-                <i className="fa-solid fa-user-shield"></i>
-              </button>
-            </CustomNavLink>
+
+            {isAdmin ? (
+              <CustomNavLink to="/admin/dashboard" title="Admin Dashboard">
+                <button className="p-2 rounded-full bg-blue-800 hover:bg-blue-700 text-white text-xl shadow hover:scale-110 transition">
+                  <i className="fa-solid fa-user-shield"></i>
+                </button>
+              </CustomNavLink>
+            ) : (
+              <CustomNavLink to="/admin/login" title="Admin Login">
+                <button className="p-2 rounded-full bg-blue-800 hover:bg-blue-700 text-white text-xl shadow hover:scale-110 transition">
+                  <i className="fa-solid fa-lock"></i>
+                </button>
+              </CustomNavLink>
+            )}
           </div>
         </div>
       </nav>
 
-      {/* 🔹 Overlay */}
+      {/* Overlay */}
       {open && (
         <div
           className="fixed inset-0 bg-black/40 z-40"
@@ -109,7 +129,7 @@ function Header() {
         ></div>
       )}
 
-      {/* 🔹 Mobile Drawer */}
+      {/* Mobile Drawer */}
       <div
         id="mobile-drawer"
         className={`fixed top-0 right-0 h-full w-64 bg-blue-950 text-white transition-transform duration-300 z-50 ${
@@ -130,7 +150,12 @@ function Header() {
           <CustomNavLink to="/Admission" onClick={() => setOpen(false)} className="hover:text-yellow-200">Admission</CustomNavLink>
           <CustomNavLink to="/Gallery" onClick={() => setOpen(false)} className="hover:text-yellow-200">Gallery</CustomNavLink>
           <CustomNavLink to="/Contact" onClick={() => setOpen(false)} className="hover:text-yellow-200">Contact</CustomNavLink>
-          <CustomNavLink to="/admin" onClick={() => setOpen(false)} className="hover:text-yellow-200">Admin Panel</CustomNavLink>
+          <CustomNavLink to="/mandatory-disclosure" onClick={() => setOpen(false)} className="hover:text-yellow-200">Disclosure</CustomNavLink>
+          {isAdmin ? (
+            <CustomNavLink to="/admin/dashboard" onClick={() => setOpen(false)} className="hover:text-yellow-200">Admin Dashboard</CustomNavLink>
+          ) : (
+            <CustomNavLink to="/admin/login" onClick={() => setOpen(false)} className="hover:text-yellow-200">Admin Login</CustomNavLink>
+          )}
         </ul>
       </div>
     </>

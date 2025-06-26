@@ -1,152 +1,3 @@
-// import { useRef, useState } from "react";
-// import emailjs from "@emailjs/browser";
-// import { useLoading } from "../context/LoadingContext"; // path change mat bhoolna
-
-
-// function Admission() {
-//   const form = useRef();
-//   const { setIsLoading } = useLoading();
-
-//   const [status, setStatus] = useState(null); // success | error
-
-//   const handleSubmit = (e) => {
-//   e.preventDefault();
-//   setIsLoading(true); // ⏳ loader on
-
-//   emailjs
-//     .sendForm(
-//       "service_n5cw0kg",
-//       "template_ma511ie",
-//       form.current,
-//       "oAawwwXpnjugqovvl"
-//     )
-//     .then(() => {
-//       setStatus("success");
-//       form.current.reset();
-//       setTimeout(() => setStatus(null), 4000);
-//     })
-//     .catch(() => {
-//       setStatus("error");
-//       setTimeout(() => setStatus(null), 4000);
-//     })
-//     .finally(() => {
-//       setIsLoading(false); // ✅ loader off
-//     });
-// };
-
-
-//   return (
-//     <div className="bg-gradient-to-b from-blue-100 to-white min-h-screen py-12 px-4 md:px-20">
-//       <div className="text-center mb-12">
-//         <h1 className="text-5xl font-bold text-blue-800 mb-2">🎓 Admissions Open</h1>
-//         <p className="text-gray-700 text-lg max-w-2xl mx-auto">
-//           Apply to Krishna Public School – nurturing excellence since day one.
-//         </p>
-//       </div>
-
-//       <div className="grid md:grid-cols-2 gap-12">
-//         {/* ℹ️ Admission Info */}
-//         <div className="bg-white rounded-2xl shadow-xl p-8 border border-blue-200">
-//           <h2 className="text-2xl font-semibold text-blue-700 mb-4">📌 Admission Details</h2>
-//           <ul className="text-blue-900 space-y-3 text-[16px]">
-//             <li>✅ Classes: Nursery to Class 10</li>
-//             <li>📅 Dates: 1st March – 31st May</li>
-//             <li>🎂 Min Age: 3 years (Nursery)</li>
-//             <li>📄 Documents:
-//               <ul className="list-disc ml-5 text-gray-700">
-//                 <li>Birth Certificate</li>
-//                 <li>2 Photos (Passport Size)</li>
-//                 <li>Aadhar Card</li>
-//                 <li>Previous Report Card</li>
-//               </ul>
-//             </li>
-//             <li>💰 Fee Structure: Available at office</li>
-//             <li>📍 Address: Krishna Nagar, Kanpur</li>
-//             <li>📞 Contact: +91 98765 43210</li>
-//           </ul>
-//         </div>
-
-//         {/* 📝 Admission Form */}
-//         <form
-//           ref={form}
-//           onSubmit={handleSubmit}
-//           className="bg-white rounded-2xl shadow-xl p-8 border border-blue-200 space-y-4"
-//         >
-//           <h2 className="text-2xl font-semibold text-blue-700 mb-2">📝 Admission Form</h2>
-
-//           {status === "success" && (
-//             <p className="bg-green-100 text-green-800 px-4 py-2 rounded-xl border border-green-300">
-//               ✅ Form submitted successfully! We'll contact you soon.
-//             </p>
-//           )}
-//           {status === "error" && (
-//             <p className="bg-red-100 text-red-800 px-4 py-2 rounded-xl border border-red-300">
-//               ❌ Something went wrong. Please try again.
-//             </p>
-//           )}
-
-//           <input
-//             type="text"
-//             name="student_name"
-//             placeholder="👦 Student's Full Name"
-//             required
-//             className="w-full p-3 rounded-xl border focus:ring-2 focus:ring-blue-400"
-//           />
-//           <input
-//             type="text"
-//             name="class"
-//             placeholder="🏷 Class Applying For"
-//             required
-//             className="w-full p-3 rounded-xl border focus:ring-2 focus:ring-blue-400"
-//           />
-//           <input
-//             type="date"
-//             name="dob"
-//             placeholder="📅 Date of Birth"
-//             required
-//             className="w-full p-3 rounded-xl border focus:ring-2 focus:ring-blue-400"
-//           />
-//           <input
-//             type="text"
-//             name="parent_name"
-//             placeholder="👨‍👩‍👧 Parent's Name"
-//             required
-//             className="w-full p-3 rounded-xl border focus:ring-2 focus:ring-blue-400"
-//           />
-//           <input
-//             type="email"
-//             name="email"
-//             placeholder="✉️ Parent's Email"
-//             required
-//             className="w-full p-3 rounded-xl border focus:ring-2 focus:ring-blue-400"
-//           />
-//           <input
-//             type="tel"
-//             name="phone"
-//             placeholder="📞 Contact Number"
-//             required
-//             className="w-full p-3 rounded-xl border focus:ring-2 focus:ring-blue-400"
-//           />
-//           <textarea
-//             name="message"
-//             rows="4"
-//             placeholder="💬 Any additional info (optional)"
-//             className="w-full p-3 rounded-xl border focus:ring-2 focus:ring-blue-400"
-//           />
-//           <button
-//             type="submit"
-//             className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl text-lg font-medium transition"
-//           >
-//             📤 Submit Application
-//           </button>
-//         </form>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default Admission;
-
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { Helmet } from "react-helmet-async";
@@ -181,126 +32,142 @@ function Admission() {
   };
 
   return (
-    <div className="bg-gradient-to-b from-blue-100 to-white min-h-screen py-12 px-4 md:px-20">
-      {/* ✅ SEO Meta Tags */}
+    <div className="bg-gradient-to-br from-blue-50 to-white min-h-screen py-14 px-4 md:px-20">
       <Helmet>
-        <title>Admission - Krishna Public School | Apply Online</title>
+        <title>Admissions - Krishna Public School, Kanpur | Apply Online</title>
         <meta
           name="description"
-          content="Apply online for admission to Krishna Public School, Kanpur. Open from Nursery to Class 10. Safe transport, smart classrooms, and value-based education."
+          content="Apply online for admission to Krishna Public School in Kanpur. Classes from Nursery to 10th. Safe transport, smart classes, and caring teachers."
         />
         <meta
           name="keywords"
-          content="Krishna Public School Admission, School Near Me, Kanpur School, Apply Online, Nursery Admission, CBSE School Kanpur"
+          content="Krishna Public School Admission, Apply Online, Kanpur School, Nursery Admission, CBSE Kanpur"
         />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Admission - Krishna Public School, Kanpur" />
+        <meta property="og:description" content="Online admission open for classes Nursery to 10th at Krishna Public School, Kanpur." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://krishnapublicschool.in/admission" />
+        <meta property="og:image" content="/logo192.png" />
+        <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
 
-      <div className="text-center mb-12">
-        <h1 className="text-5xl font-bold text-blue-800 mb-2">🎓 Admissions Open</h1>
+      {/* Header */}
+      <header className="text-center mb-12">
+        <h1 className="text-5xl font-bold text-blue-800 mb-2">Admissions Open</h1>
         <p className="text-gray-700 text-lg max-w-2xl mx-auto">
-          Apply to Krishna Public School – nurturing excellence since day one.
+          Enroll your child today into a nurturing and excellence-driven environment.
         </p>
-      </div>
+      </header>
 
-      <div className="grid md:grid-cols-2 gap-12">
-        {/* ℹ️ Admission Info */}
-        <section className="bg-white rounded-2xl shadow-xl p-8 border border-blue-200" aria-label="Admission Details">
-          <h2 className="text-2xl font-semibold text-blue-700 mb-4">📌 Admission Details</h2>
-          <ul className="text-blue-900 space-y-3 text-[16px]">
-            <li>✅ Classes: Nursery to Class 10</li>
-            <li>📅 Dates: 1st March – 31st May</li>
-            <li>🎂 Min Age: 3 years (Nursery)</li>
+      <main className="grid md:grid-cols-2 gap-12 items-start">
+        {/* Admission Info */}
+        <section
+          className="bg-white/70 backdrop-blur-xl rounded-2xl shadow-xl p-8 border border-blue-200"
+          aria-label="Admission Details"
+        >
+          <h2 className="text-2xl font-semibold text-blue-700 mb-4">Admission Details</h2>
+          <ul className="space-y-3 text-blue-900 text-[16px]">
+            <li><strong>Classes:</strong> Nursery to Class 10</li>
+            <li><strong>Admission Period:</strong> 1st March – 31st May</li>
+            <li><strong>Minimum Age:</strong> 3 years for Nursery</li>
             <li>
-              📄 Documents:
-              <ul className="list-disc ml-5 text-gray-700">
+              <strong>Required Documents:</strong>
+              <ul className="list-disc list-inside text-gray-700 ml-2 space-y-1">
                 <li>Birth Certificate</li>
-                <li>2 Photos (Passport Size)</li>
+                <li>2 Passport Size Photos</li>
                 <li>Aadhar Card</li>
                 <li>Previous Report Card</li>
               </ul>
             </li>
-            <li>💰 Fee Structure: Available at office</li>
-            <li>📍 Address: Krishna Nagar, Kanpur</li>
-            <li>📞 Contact: +91 98765 43210</li>
+            <li><strong>Fee Structure:</strong> Available at Office</li>
+            <li><strong>Address:</strong> Krishna Nagar, Kanpur</li>
+            <li><strong>Contact:</strong> +91 98765 43210</li>
           </ul>
         </section>
 
-        {/* 📝 Admission Form */}
-        <article className="bg-white rounded-2xl shadow-xl p-8 border border-blue-200 space-y-4" aria-label="Admission Form">
-          <h2 className="text-2xl font-semibold text-blue-700 mb-2">📝 Admission Form</h2>
+        {/* Admission Form */}
+        <section
+          className="bg-white rounded-2xl shadow-2xl p-8 border border-blue-100 space-y-4"
+          aria-label="Admission Form"
+        >
+          <h2 className="text-2xl font-semibold text-blue-700 mb-2">Online Admission Form</h2>
 
-          {status === "success" && (
-            <p className="bg-green-100 text-green-800 px-4 py-2 rounded-xl border border-green-300">
-              ✅ Form submitted successfully! We'll contact you soon.
+          {status && (
+            <p className={`px-4 py-2 rounded-xl border font-medium ${
+              status === "success"
+                ? "bg-green-100 text-green-800 border-green-300"
+                : "bg-red-100 text-red-800 border-red-300"
+            }`}>
+              {status === "success"
+                ? "Form submitted successfully! We'll contact you soon."
+                : "Something went wrong. Please try again."}
             </p>
           )}
-          {status === "error" && (
-            <p className="bg-red-100 text-red-800 px-4 py-2 rounded-xl border border-red-300">
-              ❌ Something went wrong. Please try again.
-            </p>
-          )}
 
-          <form ref={form} onSubmit={handleSubmit}>
-            <input
-              type="text"
-              name="student_name"
-              placeholder="👦 Student's Full Name"
-              autoComplete="name"
-              required
-              className="w-full p-3 rounded-xl border focus:ring-2 focus:ring-blue-400 mb-3"
-            />
-            <input
-              type="text"
-              name="class"
-              placeholder="🏷 Class Applying For"
-              required
-              className="w-full p-3 rounded-xl border focus:ring-2 focus:ring-blue-400 mb-3"
-            />
-            <input
-              type="date"
-              name="dob"
-              required
-              className="w-full p-3 rounded-xl border focus:ring-2 focus:ring-blue-400 mb-3"
-            />
-            <input
-              type="text"
-              name="parent_name"
-              placeholder="👨‍👩‍👧 Parent's Name"
-              autoComplete="name"
-              required
-              className="w-full p-3 rounded-xl border focus:ring-2 focus:ring-blue-400 mb-3"
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="✉️ Parent's Email"
-              autoComplete="email"
-              required
-              className="w-full p-3 rounded-xl border focus:ring-2 focus:ring-blue-400 mb-3"
-            />
-            <input
-              type="tel"
-              name="phone"
-              placeholder="📞 Contact Number"
-              autoComplete="tel"
-              required
-              className="w-full p-3 rounded-xl border focus:ring-2 focus:ring-blue-400 mb-3"
-            />
-            <textarea
-              name="message"
-              rows="4"
-              placeholder="💬 Any additional info (optional)"
-              className="w-full p-3 rounded-xl border focus:ring-2 focus:ring-blue-400 mb-3"
-            />
+          <form
+            ref={form}
+            onSubmit={handleSubmit}
+            autoComplete="off"
+            className="space-y-4"
+          >
+            {[
+              { name: "student_name", label: "Student's Full Name", type: "text" },
+              { name: "class", label: "Class Applying For", type: "text" },
+              { name: "dob", label: "Date of Birth", type: "date" },
+              { name: "parent_name", label: "Parent's Name", type: "text" },
+              { name: "email", label: "Parent's Email", type: "email" },
+              { name: "phone", label: "Contact Number", type: "tel" },
+            ].map((field) => (
+              <div key={field.name} className="relative">
+                <input
+                  type={field.type}
+                  name={field.name}
+                  id={field.name}
+                  placeholder=" "
+                  required
+                  autoComplete="off"
+                  className="w-full p-3 pt-4 border border-gray-300 rounded-lg peer focus:ring-2 focus:ring-blue-400 outline-none"
+                />
+                <label
+                  htmlFor={field.name}
+                  className="absolute left-3 top-0.5 text-sm text-gray-500 transition-all 
+                    peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 
+                    peer-focus:top-0.5 peer-focus:text-sm peer-focus:text-blue-600"
+                >
+                  {field.label}
+                </label>
+              </div>
+            ))}
+
+            <div className="relative">
+              <textarea
+                name="message"
+                id="message"
+                rows="4"
+                placeholder=" "
+                autoComplete="off"
+                className="w-full p-3 pt-4 border border-gray-300 rounded-lg peer focus:ring-2 focus:ring-blue-400 outline-none resize-none"
+              ></textarea>
+              <label
+                htmlFor="message"
+                className="absolute left-3 top-0.5 text-sm text-gray-500 transition-all 
+                  peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 
+                  peer-focus:top-0.5 peer-focus:text-sm peer-focus:text-blue-600"
+              >
+                Any additional information (optional)
+              </label>
+            </div>
+
             <button
               type="submit"
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl text-lg font-medium transition"
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl text-lg font-medium transition-all"
             >
-              📤 Submit Application
+              Submit Application
             </button>
           </form>
-        </article>
-      </div>
+        </section>
+      </main>
     </div>
   );
 }

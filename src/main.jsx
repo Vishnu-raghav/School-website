@@ -1,4 +1,3 @@
-import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css';
 
@@ -12,6 +11,9 @@ import About from './pages/about.jsx';
 import Contact from './pages/contact.jsx';
 import Gallery from './pages/gallery.jsx';
 import Admission from './pages/admission.jsx';
+import MandatoryDisclosure from './pages/MandatoryDisclosure.jsx';
+import AdminLogin from './pages/AdminLogin.jsx'; 
+import AdminDashboard from './pages/AdminDashboard.jsx'; 
 
 const router = createBrowserRouter([
   {
@@ -23,17 +25,19 @@ const router = createBrowserRouter([
       { path: 'contact', element: <Contact /> },
       { path: 'gallery', element: <Gallery /> },
       { path: 'admission', element: <Admission /> },
+      { path: 'mandatory-disclosure', element: <MandatoryDisclosure /> },
+      { path: 'admin/login', element: <AdminLogin /> },       
+      { path: 'admin/dashboard', element: <AdminDashboard /> } 
     ],
   },
 ]);
 
-
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+
     <HelmetProvider>
       <LoadingProvider>
         <RouterProvider router={router} />
       </LoadingProvider>
     </HelmetProvider>
-  </StrictMode>
+  
 );
