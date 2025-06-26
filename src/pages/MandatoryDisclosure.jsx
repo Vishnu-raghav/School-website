@@ -1,3 +1,239 @@
+// import {
+//   FaSchool,
+//   FaFileAlt,
+//   FaChartLine,
+//   FaChalkboardTeacher,
+//   FaUserTie,
+//   FaTools,
+// } from "react-icons/fa";
+
+// const Table = ({ headers, rows }) => (
+//   <table className="w-full text-sm border border-blue-300 mb-6">
+//     <thead className="bg-gray-100 text-blue-900 text-left">
+//       <tr>
+//         {headers.map((head, i) => (
+//           <th key={i} className="border px-3 py-2 font-semibold">{head}</th>
+//         ))}
+//       </tr>
+//     </thead>
+//     <tbody>
+//       {rows.map((row, i) => (
+//         <tr key={i} className="hover:bg-gray-50">
+//           {row.map((cell, j) => (
+//             <td
+//               key={j}
+//               className="border px-3 py-2 text-gray-800 text-left whitespace-pre-line"
+//             >
+//               {cell}
+//             </td>
+//           ))}
+//         </tr>
+//       ))}
+//     </tbody>
+//   </table>
+// );
+
+// const Section = ({ icon, title, children }) => (
+//   <div className="bg-[#f0f6ff] border border-blue-200 rounded-xl px-6 py-5 mb-8">
+//     <div className="flex items-center gap-3 mb-4">
+//       <div className="text-blue-700 text-lg">{icon}</div>
+//       <h2 className="text-xl font-semibold text-blue-900 border-l-4 pl-3 border-blue-500">
+//         {title}
+//       </h2>
+//     </div>
+//     {children}
+//   </div>
+// );
+
+// export default function MandatoryDisclosure() {
+//   return (
+//     <div className="bg-white min-h-screen py-12 px-4 sm:px-8">
+//       <div className="max-w-6xl mx-auto">
+//         <h1 className="text-3xl sm:text-4xl font-bold text-center text-blue-900 mb-10">
+//           Mandatory Public Disclosure
+//         </h1>
+
+//         {/* A. General Information */}
+//         <Section icon={<FaSchool />} title="A. General Information">
+//           <Table
+//             headers={["S.No.", "Information", "Details"]}
+//             rows={[
+//               ["1", "Name of School", "Krishna Public School"],
+//               ["2", "Affiliation No. (If Applicable)", "Not Applicable"],
+//               ["3", "School Code (If Applicable)", "Not Applicable"],
+//               ["4", "Complete Address", "Sarwan Colony, Sewarpar, Gorakhpur, 273401"],
+//               ["5", "Principal Name", "Mr. Sunny Kumar Sharma"],
+//               ["6", "Principal Qualification", "M.A., B.Ed."],
+//               ["7", "School Email ID", "info@kpschool.edu.in"],
+//               ["8", "Contact Details", "+91-9876543210"],
+//             ]}
+//           />
+//         </Section>
+
+//         {/* B. Documents */}
+//         <Section icon={<FaFileAlt />} title="B. Documents & Information">
+//           <Table
+//             headers={["S.No.", "Documents", "Download"]}
+//             rows={[
+//               ["1", "Self-Certification", <a href="/docs/GetSelfCertification.pdf" download className="text-blue-700 underline">Click here</a>],
+//               ["2", "Water, Health & Sanitation", <a href="/docs/Water_Health.pdf" download className="text-blue-700 underline">Click here</a>],
+//               ["3", "Building Fitness Certificate (PWD)", <a href="/docs/BFC_PWD.pdf" download className="text-blue-700 underline">Click here</a>],
+//               ["4", "Fire Safety Certificate", <a href="/docs/Fire-Certificate.pdf" download className="text-blue-700 underline">Click here</a>],
+//               ["5", "Recognition Certificate", <a href="/docs/Recognition.pdf" download className="text-blue-700 underline">Click here</a>],
+//               ["6", "NOC from State Government", <a href="/docs/NOC.pdf" download className="text-blue-700 underline">Click here</a>],
+//               ["7", "Society Registration Certificate", <a href="/docs/Krishna-society_RC.pdf" download className="text-blue-700 underline">Click here</a>],
+//               ["8", "Affiliation Certificate", <a href="/docs/Affiliation.pdf" download className="text-blue-700 underline">Click here</a>],
+//             ]}
+//           />
+//         </Section>
+
+//         {/* C. Result & Academics */}
+//         <Section icon={<FaChartLine />} title="C. Result & Academics">
+//           <Table
+//             headers={["S.No.", "Information", "Download"]}
+//             rows={[
+//               ["1", "Fee Structure", <a href="/docs/Fee-Structure.pdf" download className="text-blue-700 underline">Click here</a>],
+//               ["2", "Annual Academic Calendar", <a href="/docs/Anual-Calender.pdf" download className="text-blue-700 underline">Click here</a>],
+//               ["3", "School Management Committee (SMC)", <a href="/docs/Krishna-SMC.pdf" download className="text-blue-700 underline">Click here</a>],
+//               ["4", "PTA Members", "-"],
+//               ["5", "Last 3 Year Board Result", <a href="/docs/Krishna-Result.pdf" download className="text-blue-700 underline">Click here</a>],
+//             ]}
+//           />
+//         </Section>
+// {/* D. Staff (Teaching) */}
+// <Section icon={<FaChalkboardTeacher />} title="D. Staff (Teaching)">
+//   <Table
+//     headers={["S.No.", "Information", "Details"]}
+//     rows={[
+//       ["1", "Principal", "SHIKHA BHATT"],
+//       ["2", "Total Number of Teachers", ""],
+//       ["", "Principal", "1"],
+//       ["", "Vice Principal", "1"],
+//       ["", "PGT", "11"],
+//       ["", "TGT", "18"],
+//       ["", "PRT", "20"],
+//       ["", "PET", "1"],
+//       ["", "Librarian", "1"],
+//       ["", "NTT", "05"],
+//       ["", "Wellness Teacher", "1"],
+//       ["", "Special Educator", "1"],
+//       ["3", "Teachers Section Ratio", ""],
+//       ["4", "Details of Special Educator", "Chirag Sengar, BEd (Spl. Edn), BA"],
+//       ["5", "Details of Counsellor and Wellness Teacher", "Karishma Rani, MA (Psychology), BEd"]
+//     ]}
+//   />
+// </Section>
+
+
+// {/* E. Results */}
+// <Section icon={<FaUserTie />} title="E. Results (Class X & XII)">
+//   {/* Result Class X */}
+//   <h3 className="font-semibold text-blue-900 mb-2">RESULT CLASS: X</h3>
+//   <table className="w-full text-sm border border-blue-300 mb-6 text-left">
+//     <thead className="bg-blue-100 text-blue-900">
+//       <tr>
+//         {["S.No.", "Year", "No. of Registered Students", "No. of students passed", "Pass Percentage", "Remarks, if any"].map((text, idx) => (
+//           <th key={idx} className="border px-3 py-2">{text}</th>
+//         ))}
+//       </tr>
+//     </thead>
+//     <tbody>
+//       {[
+//         ["1", "2024-25", "98", "98", "100", "Yashi = 97%"],
+//         ["2", "2023-24", "90", "90", "100", "Tajinder Saini = 92.8%"],
+//         ["3", "2022-23", "77", "73", "95", "Akansha Kumari = 96.8%"],
+//       ].map((row, i) => (
+//         <tr key={i} className="text-gray-800">
+//           {row.map((cell, j) => (
+//             <td key={j} className="border px-3 py-1">{cell}</td>
+//           ))}
+//         </tr>
+//       ))}
+//     </tbody>
+//   </table>
+
+//   {/* Result Class XII */}
+//   <h3 className="font-semibold text-blue-900 mb-2">RESULT CLASS: XII</h3>
+//   <table className="w-full text-sm border border-blue-300 text-left">
+//     <thead className="bg-blue-100 text-blue-900">
+//       <tr>
+//         {["S.No.", "Year", "No. of Registered Students", "No. of students passed", "Pass Percentage", "Remarks, if any"].map((text, idx) => (
+//           <th key={idx} className="border px-3 py-2">{text}</th>
+//         ))}
+//       </tr>
+//     </thead>
+//     <tbody>
+//       {[
+//         ["1", "2024-25", "30", "30", "100", "Neeraj Aswal = 93%"],
+//         ["2", "2023-24", "29", "28", "97", "Yuvika Semalti = 94%"],
+//         ["3", "2022-23", "17", "16", "94", "-"],
+//       ].map((row, i) => (
+//         <tr key={i} className="text-gray-800">
+//           {row.map((cell, j) => (
+//             <td key={j} className="border px-3 py-1">{cell}</td>
+//           ))}
+//         </tr>
+//       ))}
+//     </tbody>
+//   </table>
+// </Section>
+
+
+//         {/* F. Infrastructure */}
+//         <Section icon={<FaTools />} title="F. School Infrastructure">
+//           <Table
+//             headers={["S.No.", "Information", "Details"]}
+//             rows={[
+//               ["1", "TOTAL CAMPUS AREA OF THE SCHOOL (IN SQ MTR)", "8093.44 Sq.M."],
+//               ["2", "NO. AND SIZE OF THE CLASS ROOMS (IN SQ MTR)", "-"],
+//               [
+//                 "3",
+//                 "NO. AND SIZE OF LABORATORIES INCLUDING COMPUTER LABS (IN SQ MTR)",
+// `01 – Science Lab (55.74 Sq.M.)
+// 01 – Maths Lab (46.45 Sq.M.)
+// 01 – Computer Lab (55.74 Sq.M.)
+// 01 – Physics Lab (57.97 Sq.M.)
+// 01 – Chemistry Lab (68.51 Sq.M.)
+// 01 – Biology Lab (57.06 Sq.M.)`
+//               ],
+//               ["4", "INTERNET FACILITY", "Yes"],
+//               ["5", "NO. OF GIRLS TOILETS", "28 + 02 CWSN + 03 Staff (Female)"],
+//               ["6", "NO. OF BOYS TOILETS", "26 + 02 CWSN + 03 Staff (Male)"],
+//               [
+//                 "7",
+//                 "LINK OF YOUTUBE VIDEO OF THE INSPECTION OF SCHOOL COVERING THE INFRASTRUCTURE OF THE SCHOOL",
+//                 <a href="https://www.youtube.com/" target="_blank" className="text-blue-700 underline">ClickHere</a>
+//               ]
+//             ]}
+//           />
+//         </Section>
+//       </div>
+//     </div>
+//   );
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import {
   FaSchool,
   FaFileAlt,
@@ -7,6 +243,36 @@ import {
   FaTools,
 } from "react-icons/fa";
 
+const Table = ({ headers, rows }) => (
+  <div className="overflow-x-auto">
+    <table className="min-w-full text-sm border border-blue-300 mb-6">
+      <thead className="bg-gray-100 text-blue-900 text-left">
+        <tr>
+          {headers.map((head, i) => (
+            <th key={i} className="border px-3 py-2 font-semibold whitespace-nowrap">
+              {head}
+            </th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map((row, i) => (
+          <tr key={i} className="hover:bg-gray-50">
+            {row.map((cell, j) => (
+              <td
+                key={j}
+                className="border px-3 py-2 text-gray-800 text-left whitespace-pre-line align-top"
+              >
+                {cell}
+              </td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+);
+
 const Section = ({ icon, title, children }) => (
   <div className="bg-[#f0f6ff] border border-blue-200 rounded-xl px-6 py-5 mb-8">
     <div className="flex items-center gap-3 mb-4">
@@ -15,125 +281,172 @@ const Section = ({ icon, title, children }) => (
         {title}
       </h2>
     </div>
-    <div className="text-gray-800 text-sm leading-relaxed">{children}</div>
+    {children}
   </div>
 );
 
 export default function MandatoryDisclosure() {
   return (
-    <div className="bg-white min-h-screen py-12 px-4 sm:px-8">
-      <div className="max-w-5xl mx-auto">
+    <div className="bg-white min-h-screen py-12 px-4 sm:px-8 overflow-x-hidden">
+      <div className="max-w-6xl mx-auto">
         <h1 className="text-3xl sm:text-4xl font-bold text-center text-blue-900 mb-10">
           Mandatory Public Disclosure
         </h1>
 
         {/* A. General Information */}
         <Section icon={<FaSchool />} title="A. General Information">
-          <ul className="grid sm:grid-cols-2 gap-3">
-            <li><strong>School Name:</strong> Krishna Public School</li>
-            <li><strong>Affiliation No:</strong> 1234567</li>
-            <li><strong>School Code:</strong> 998877</li>
-            <li><strong>Address:</strong> ABC Road, XYZ City</li>
-            <li><strong>Principal:</strong> Mr. Sharma</li>
-            <li><strong>Qualification:</strong> M.Sc, B.Ed</li>
-            <li><strong>Email:</strong> info@kpschool.edu.in</li>
-            <li><strong>Phone:</strong> +91-9876543210</li>
-          </ul>
+          <Table
+            headers={["S.No.", "Information", "Details"]}
+            rows={[
+              ["1", "Name of School", "Krishna Public School"],
+              ["2", "Affiliation No. (If Applicable)", "Not Applicable"],
+              ["3", "School Code (If Applicable)", "Not Applicable"],
+              ["4", "Complete Address", "Sarwan Colony, Sewarpar, Gorakhpur, 273401"],
+              ["5", "Principal Name", "Mr. Sunny Kumar Sharma"],
+              ["6", "Principal Qualification", "M.A., B.Ed."],
+              ["7", "School Email ID", "info@kpschool.edu.in"],
+              ["8", "Contact Details", "+91-9876543210"],
+            ]}
+          />
         </Section>
 
+        {/* Other sections would go below following similar structure... */}
         {/* B. Documents */}
         <Section icon={<FaFileAlt />} title="B. Documents & Information">
-          <ul className="list-disc pl-5 space-y-2">
-            {[
-              "Affiliation/Upgradation Letter",
-              "Society Registration Certificate",
-              "NOC from State Govt.",
-              "Recognition Certificate (RTE)",
-              "Building Safety Certificate",
-              "Fire Safety Certificate",
-              "DEO/Self Certification",
-              "Water, Health & Sanitation Certificates",
-            ].map((doc, idx) => (
-              <li key={idx}>
-                {doc}: <a href="#" className="text-blue-700 underline">Click here</a>
-              </li>
-            ))}
-          </ul>
+          <Table
+            headers={["S.No.", "Documents", "Download"]}
+            rows={[
+              ["1", "Self-Certification", <a href="/docs/GetSelfCertification.pdf" download className="text-blue-700 underline">Click here</a>],
+              ["2", "Water, Health & Sanitation", <a href="/docs/Water_Health.pdf" download className="text-blue-700 underline">Click here</a>],
+              ["3", "Building Fitness Certificate (PWD)", <a href="/docs/BFC_PWD.pdf" download className="text-blue-700 underline">Click here</a>],
+              ["4", "Fire Safety Certificate", <a href="/docs/Fire-Certificate.pdf" download className="text-blue-700 underline">Click here</a>],
+              ["5", "Recognition Certificate", <a href="/docs/Recognition.pdf" download className="text-blue-700 underline">Click here</a>],
+              ["6", "NOC from State Government", <a href="/docs/NOC.pdf" download className="text-blue-700 underline">Click here</a>],
+              ["7", "Society Registration Certificate", <a href="/docs/Krishna-society_RC.pdf" download className="text-blue-700 underline">Click here</a>],
+              ["8", "Affiliation Certificate", <a href="/docs/Affiliation.pdf" download className="text-blue-700 underline">Click here</a>],
+            ]}
+          />
         </Section>
 
-        {/* C. Academics */}
+        {/* C. Result & Academics */}
         <Section icon={<FaChartLine />} title="C. Result & Academics">
-          <ul className="list-disc pl-5 space-y-2">
-            {[
-              "Fee Structure",
-              "Academic Calendar",
-              "School Management Committee (SMC)",
-              "PTA Members",
-              "Last 3 Years Board Results",
-            ].map((item, idx) => (
-              <li key={idx}>
-                {item}: <a href="#" className="text-blue-700 underline">Click here</a>
-              </li>
-            ))}
-          </ul>
+          <Table
+            headers={["S.No.", "Information", "Download"]}
+            rows={[
+              ["1", "Fee Structure", <a href="/docs/Fee-Structure.pdf" download className="text-blue-700 underline">Click here</a>],
+              ["2", "Annual Academic Calendar", <a href="/docs/Anual-Calender.pdf" download className="text-blue-700 underline">Click here</a>],
+              ["3", "School Management Committee (SMC)", <a href="/docs/Krishna-SMC.pdf" download className="text-blue-700 underline">Click here</a>],
+              ["4", "PTA Members", "-"],
+              ["5", "Last 3 Year Board Result", <a href="/docs/Krishna-Result.pdf" download className="text-blue-700 underline">Click here</a>],
+            ]}
+          />
         </Section>
+{/* D. Staff (Teaching) */}
+<Section icon={<FaChalkboardTeacher />} title="D. Staff (Teaching)">
+  <Table
+    headers={["S.No.", "Information", "Details"]}
+    rows={[
+      ["1", "Principal", "SHIKHA BHATT"],
+      ["2", "Total Number of Teachers", ""],
+      ["", "Principal", "1"],
+      ["", "Vice Principal", "1"],
+      ["", "PGT", "11"],
+      ["", "TGT", "18"],
+      ["", "PRT", "20"],
+      ["", "PET", "1"],
+      ["", "Librarian", "1"],
+      ["", "NTT", "05"],
+      ["", "Wellness Teacher", "1"],
+      ["", "Special Educator", "1"],
+      ["3", "Teachers Section Ratio", ""],
+      ["4", "Details of Special Educator", "Chirag Sengar, BEd (Spl. Edn), BA"],
+      ["5", "Details of Counsellor and Wellness Teacher", "Karishma Rani, MA (Psychology), BEd"]
+    ]}
+  />
+</Section>
 
-        {/* D. Staff */}
-        <Section icon={<FaChalkboardTeacher />} title="D. Staff (Teaching)">
-          <ul className="grid sm:grid-cols-2 gap-3">
-            <li><strong>Total Teachers:</strong> 40</li>
-            <li><strong>PGTs:</strong> 10</li>
-            <li><strong>TGTs:</strong> 15</li>
-            <li><strong>PRTs:</strong> 15</li>
-            <li><strong>Special Educator:</strong> Available</li>
-            <li><strong>Counsellor:</strong> Available</li>
-            <li><strong>Ratio:</strong> 1:1.50</li>
-          </ul>
-        </Section>
 
-        {/* E. Results */}
-        <Section icon={<FaUserTie />} title="E. Results (Class X & XII)">
-          {["Class X", "Class XII"].map((label, i) => (
-            <div key={i} className="mb-5">
-              <h3 className="font-medium mb-2 text-blue-800">{label}</h3>
-              <table className="w-full text-sm border border-blue-200">
-                <thead className="bg-blue-100 text-blue-900">
-                  <tr>
-                    {["Year", "Registered", "Passed", "Pass %", "Remarks"].map((th) => (
-                      <th key={th} className="border px-2 py-1">{th}</th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {[2021, 2022, 2023].map((year) => (
-                    <tr key={year} className="text-center">
-                      <td className="border px-2 py-1">{year}</td>
-                      <td className="border px-2 py-1">100</td>
-                      <td className="border px-2 py-1">98</td>
-                      <td className="border px-2 py-1">98%</td>
-                      <td className="border px-2 py-1">-</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+{/* E. Results */}
+<Section icon={<FaUserTie />} title="E. Results (Class X & XII)">
+  {/* Result Class X */}
+  <h3 className="font-semibold text-blue-900 mb-2">RESULT CLASS: X</h3>
+  <table className="w-full text-sm border border-blue-300 mb-6 text-left">
+    <thead className="bg-blue-100 text-blue-900">
+      <tr>
+        {["S.No.", "Year", "No. of Registered Students", "No. of students passed", "Pass Percentage", "Remarks, if any"].map((text, idx) => (
+          <th key={idx} className="border px-3 py-2">{text}</th>
+        ))}
+      </tr>
+    </thead>
+    <tbody>
+      {[
+        ["1", "2024-25", "98", "98", "100", "Yashi = 97%"],
+        ["2", "2023-24", "90", "90", "100", "Tajinder Saini = 92.8%"],
+        ["3", "2022-23", "77", "73", "95", "Akansha Kumari = 96.8%"],
+      ].map((row, i) => (
+        <tr key={i} className="text-gray-800">
+          {row.map((cell, j) => (
+            <td key={j} className="border px-3 py-1">{cell}</td>
           ))}
-        </Section>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+
+  {/* Result Class XII */}
+  <h3 className="font-semibold text-blue-900 mb-2">RESULT CLASS: XII</h3>
+  <table className="w-full text-sm border border-blue-300 text-left">
+    <thead className="bg-blue-100 text-blue-900">
+      <tr>
+        {["S.No.", "Year", "No. of Registered Students", "No. of students passed", "Pass Percentage", "Remarks, if any"].map((text, idx) => (
+          <th key={idx} className="border px-3 py-2">{text}</th>
+        ))}
+      </tr>
+    </thead>
+    <tbody>
+      {[
+        ["1", "2024-25", "30", "30", "100", "Neeraj Aswal = 93%"],
+        ["2", "2023-24", "29", "28", "97", "Yuvika Semalti = 94%"],
+        ["3", "2022-23", "17", "16", "94", "-"],
+      ].map((row, i) => (
+        <tr key={i} className="text-gray-800">
+          {row.map((cell, j) => (
+            <td key={j} className="border px-3 py-1">{cell}</td>
+          ))}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</Section>
+
 
         {/* F. Infrastructure */}
         <Section icon={<FaTools />} title="F. School Infrastructure">
-          <ul className="grid sm:grid-cols-2 gap-3">
-            <li><strong>Campus Area:</strong> 8000 sq.m.</li>
-            <li><strong>Classrooms:</strong> 40 (45 sq.m.)</li>
-            <li><strong>Labs:</strong> 5 (60 sq.m.)</li>
-            <li><strong>Internet:</strong> Yes</li>
-            <li><strong>Girls Toilets:</strong> 10</li>
-            <li><strong>Boys Toilets:</strong> 12</li>
-            <li>
-              <strong>Inspection Video:</strong>{" "}
-              <a href="#" className="text-blue-700 underline">Watch</a>
-            </li>
-          </ul>
+          <Table
+            headers={["S.No.", "Information", "Details"]}
+            rows={[
+              ["1", "TOTAL CAMPUS AREA OF THE SCHOOL (IN SQ MTR)", "8093.44 Sq.M."],
+              ["2", "NO. AND SIZE OF THE CLASS ROOMS (IN SQ MTR)", "-"],
+              [
+                "3",
+                "NO. AND SIZE OF LABORATORIES INCLUDING COMPUTER LABS (IN SQ MTR)",
+`01 – Science Lab (55.74 Sq.M.)
+01 – Maths Lab (46.45 Sq.M.)
+01 – Computer Lab (55.74 Sq.M.)
+01 – Physics Lab (57.97 Sq.M.)
+01 – Chemistry Lab (68.51 Sq.M.)
+01 – Biology Lab (57.06 Sq.M.)`
+              ],
+              ["4", "INTERNET FACILITY", "Yes"],
+              ["5", "NO. OF GIRLS TOILETS", "28 + 02 CWSN + 03 Staff (Female)"],
+              ["6", "NO. OF BOYS TOILETS", "26 + 02 CWSN + 03 Staff (Male)"],
+              [
+                "7",
+                "LINK OF YOUTUBE VIDEO OF THE INSPECTION OF SCHOOL COVERING THE INFRASTRUCTURE OF THE SCHOOL",
+                <a href="https://www.youtube.com/" target="_blank" className="text-blue-700 underline">ClickHere</a>
+              ]
+            ]}
+          />
         </Section>
       </div>
     </div>

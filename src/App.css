@@ -1,46 +1,3 @@
-/* @keyframes scroll-left {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.infinite-scroll-wrapper {
-  display: flex;
-  width: 200%; 
-  animation: scroll-left 25s linear infinite;
-}
-
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.fade-enter {
-  opacity: 0;
-  animation: fadeInBalanced 0.4s ease-out forwards;
-}
-
-@keyframes fadeInBalanced {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-} */
-
-
-
-
-
-
-
 /* Smooth scroll-in animation for route transitions */
 @keyframes fadeInBalanced {
   from {
@@ -57,9 +14,9 @@
 }
 
 /* Infinite horizontal scroll animation */
-@keyframes scroll-left {
+/* @keyframes scroll-left {
   0% {
-    transform: translateX(0%);
+    transform: translateX(0);
   }
   100% {
     transform: translateX(-50%);
@@ -68,16 +25,37 @@
 
 .infinite-scroll-wrapper {
   display: flex;
-  width: 200%; /* Double the width to allow seamless looping */
-  animation: scroll-left 25s linear infinite;
+  width: max-content;
+  animation: scroll-left 20s linear infinite;
+} */
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.3333%);
+  }
 }
+
+.infinite-scroll-wrapper {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 20s linear infinite;
+}
+
 
 /* Hide scrollbars (cross-browser) */
 .scrollbar-hide {
-  -ms-overflow-style: none;       /* IE/Edge */
-  scrollbar-width: none;          /* Firefox */
+  -ms-overflow-style: none;       
+  scrollbar-width: none;          
 }
 
 .scrollbar-hide::-webkit-scrollbar {
-  display: none;                  /* Chrome/Safari */
+  display: none;                 
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
