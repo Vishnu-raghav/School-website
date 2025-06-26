@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Helmet } from "react-helmet-async"; // 👈 For SEO
+import { Helmet } from "react-helmet-async"; // SEO
 import SchoolImg from "../assets/schl.jpg";
 import PrincipalImg from "../assets/prin.jpg";
 import DirectorImg from "../assets/dir.jpg";
@@ -35,13 +35,54 @@ function About() {
         <title>About Krishna Public School - Vision, Leadership & Mission</title>
         <meta
           name="description"
-          content="Discover Krishna Public School's mission, leadership team, and educational values. Learn how we nurture future leaders through holistic learning."
+          content="Krishna Public School fosters leadership, values, and academic excellence in Faridabad. Meet our principal, chairman, and director."
         />
         <meta
           name="keywords"
-          content="Krishna Public School, school near me, best school in [city], principal message, school mission, chairman, director, CBSE"
+          content="Krishna Public School, CBSE school Faridabad, school leadership, principal's message, director, chairman, school vision"
         />
         <link rel="canonical" href="https://krishnapublicschool.net/About" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="About Krishna Public School - Vision & Mission" />
+        <meta
+          property="og:description"
+          content="Learn about Krishna Public School's leadership, educational philosophy, and mission for holistic student development."
+        />
+        <meta property="og:image" content="https://krishnapublicschool.net/og-school.jpg" />
+        <meta property="og:url" content="https://krishnapublicschool.net/About" />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Krishna Public School" />
+        <meta
+          name="twitter:description"
+          content="Meet our leadership and explore Krishna Public School's commitment to quality education and values."
+        />
+        <meta name="twitter:image" content="https://krishnapublicschool.net/og-school.jpg" />
+
+        {/* Schema.org JSON-LD */}
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "EducationalOrganization",
+            "name": "Krishna Public School",
+            "url": "https://krishnapublicschool.net",
+            "logo": "https://krishnapublicschool.net/logo.png",
+            "sameAs": ["https://www.facebook.com/krishnapublicschool"],
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Sector XX",
+              "addressLocality": "Faridabad",
+              "addressRegion": "Haryana",
+              "postalCode": "121XXX",
+              "addressCountry": "IN"
+            },
+            "description": "Krishna Public School fosters academic excellence, leadership, and holistic development through value-based education.",
+            "founder": "Krishna Educational Trust"
+          }
+        `}</script>
       </Helmet>
 
       {/* 🏫 About Section */}
@@ -55,16 +96,16 @@ function About() {
             About Krishna Public School
           </h1>
           <p className="text-lg leading-relaxed text-gray-700">
-            At Krishna Public School, we nurture young minds with care, purpose,
-            and dedication. With experienced educators and advanced
-            infrastructure, we emphasize holistic development through academics,
-            ethics, and creativity.
+            At Krishna Public School, we nurture young minds with care,
+            purpose, and dedication. With experienced educators and modern
+            infrastructure, we emphasize holistic development through
+            academics, ethics, and creativity.
           </p>
         </motion.div>
 
         <motion.img
           src={SchoolImg}
-          alt="Krishna Public School building"
+          alt="Front view of Krishna Public School campus"
           initial={{ x: 80, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 1 }}
@@ -88,7 +129,7 @@ function About() {
             >
               <img
                 src={leader.image}
-                alt={`${leader.name} at Krishna Public School`}
+                alt={`Portrait of ${leader.name} at Krishna Public School`}
                 className="w-28 h-28 mx-auto rounded-full border-4 border-blue-500 mb-4 object-cover"
               />
               <h3 className="text-xl text-center font-semibold text-blue-800 mb-2">
@@ -102,7 +143,7 @@ function About() {
         </div>
       </section>
 
-      {/* 🎯 Mission Vision Aim */}
+      {/* 🎯 Mission Vision Aim Section */}
       <section className="bg-white py-20 px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-10 text-center">
           <motion.div
@@ -112,7 +153,7 @@ function About() {
             className="bg-blue-50 rounded-2xl p-8 shadow hover:shadow-blue-200"
           >
             <FaBullseye className="text-3xl text-blue-700 mb-4 mx-auto" />
-            <h4 className="text-xl font-bold text-blue-800 mb-2">Our Mission</h4>
+            <h3 className="text-xl font-bold text-blue-800 mb-2">Our Mission</h3>
             <p className="text-gray-600 text-sm">
               Deliver value-based education that fosters academic excellence,
               creativity, and integrity.
@@ -126,7 +167,7 @@ function About() {
             className="bg-blue-50 rounded-2xl p-8 shadow hover:shadow-blue-200"
           >
             <FaEye className="text-3xl text-blue-700 mb-4 mx-auto" />
-            <h4 className="text-xl font-bold text-blue-800 mb-2">Our Vision</h4>
+            <h3 className="text-xl font-bold text-blue-800 mb-2">Our Vision</h3>
             <p className="text-gray-600 text-sm">
               To become a leading educational institution producing global
               citizens with strong values.
@@ -140,7 +181,7 @@ function About() {
             className="bg-blue-50 rounded-2xl p-8 shadow hover:shadow-blue-200"
           >
             <FaLightbulb className="text-3xl text-blue-700 mb-4 mx-auto" />
-            <h4 className="text-xl font-bold text-blue-800 mb-2">Our Aim</h4>
+            <h3 className="text-xl font-bold text-blue-800 mb-2">Our Aim</h3>
             <p className="text-gray-600 text-sm">
               Create a nurturing environment where every student is empowered to
               dream, believe, and achieve.
@@ -153,3 +194,4 @@ function About() {
 }
 
 export default About;
+

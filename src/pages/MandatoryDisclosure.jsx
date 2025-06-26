@@ -6,6 +6,7 @@ import {
   FaUserTie,
   FaTools,
 } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 const Table = ({ headers, rows }) => (
   <div className="overflow-x-auto">
@@ -52,6 +53,54 @@ const Section = ({ icon, title, children }) => (
 export default function MandatoryDisclosure() {
   return (
     <div className="bg-white min-h-screen py-10 px-4 sm:px-8 overflow-x-hidden">
+      <Helmet>
+        <title>Mandatory Public Disclosure | Krishna Public School Faridabad</title>
+        <meta
+          name="description"
+          content="Mandatory Public Disclosure of Krishna Public School including infrastructure details, staff information, certificates, academic results, and more."
+        />
+        <meta
+          name="keywords"
+          content="Krishna Public School Mandatory Disclosure, school certificates, school results, CBSE school documents, school infrastructure Faridabad"
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://krishnapublicschool.net/mandatory-disclosure" />
+        <meta property="og:title" content="Mandatory Public Disclosure | Krishna Public School Faridabad" />
+        <meta property="og:description" content="Explore the mandatory public disclosure section of Krishna Public School. Find certificates, results, staff, and infrastructure details." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://krishnapublicschool.net/mandatory-disclosure" />
+        <meta property="og:image" content="https://krishnapublicschool.net/preview.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Mandatory Disclosure - Krishna Public School" />
+        <meta name="twitter:description" content="All CBSE required disclosures: certificates, results, infrastructure, and staff info from Krishna Public School, Faridabad." />
+        <meta name="twitter:image" content="https://krishnapublicschool.net/preview.jpg" />
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Mandatory Public Disclosure",
+            "url": "https://krishnapublicschool.net/mandatory-disclosure",
+            "description": "This page displays the official mandatory public disclosures of Krishna Public School including CBSE-required documents, infrastructure, and academic information.",
+            "publisher": {
+              "@type": "EducationalOrganization",
+              "name": "Krishna Public School",
+              "url": "https://krishnapublicschool.net",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://krishnapublicschool.net/logo.png"
+              },
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Sarswati Colony, Sehatpur",
+                "addressLocality": "Faridabad",
+                "addressRegion": "Haryana",
+                "postalCode": "121003",
+                "addressCountry": "IN"
+              }
+            }
+          }
+        `}</script>
+      </Helmet>
       <div className="max-w-6xl mx-auto">
         <h1 className="text-2xl sm:text-4xl font-bold text-center text-blue-900 mb-10">
           Mandatory Public Disclosure
@@ -129,12 +178,6 @@ export default function MandatoryDisclosure() {
     ]}
   />
 </Section>
-
-
-
-
-
-
 
 
 {/* E. Results */}

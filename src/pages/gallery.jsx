@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { Helmet } from "react-helmet-async";
 
 import Campus1 from "../assets/campus.jpg";
@@ -34,6 +34,7 @@ const Gallery = () => {
   const [imageIndex, setImageIndex] = useState(0);
 
   const handleTabChange = (tab) => {
+    if (tab === activeTab) return;
     setFade(false);
     setTimeout(() => {
       setActiveTab(tab);
@@ -41,40 +42,38 @@ const Gallery = () => {
     }, 200);
   };
 
-  const openModal = (img, index) => {
+  const openModal = useCallback((img, index) => {
     setCurrentImage(img);
     setImageIndex(index);
     setModalOpen(true);
     document.body.style.overflow = "hidden";
-  };
+  }, []);
 
-  const closeModal = () => {
+  const closeModal = useCallback(() => {
     setModalOpen(false);
     document.body.style.overflow = "auto";
-  };
+  }, []);
 
-  const showNext = () => {
+  const showNext = useCallback(() => {
     const imgs = categories[activeTab];
     const nextIndex = (imageIndex + 1) % imgs.length;
     setImageIndex(nextIndex);
     setCurrentImage(imgs[nextIndex]);
-  };
+  }, [activeTab, imageIndex]);
 
-  const showPrev = () => {
+  const showPrev = useCallback(() => {
     const imgs = categories[activeTab];
     const prevIndex = (imageIndex - 1 + imgs.length) % imgs.length;
     setImageIndex(prevIndex);
     setCurrentImage(imgs[prevIndex]);
-  };
+  }, [activeTab, imageIndex]);
 
-  // Smooth scroll
   useEffect(() => {
     if (imagesRef.current) {
       imagesRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [activeTab]);
 
-  // ESC to close modal
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === "Escape") closeModal();
@@ -83,21 +82,27 @@ const Gallery = () => {
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [imageIndex, activeTab]);
+  }, [showNext, showPrev, closeModal]);
 
   return (
     <div className="w-full px-6 py-12 bg-gradient-to-b from-[#e6f0ff] via-white to-[#d6e6f9] min-h-screen">
       {/* ✅ SEO Helmet */}
-      <Helmet>
-        <title>Gallery | Krishna Public School</title>
+      <Helmet prioritizeSeoTags>
+        <title>Gallery | Krishna Public School - Campus, Events, Labs</title>
         <meta
           name="description"
-          content="Explore Krishna Public School's vibrant gallery featuring campus, classroom, lab, sports, and event memories. View photos in full screen."
+          content="Explore Krishna Public School's vibrant gallery featuring campus, classroom, lab, sports and event memories. View photos in full screen."
         />
         <meta
           name="keywords"
-          content="Krishna Public School gallery, school events photos, campus pictures, school lab images, classroom gallery"
+          content="Krishna Public School gallery, Faridabad school photos, campus pictures, school events, classroom images, lab gallery"
         />
+        <link rel="canonical" href="https://www.krishnapublicschool.in/gallery" />
+        <meta property="og:title" content="Krishna Public School - Photo Gallery" />
+        <meta property="og:description" content="Discover Krishna Public School's visual journey through events, sports, and labs." />
+        <meta property="og:image" content="https://cdn.pixabay.com/photo/2016/11/29/09/08/blur-1867321_1280.jpg" />
+        <meta property="og:url" content="https://www.krishnapublicschool.in/gallery" />
+        <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
 
       <div className="max-w-7xl mx-auto">
@@ -118,6 +123,7 @@ const Gallery = () => {
               }`}
               aria-pressed={activeTab === category}
               aria-label={`Show ${category} photos`}
+              aria-controls={`gallery-${category}`}
             >
               {category}
             </button>
@@ -126,6 +132,7 @@ const Gallery = () => {
 
         {/* Images */}
         <div
+          id={`gallery-${activeTab}`}
           ref={imagesRef}
           className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 transition-opacity duration-500 ${
             fade ? "opacity-100" : "opacity-0"
@@ -137,12 +144,12 @@ const Gallery = () => {
               className="relative group overflow-hidden rounded-xl shadow-md border border-blue-100 cursor-pointer"
               onClick={() => openModal(img, index)}
               role="button"
-              aria-label="Open image in full screen"
+              aria-label={`Open ${activeTab} image ${index + 1}`}
             >
               <img
                 loading="lazy"
                 src={img}
-                alt={`Gallery image - ${activeTab} ${index + 1}`}
+                alt={`${activeTab} photo ${index + 1}`}
                 className="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500"
               />
               <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white font-semibold text-lg">

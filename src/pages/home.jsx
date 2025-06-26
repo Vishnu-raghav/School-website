@@ -43,43 +43,73 @@ function Home() {
   const { ref, inView } = useInView({ triggerOnce: true });
   return (
     <div className="overflow-x-hidden">
-      <Helmet>
-        <title>Krishna Public School | Best School Near Me in Faridabad | Top CBSE School</title>
-        <meta
-          name="description"
-          content="Looking for the best school near you? Krishna Public School in Faridabad offers CBSE education, smart classes, safe transport, and holistic development. Admissions open for 2025–26."
-        />
-        <meta
-          name="keywords"
-          content="school near me, Krishna Public School, best school in Faridabad, CBSE school Faridabad, top school near me, private school Faridabad"
-        />
-        <meta property="og:image" content="/preview.jpg" />
-        <link rel="canonical" href="https://krishnapublicschool.net/" />
-        <script type="application/ld+json">{`
-          {
-            "@context": "https://schema.org",
-            "@type": "School",
-            "name": "Krishna Public School",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "Sarswati colonyr",
-              "addressLocality": "Haryana",
-              "addressRegion": "HR",
-              "postalCode": "121003",
-              "addressCountry": "IN"
-            },
-            "geo": {
-              "@type": "GeoCoordinates",
-              "latitude": "26.4499",
-              "longitude": "80.3319"
-            },
-            "hasMap": "https://goo.gl/maps/xyz",
-            "telephone": "9711208294",
-            "email": "vishnur1225@gmail.com",
-            "url": "https://krishnapublicschool.net/"
-          }
-        `}</script>
-      </Helmet>
+    <Helmet>
+  {/* Title & Meta */}
+  <title>Krishna Public School | Top CBSE School in Faridabad | Admissions Open 2025</title>
+  <meta
+    name="description"
+    content="Krishna Public School, the best CBSE school in Faridabad, offers smart classes, experienced teachers, safe transport, and overall student development. Enroll now for 2025–26 session."
+  />
+  <meta
+    name="keywords"
+    content="Krishna Public School, best CBSE school Faridabad, school near me, top school in Faridabad, smart class school, private school Faridabad, admission open 2025"
+  />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://krishnapublicschool.net/" />
+
+  {/* Open Graph for social sharing (Facebook, WhatsApp etc.) */}
+  <meta property="og:title" content="Krishna Public School | Top CBSE School in Faridabad" />
+  <meta property="og:description" content="Enroll your child at Krishna Public School - Smart classes, qualified staff, and holistic education in Faridabad." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://krishnapublicschool.net/" />
+  <meta property="og:image" content="https://krishnapublicschool.net/preview.jpg" />
+
+  {/* Twitter Card */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Krishna Public School | Top CBSE School in Faridabad" />
+  <meta name="twitter:description" content="Top-rated CBSE school offering admissions for 2025. Smart classrooms, safe transport & holistic learning." />
+  <meta name="twitter:image" content="https://krishnapublicschool.net/preview.jpg" />
+
+  {/* JSON-LD Structured Data */}
+  <script type="application/ld+json">{`
+    {
+      "@context": "https://schema.org",
+      "@type": "School",
+      "name": "Krishna Public School",
+      "description": "Top CBSE School in Faridabad with certified teachers, digital learning, and excellent academic results.",
+      "url": "https://krishnapublicschool.net/",
+      "logo": "https://krishnapublicschool.net/logo.png",
+      "image": "https://krishnapublicschool.net/preview.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sarswati Colony, Sehatpur",
+        "addressLocality": "Faridabad",
+        "addressRegion": "Haryana",
+        "postalCode": "121003",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "28.4089",
+        "longitude": "77.3178"
+      },
+      "hasMap": "https://goo.gl/maps/xyz",
+      "telephone": "+91-9711208294",
+      "email": "vishnur1225@gmail.com",
+      "founder": {
+        "@type": "Person",
+        "name": "Mr. Sunny Kumar Sharma"
+      },
+      "foundingDate": "2004",
+      "sameAs": [
+        "https://www.facebook.com/krishnapublicschool",
+        "https://www.instagram.com/krishnapublicschool",
+        "https://www.youtube.com/@krishnapublicschool"
+      ]
+    }
+  `}</script>
+</Helmet>
+
 
       {/* Top Strip */}
       <div className="bg-blue-700 text-white py-3 text-sm text-center font-medium animate-pulse px-4">
@@ -106,30 +136,6 @@ function Home() {
         </Link>
       </section>
 
-      {/* Why Us
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
-          <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 1 }} className="w-full md:w-1/2">
-            <img src={Img5} alt="Why Krishna Public School - best school near me in Kanpur" className="w-full h-auto rounded-2xl shadow-lg" />
-          </motion.div>
-          <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 1 }} className="w-full md:w-1/2 text-center md:text-left">
-            <h2 className="text-3xl md:text-4xl font-bold text-blue-800 mb-4">
-              Why Krishna Public School?
-            </h2>
-            <p className="text-gray-700 text-lg mb-6">
-              We focus on holistic development, academic excellence & nurturing innovation in every child.
-            </p>
-            <Link to="/about">
-              <button className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-full shadow-md">
-                Read More
-              </button>
-            </Link>
-          </motion.div>
-        </div>
-      </section> */}
-      
-
-      
 {/* Why Us - Image left se, Text right se animate */}
 <section className="py-16 px-4 bg-white">
   <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
