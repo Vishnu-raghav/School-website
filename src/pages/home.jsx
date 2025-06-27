@@ -5,7 +5,7 @@ import Top121 from "../assets/top121.png";
 import Top122 from "../assets/top122.png";
 import Top123 from "../assets/top123.png";
 import SmartClass from "../assets/SC.jpg";
-import Transport from "../assets/trans.jpg";
+import Transport from "../assets/Trans.jpg";
 import Kindergarten from "../assets/Kindergarden.jpg";
 import Lab from "../assets/LLL.WEBP";
 import Block from "../assets/BB.jpg";
