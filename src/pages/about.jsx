@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Helmet } from "react-helmet-async"; // SEO
+import { Helmet } from "react-helmet-async"; 
 import SchoolImg from "../assets/schl.jpg";
 import PrincipalImg from "../assets/prin.jpg";
 import DirectorImg from "../assets/dir.jpg";

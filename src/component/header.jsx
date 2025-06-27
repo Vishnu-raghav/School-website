@@ -87,11 +87,11 @@ function Header() {
             {/* Desktop Nav */}
             <div className="hidden md:flex gap-6 font-medium text-sm">
               <CustomNavLink to="/" className="hover:text-yellow-300 transition">Home</CustomNavLink>
-              <CustomNavLink to="/About" className="hover:text-yellow-300 transition">About</CustomNavLink>
-              <CustomNavLink to="/Admission" className="hover:text-yellow-300 transition">Admission</CustomNavLink>
               <CustomNavLink to="/Gallery" className="hover:text-yellow-300 transition">Gallery</CustomNavLink>
+              <CustomNavLink to="/Admission" className="hover:text-yellow-300 transition">Admission</CustomNavLink>
               <CustomNavLink to="/Contact" className="hover:text-yellow-300 transition">Contact</CustomNavLink>
               <CustomNavLink to="/mandatory-disclosure" className="hover:text-yellow-300 transition">Disclosure</CustomNavLink>
+              <CustomNavLink to="/About" className="hover:text-yellow-300 transition">About</CustomNavLink>
             </div>
           </div>
 
@@ -146,11 +146,11 @@ function Header() {
         </div>
         <ul className="flex flex-col gap-4 p-4 text-sm">
           <CustomNavLink to="/" onClick={() => setOpen(false)} className="hover:text-yellow-200">Home</CustomNavLink>
-          <CustomNavLink to="/About" onClick={() => setOpen(false)} className="hover:text-yellow-200">About</CustomNavLink>
-          <CustomNavLink to="/Admission" onClick={() => setOpen(false)} className="hover:text-yellow-200">Admission</CustomNavLink>
           <CustomNavLink to="/Gallery" onClick={() => setOpen(false)} className="hover:text-yellow-200">Gallery</CustomNavLink>
+          <CustomNavLink to="/Admission" onClick={() => setOpen(false)} className="hover:text-yellow-200">Admission</CustomNavLink>
           <CustomNavLink to="/Contact" onClick={() => setOpen(false)} className="hover:text-yellow-200">Contact</CustomNavLink>
           <CustomNavLink to="/mandatory-disclosure" onClick={() => setOpen(false)} className="hover:text-yellow-200">Disclosure</CustomNavLink>
+          <CustomNavLink to="/About" onClick={() => setOpen(false)} className="hover:text-yellow-200">About</CustomNavLink>
           {isAdmin ? (
             <CustomNavLink to="/admin/dashboard" onClick={() => setOpen(false)} className="hover:text-yellow-200">Admin Dashboard</CustomNavLink>
           ) : (

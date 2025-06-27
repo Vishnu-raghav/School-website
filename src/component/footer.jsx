@@ -55,10 +55,11 @@ function Footer() {
           <h3 className="text-2xl font-semibold text-white mb-4">Quick Links</h3>
           <ul className="space-y-3 text-sm">
             <li><CustomNavLink to="/" className="hover:text-sky-400 transition">🏠 Home</CustomNavLink></li>
-            <li><CustomNavLink to="/About" className="hover:text-sky-400 transition">📘 About</CustomNavLink></li>
-            <li><CustomNavLink to="/Admission" className="hover:text-sky-400 transition">🎓 Admission</CustomNavLink></li>
             <li><CustomNavLink to="/Gallery" className="hover:text-sky-400 transition">📸 Gallery</CustomNavLink></li>
+            <li><CustomNavLink to="/Admission" className="hover:text-sky-400 transition">🎓 Admission</CustomNavLink></li>
             <li><CustomNavLink to="/Contact" className="hover:text-sky-400 transition">📞 Contact</CustomNavLink></li>
+            <li><CustomNavLink to="/mandatory-disclosure" className="hover:text-sky-400 transition">📄 Disclosure</CustomNavLink></li>
+            <li><CustomNavLink to="/About" className="hover:text-sky-400 transition">📘 About</CustomNavLink></li>
           </ul>
         </div>
 
