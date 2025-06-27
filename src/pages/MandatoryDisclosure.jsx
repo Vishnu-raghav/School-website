@@ -123,22 +123,48 @@ export default function MandatoryDisclosure() {
           />
         </Section>
 
-        {/* B. Documents */}
+{/* B. Documents */}
 <Section icon={<FaFileAlt />} title="B. DOCUMENTS AND INFORMATION">
-  <Table
-    headers={["S.No.", "DOCUMENTS/INFORMATION", "LINKS OF UPLOADED ON YOUR SCHOOL'S WEBSITE"]}
-    rows={[
-      ["1", "Self-Certification", <a href="/docs/GetSelfCertification.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">Click here</a>],
-      ["2", "Water, Health & Sanitation", <a href="/docs/Water_Health.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">Click here</a>],
-      ["3", "Building Fitness Certificate (PWD)", <a href="/docs/BFC_PWD.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">Click here</a>],
-      ["4", "Fire Safety Certificate", <a href="/docs/Fire-Certificate.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">Click here</a>],
-      ["5", "Recognition Certificate", <a href="/docs/Recognition.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">Click here</a>],
-      ["6", "NOC from State Government", <a href="/docs/NOC.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">Click here</a>],
-      ["7", "Society Registration Certificate", <a href="/docs/Krishna-society_RC.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">Click here</a>],
-      ["8", "Affiliation Certificate", <a href="/docs/Affiliation.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">Click here</a>],
-    ]}
-  />
+  <div className="w-full">
+    <table className="w-full text-sm border border-blue-300 table-auto">
+      <thead className="bg-blue-100 text-blue-900">
+        <tr>
+          <th className="border border-blue-300 px-4 py-2 text-left font-semibold">S.No.</th>
+          <th className="border border-blue-300 px-4 py-2 text-left font-semibold">DOCUMENTS/INFORMATION</th>
+          <th className="border border-blue-300 px-4 py-2 text-left font-semibold">LINKS OF UPLOADED ON YOUR SCHOOL'S WEBSITE</th>
+        </tr>
+      </thead>
+      <tbody>
+        {[
+          ["1", "Self-Certification", "/docs/GetSelfCertification.pdf"],
+          ["2", "Water, Health & Sanitation", "/docs/Water_Health.pdf"],
+          ["3", "Building Fitness Certificate (PWD)", "/docs/BFC_PWD.pdf"],
+          ["4", "Fire Safety Certificate", "/docs/Fire-Certificate.pdf"],
+          ["5", "Recognition Certificate", "/docs/Recognition.pdf"],
+          ["6", "NOC from State Government", "/docs/NOC.pdf"],
+          ["7", "Society Registration Certificate", "/docs/Krishna-society_RC.pdf"],
+          ["8", "Affiliation Certificate", "/docs/Affiliation.pdf"],
+        ].map(([sn, title, link], index) => (
+          <tr key={index} className={index % 2 === 0 ? "bg-white" : "bg-blue-50"}>
+            <td className="border border-blue-300 px-4 py-2 text-blue-900">{sn}</td>
+            <td className="border border-blue-300 px-4 py-2 text-blue-900">{title}</td>
+            <td className="border border-blue-300 px-4 py-2">
+              <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-700 underline"
+              >
+                Click here
+              </a>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
 </Section>
+
 
 <Section icon={<FaChartLine />} title="C. Result & Academics">
   <Table
