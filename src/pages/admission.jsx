@@ -68,8 +68,8 @@ function Admission() {
         >
           <h2 className="text-2xl font-semibold text-blue-700 mb-4">Admission Details</h2>
           <ul className="space-y-3 text-blue-900 text-[16px]">
-            <li><strong>Classes:</strong> Nursery to Class 10</li>
-            <li><strong>Admission Period:</strong> 1st March – 31st May</li>
+            <li><strong>Classes:</strong> Nursery to Class 10+2</li>
+            <li><strong>Admission Period:</strong> 1st April – 31st July</li>
             <li><strong>Minimum Age:</strong> 3 years for Nursery</li>
             <li>
               <strong>Required Documents:</strong>
@@ -81,8 +81,8 @@ function Admission() {
               </ul>
             </li>
             <li><strong>Fee Structure:</strong> Available at Office</li>
-            <li><strong>Address:</strong> Krishna Nagar, Kanpur</li>
-            <li><strong>Contact:</strong> +91 98765 43210</li>
+            <li><strong>Address:</strong> Sehatpur, Faridabad</li>
+            <li><strong>Contact:</strong> +91-9911733387, +91-9958403241</li>
           </ul>
         </section>
 
@@ -116,7 +116,6 @@ function Admission() {
               { name: "class", label: "Class Applying For", type: "text" },
               { name: "dob", label: "Date of Birth", type: "date" },
               { name: "parent_name", label: "Parent's Name", type: "text" },
-              { name: "email", label: "Parent's Email", type: "email" },
               { name: "phone", label: "Contact Number", type: "tel" },
             ].map((field) => (
               <div key={field.name} className="relative">

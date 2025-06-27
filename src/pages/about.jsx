@@ -13,12 +13,6 @@ function About() {
         "Education here is about building responsible individuals ready to lead the world with values and vision.",
     },
     {
-      name: "Vice-Chairman's Message",
-      image: DefaultAvatar,
-      message:
-        "We offer a space where each child feels valued and inspired to grow to their fullest potential.",
-    },
-    {
       name: "Director's Message",
       image: DefaultAvatar,
       message:
@@ -28,7 +22,6 @@ function About() {
 
   return (
     <div className="bg-gradient-to-br from-white via-blue-50 to-blue-100 text-gray-800 overflow-hidden">
-      {/* 🔍 SEO Meta Tags */}
       <Helmet>
         <title>About Krishna Public School - Vision, Leadership & Mission</title>
         <meta
@@ -40,8 +33,6 @@ function About() {
           content="Krishna Public School, CBSE school Faridabad, school leadership, principal's message, director, chairman, school vision"
         />
         <link rel="canonical" href="https://krishnapublicschool.net/About" />
-
-        {/* Open Graph */}
         <meta property="og:title" content="About Krishna Public School - Vision & Mission" />
         <meta
           property="og:description"
@@ -50,8 +41,6 @@ function About() {
         <meta property="og:image" content="https://krishnapublicschool.net/og-school.jpg" />
         <meta property="og:url" content="https://krishnapublicschool.net/About" />
         <meta property="og:type" content="website" />
-
-        {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="About Krishna Public School" />
         <meta
@@ -59,8 +48,6 @@ function About() {
           content="Meet our leadership and explore Krishna Public School's commitment to quality education and values."
         />
         <meta name="twitter:image" content="https://krishnapublicschool.net/og-school.jpg" />
-
-        {/* Schema.org JSON-LD */}
         <script type="application/ld+json">{`
           {
             "@context": "https://schema.org",
@@ -83,7 +70,7 @@ function About() {
         `}</script>
       </Helmet>
 
-      {/* 🏫 About Section */}
+      {/* About Section */}
       <section className="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
         <motion.div
           initial={{ x: -80, opacity: 0 }}
@@ -111,12 +98,12 @@ function About() {
         />
       </section>
 
-      {/* 👨‍💼 Leadership Section */}
+      {/* Leadership Section */}
       <section className="max-w-7xl mx-auto px-6 py-24">
         <h2 className="text-3xl md:text-4xl font-semibold text-center text-blue-800 mb-12">
           💼 Leadership Messages
         </h2>
-        <div className="grid md:grid-cols-3 gap-10">
+        <div className="grid md:grid-cols-2 gap-10">
           {leaders.map((leader, index) => (
             <motion.div
               key={index}
@@ -141,7 +128,7 @@ function About() {
         </div>
       </section>
 
-      {/* Mission Vision Aim Section */}
+      {/* Mission Vision Aim */}
       <section className="bg-white py-20 px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-10 text-center">
           <motion.div

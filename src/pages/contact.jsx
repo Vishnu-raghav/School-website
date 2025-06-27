@@ -129,9 +129,9 @@ function Contact() {
           className="space-y-6"
         >
           {[
-            { title: "Address", value: "Krishna Nagar, Kanpur, UP – 208001" },
-            { title: "Phone", value: "+91 98765 43210" },
-            { title: "Email", value: "contact@krishnapublicschool.edu.in" },
+            { title: "Address", value: "Sehatpur, Faridabad, Haryana – 121003" },
+            { title: "Phone", value: "+91-9911733387, +91-9958403241" },
+            { title: "Email", value: "Kps5358@gmail.com" },
           ].map((item, index) => (
             <div
               key={index}
