@@ -126,12 +126,18 @@ export default function MandatoryDisclosure() {
 {/* B. Documents */}
 <Section icon={<FaFileAlt />} title="B. DOCUMENTS AND INFORMATION">
   <div className="w-full">
-    <table className="w-full text-sm border border-blue-300 table-auto">
+    <table className="w-full text-xs sm:text-sm border border-blue-300 table-auto">
       <thead className="bg-blue-100 text-blue-900">
         <tr>
-          <th className="border border-blue-300 px-4 py-2 text-left font-semibold">S.No.</th>
-          <th className="border border-blue-300 px-4 py-2 text-left font-semibold">DOCUMENTS/INFORMATION</th>
-          <th className="border border-blue-300 px-4 py-2 text-left font-semibold">LINKS OF UPLOADED ON YOUR SCHOOL'S WEBSITE</th>
+          <th className="border border-blue-300 px-2 sm:px-4 py-1 sm:py-2 text-left font-semibold">
+            S.No.
+          </th>
+          <th className="border border-blue-300 px-2 sm:px-4 py-1 sm:py-2 text-left font-semibold">
+            DOCUMENTS/INFORMATION
+          </th>
+          <th className="border border-blue-300 px-2 sm:px-4 py-1 sm:py-2 text-left font-semibold">
+            LINKS OF UPLOADED ON YOUR SCHOOL'S WEBSITE
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -146,9 +152,11 @@ export default function MandatoryDisclosure() {
           ["8", "Affiliation Certificate", "/docs/Affiliation.pdf"],
         ].map(([sn, title, link], index) => (
           <tr key={index} className={index % 2 === 0 ? "bg-white" : "bg-blue-50"}>
-            <td className="border border-blue-300 px-4 py-2 text-blue-900">{sn}</td>
-            <td className="border border-blue-300 px-4 py-2 text-blue-900">{title}</td>
-            <td className="border border-blue-300 px-4 py-2">
+            <td className="border border-blue-300 px-2 sm:px-4 py-1 sm:py-2 text-blue-900">{sn}</td>
+            <td className="border border-blue-300 px-2 sm:px-4 py-1 sm:py-2 text-blue-900 break-words">
+              {title}
+            </td>
+            <td className="border border-blue-300 px-2 sm:px-4 py-1 sm:py-2 break-words">
               <a
                 href={link}
                 target="_blank"
@@ -165,7 +173,6 @@ export default function MandatoryDisclosure() {
   </div>
 </Section>
 
-
 <Section icon={<FaChartLine />} title="C. Result & Academics">
   <Table
     headers={["S.No.", "Information", "Download"]}
@@ -178,6 +185,7 @@ export default function MandatoryDisclosure() {
     ]}
   />
 </Section>
+
 {/* D. Staff (Teaching) */}
 <Section icon={<FaChalkboardTeacher />} title="D. STAFF (TEACHING)">
   <Table
