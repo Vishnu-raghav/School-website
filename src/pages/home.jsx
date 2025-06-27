@@ -7,7 +7,7 @@ import Top123 from "../assets/top123.png";
 import SmartClass from "../assets/SC.jpg";
 import Transport from "../assets/Trans.jpg";
 import Kindergarten from "../assets/Kindergarden.jpg";
-import Lab from "../assets/LLL.WEBP";
+import Lab from "../assets/LLL.webp";
 import Block from "../assets/BB.jpg";
 import Mess from "../assets/Mess.jpg";
 import FooterImg from "../assets/f-2.jpg";
