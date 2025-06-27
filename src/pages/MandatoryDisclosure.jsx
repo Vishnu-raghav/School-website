@@ -106,8 +106,7 @@ export default function MandatoryDisclosure() {
           Mandatory Public Disclosure
         </h1>
 
-        {/* Sections go here - unchanged content below remains as-is, following Table & Section structure */}
-                {/* A. General Information */}
+          {/* A. General Information */}
         <Section icon={<FaSchool />} title="A. General Information">
           <Table
             headers={["S.No.", "Information", "Details"]}
@@ -115,66 +114,57 @@ export default function MandatoryDisclosure() {
               ["1", "Name of School", "Krishna Public School"],
               ["2", "Affiliation No. (If Applicable)", "Not Applicable"],
               ["3", "School Code (If Applicable)", "Not Applicable"],
-              ["4", "Complete Address", "Sarwan Colony, Sewarpar, Gorakhpur, 273401"],
+              ["4", "Complete Address", "SARASWATI COLONY, SEHATPUR, FARIDABAD, HARYANA-121013"],
               ["5", "Principal Name", "Mr. Sunny Kumar Sharma"],
               ["6", "Principal Qualification", "M.A., B.Ed."],
-              ["7", "School Email ID", "info@kpschool.edu.in"],
-              ["8", "Contact Details", "+91-9876543210"],
+              ["7", "School Email ID", "Kps5358@gmail.com"],
+              ["8", "Contact Details", "9871918619"],
             ]}
           />
         </Section>
 
-        {/* Other sections would go below following similar structure... */}
         {/* B. Documents */}
-        <Section icon={<FaFileAlt />} title="B. Documents & Information">
-          <Table
-            headers={["S.No.", "Documents", "Download"]}
-            rows={[
-              ["1", "Self-Certification", <a href="/docs/GetSelfCertification.pdf" download className="text-blue-700 underline">Click here</a>],
-              ["2", "Water, Health & Sanitation", <a href="/docs/Water_Health.pdf" download className="text-blue-700 underline">Click here</a>],
-              ["3", "Building Fitness Certificate (PWD)", <a href="/docs/BFC_PWD.pdf" download className="text-blue-700 underline">Click here</a>],
-              ["4", "Fire Safety Certificate", <a href="/docs/Fire-Certificate.pdf" download className="text-blue-700 underline">Click here</a>],
-              ["5", "Recognition Certificate", <a href="/docs/Recognition.pdf" download className="text-blue-700 underline">Click here</a>],
-              ["6", "NOC from State Government", <a href="/docs/NOC.pdf" download className="text-blue-700 underline">Click here</a>],
-              ["7", "Society Registration Certificate", <a href="/docs/Krishna-society_RC.pdf" download className="text-blue-700 underline">Click here</a>],
-              ["8", "Affiliation Certificate", <a href="/docs/Affiliation.pdf" download className="text-blue-700 underline">Click here</a>],
-            ]}
-          />
-        </Section>
-
-        {/* C. Result & Academics */}
-        <Section icon={<FaChartLine />} title="C. Result & Academics">
-          <Table
-            headers={["S.No.", "Information", "Download"]}
-            rows={[
-              ["1", "Fee Structure", <a href="/docs/Fee-Structure .pdf" download className="text-blue-700 underline">Click here</a>],
-              ["2", "Annual Academic Calendar", <a href="/docs/Annual-Calender .pdf" download className="text-blue-700 underline">Click here</a>],
-              ["3", "School Management Committee (SMC)", <a href="/docs/Krishna-SMC.pdf" download className="text-blue-700 underline">Click here</a>],
-              ["4", "PTA Members", "-"],
-              ["5", "Last 3 Year Board Result", <a href="/docs/Krishna-Result.pdf" download className="text-blue-700 underline">Click here</a>],
-            ]}
-          />
-        </Section>
-{/* D. Staff (Teaching) */}
-<Section icon={<FaChalkboardTeacher />} title="D. Staff (Teaching)">
+<Section icon={<FaFileAlt />} title="B. DOCUMENTS AND INFORMATION">
   <Table
-    headers={["S.No.", "Information", "Details"]}
+    headers={["S.No.", "DOCUMENTS/INFORMATION", "LINKS OF UPLOADED ON YOUR SCHOOL'S WEBSITE"]}
     rows={[
-      ["1", "Principal", "SHIKHA BHATT"],
-      ["2", "Total Number of Teachers", ""],
-      ["", "Principal", "1"],
-      ["", "Vice Principal", "1"],
-      ["", "PGT", "11"],
-      ["", "TGT", "18"],
-      ["", "PRT", "20"],
-      ["", "PET", "1"],
-      ["", "Librarian", "1"],
-      ["", "NTT", "05"],
-      ["", "Wellness Teacher", "1"],
-      ["", "Special Educator", "1"],
-      ["3", "Teachers Section Ratio", ""],
-      ["4", "Details of Special Educator", "Chirag Sengar, BEd (Spl. Edn), BA"],
-      ["5", "Details of Counsellor and Wellness Teacher", "Karishma Rani, MA (Psychology), BEd"]
+      ["1", "Self-Certification", <a href="/docs/GetSelfCertification.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">Click here</a>],
+      ["2", "Water, Health & Sanitation", <a href="/docs/Water_Health.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">Click here</a>],
+      ["3", "Building Fitness Certificate (PWD)", <a href="/docs/BFC_PWD.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">Click here</a>],
+      ["4", "Fire Safety Certificate", <a href="/docs/Fire-Certificate.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">Click here</a>],
+      ["5", "Recognition Certificate", <a href="/docs/Recognition.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">Click here</a>],
+      ["6", "NOC from State Government", <a href="/docs/NOC.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">Click here</a>],
+      ["7", "Society Registration Certificate", <a href="/docs/Krishna-society_RC.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">Click here</a>],
+      ["8", "Affiliation Certificate", <a href="/docs/Affiliation.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">Click here</a>],
+    ]}
+  />
+</Section>
+
+<Section icon={<FaChartLine />} title="C. Result & Academics">
+  <Table
+    headers={["S.No.", "Information", "Download"]}
+    rows={[
+      ["1", "Fee Structure", <a href="/docs/Fee-Structure .pdf" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">Click here</a>],
+      ["2", "Annual Academic Calendar", <a href="/docs/Annual-Calender .pdf" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">Click here</a>],
+      ["3", "School Management Committee (SMC)", <a href="/docs/Krishna-SMC.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">Click here</a>],
+      ["4", "PTA Members", <a href="/docs/C4_PTA.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">Click here</a>],
+      ["5", "Last 3 Year Board Result", <a href="/docs/Krishna-Result.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">Click here</a>],
+    ]}
+  />
+</Section>
+{/* D. Staff (Teaching) */}
+<Section icon={<FaChalkboardTeacher />} title="D. STAFF (TEACHING)">
+  <Table
+    headers={["S.No.", "INFORMATION", "DETAILS"]}
+    rows={[
+      ["1","Principal","MR. Sunny Kumar Sharma"],
+      ["2", "Total Number of Teachers", "27"],
+      ["", "PGT", "05"],
+      ["", "TGT", "10"],
+      ["", "PRT", "12"],
+      ["3", "Teachers Section Ratio", "1:1.50"],
+      ["4", "Details of Special Educator", ""],
+      ["5", "Details of Counsellor and Wellness Teacher", ""]
     ]}
   />
 </Section>
@@ -182,73 +172,56 @@ export default function MandatoryDisclosure() {
 
 {/* E. Results */}
 <Section icon={<FaUserTie />} title="E. Results (Class X & XII)">
-  {/* Result Class X */}
-  <h3 className="font-semibold text-blue-900 mb-3">RESULT CLASS: X</h3>
-  <table className="w-full text-sm border border-blue-300 table-auto">
-    <thead className="bg-blue-100 text-blue-900">
-      <tr>
-        {["S.No.", "Year", "No. of Registered Students", "No. of students passed", "Pass %", "Remarks"].map((text, i) => (
-          <th key={i} className="border px-2 py-1 text-left text-xs sm:text-sm">
-            {text}
-          </th>
-        ))}
-      </tr>
-    </thead>
-    <tbody>
-      {[
-        ["1", "2024-25", "98", "98", "100", "Yashi = 97%"],
-        ["2", "2023-24", "90", "90", "100", "Tajinder Saini = 92.8%"],
-        ["3", "2022-23", "77", "73", "95", "Akansha Kumari = 96.8%"],
-      ].map((row, i) => (
-        <tr key={i} className="text-gray-800">
-          {row.map((cell, j) => (
-            <td key={j} className="border px-2 py-1 text-xs sm:text-sm align-top break-words">
-              {cell}
-            </td>
-          ))}
-        </tr>
+{/* Result Class X */}
+<h3 className="font-semibold text-blue-900 mt-8 mb-3">RESULT CLASS: X</h3>
+<table className="w-full text-sm border border-blue-300 table-auto">
+  <thead className="bg-blue-100 text-blue-900">
+    <tr>
+      {["S.No.", "Year", "No. of Registered Students", "No. of students passed", "Pass %", "Remarks"].map((text, i) => (
+        <th key={i} className="border px-2 py-1 text-left text-xs sm:text-sm">
+          {text}
+        </th>
       ))}
-    </tbody>
-  </table>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan={6} className="p-2 border border-gray-300 text-center text-sm text-gray-700">
+        NOT AFFILIATED WITH C.B.S.E. HENCE, NOT APPLICABLE
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 
   {/* Result Class XII */}
-  <h3 className="font-semibold text-blue-900 mt-8 mb-3">RESULT CLASS: XII</h3>
-  <table className="w-full text-sm border border-blue-300 table-auto">
-    <thead className="bg-blue-100 text-blue-900">
-      <tr>
-        {["S.No.", "Year", "No. of Registered Students", "No. of students passed", "Pass %", "Remarks"].map((text, i) => (
-          <th key={i} className="border px-2 py-1 text-left text-xs sm:text-sm">
-            {text}
-          </th>
-        ))}
-      </tr>
-    </thead>
-    <tbody>
-      {[
-        ["1", "2024-25", "30", "30", "100", "Neeraj Aswal = 93%"],
-        ["2", "2023-24", "29", "28", "97", "Yuvika Semalti = 94%"],
-        ["3", "2022-23", "17", "16", "94", "-"],
-      ].map((row, i) => (
-        <tr key={i} className="text-gray-800">
-          {row.map((cell, j) => (
-            <td key={j} className="border px-2 py-1 text-xs sm:text-sm align-top break-words">
-              {cell}
-            </td>
-          ))}
-        </tr>
+<h3 className="font-semibold text-blue-900 mt-8 mb-3">RESULT CLASS: XII</h3>
+<table className="w-full text-sm border border-blue-300 table-auto">
+  <thead className="bg-blue-100 text-blue-900">
+    <tr>
+      {["S.No.", "Year", "No. of Registered Students", "No. of students passed", "Pass %", "Remarks"].map((text, i) => (
+        <th key={i} className="border px-2 py-1 text-left text-xs sm:text-sm">
+          {text}
+        </th>
       ))}
-    </tbody>
-  </table>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan={6} className="p-2 border border-gray-300 text-center text-sm text-gray-700">
+        NOT AFFILIATED WITH C.B.S.E. HENCE, NOT APPLICABLE
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 </Section>
-
-
-
 
 <Section icon={<FaTools />} title="F. School Infrastructure">
   <div className="w-full">
     <table className="w-full table-auto border border-gray-300 text-sm md:text-base">
-      <thead>
-        <tr className="bg-gray-100">
+      <thead className="bg-blue-100 text-blue-900">
+        <tr>
           <th className="p-2 border border-gray-300 text-left align-top w-[10%]">S.No.</th>
           <th className="p-2 border border-gray-300 text-left align-top w-[45%]">Information</th>
           <th className="p-2 border border-gray-300 text-left align-top w-[45%]">Details</th>
@@ -263,7 +236,7 @@ export default function MandatoryDisclosure() {
         <tr>
           <td className="p-2 border border-gray-300 align-top">2</td>
           <td className="p-2 border border-gray-300">NO. AND SIZE OF THE CLASS ROOMS (IN SQ MTR)</td>
-          <td className="p-2 border border-gray-300">-</td>
+          <td className="p-2 border border-gray-300">No. of class Rooms: 19 Size: 44 Sq.M. </td>
         </tr>
         <tr>
           <td className="p-2 border border-gray-300 align-top">3</td>
@@ -271,12 +244,7 @@ export default function MandatoryDisclosure() {
             NO. AND SIZE OF LABORATORIES INCLUDING COMPUTER LABS (IN SQ MTR)
           </td>
           <td className="p-2 border border-gray-300 whitespace-pre-line leading-relaxed break-words">
-            01 – Science Lab (55.74 Sq.M.)<br />
-            01 – Maths Lab (46.45 Sq.M.)<br />
-            01 – Computer Lab (55.74 Sq.M.)<br />
-            01 – Physics Lab (57.97 Sq.M.)<br />
-            01 – Chemistry Lab (68.51 Sq.M.)<br />
-            01 – Biology Lab (57.06 Sq.M.)
+            Labs=03 Size=111 sq.M
           </td>
         </tr>
         <tr>
@@ -287,12 +255,12 @@ export default function MandatoryDisclosure() {
         <tr>
           <td className="p-2 border border-gray-300 align-top">5</td>
           <td className="p-2 border border-gray-300">NO. OF GIRLS TOILETS</td>
-          <td className="p-2 border border-gray-300">28 + 02 CWSN + 03 Staff (Female)</td>
+          <td className="p-2 border border-gray-300">9</td>
         </tr>
         <tr>
           <td className="p-2 border border-gray-300 align-top">6</td>
           <td className="p-2 border border-gray-300">NO. OF BOYS TOILETS</td>
-          <td className="p-2 border border-gray-300">26 + 02 CWSN + 03 Staff (Male)</td>
+          <td className="p-2 border border-gray-300">11 + 04 Urinals</td>
         </tr>
         <tr>
           <td className="p-2 border border-gray-300 align-top">7</td>
@@ -300,22 +268,13 @@ export default function MandatoryDisclosure() {
             LINK OF YOUTUBE VIDEO OF THE INSPECTION OF SCHOOL COVERING THE INFRASTRUCTURE OF THE SCHOOL
           </td>
           <td className="p-2 border border-gray-300">
-            <a
-              href="https://www.youtube.com/"
-              target="_blank"
-              className="text-blue-700 underline"
-            >
-              ClickHere
-            </a>
+          
           </td>
         </tr>
       </tbody>
     </table>
   </div>
 </Section>
-
-
-
 
       </div>
     </div>

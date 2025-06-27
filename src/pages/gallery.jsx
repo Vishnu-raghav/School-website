@@ -126,9 +126,6 @@ const Gallery = () => {
       </Helmet>
 
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold text-center text-blue-900 mb-10 underline decoration-blue-300">
-          📸 Gallery Showcase
-        </h1>
 
         {/* Tabs */}
         <div className="flex flex-wrap justify-center gap-4 mb-8">

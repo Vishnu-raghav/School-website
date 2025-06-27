@@ -33,7 +33,7 @@ const stats = [
 const infrastructure = [
   { title: "School Transport", image: Transport },
   { title: "Smart Classrooms", image: SmartClass },
-  { title: "Mess", image: Mess },
+  { title: "Canteen", image: Mess },
   { title: "Kindergarten Block", image: Kindergarten },
   { title: "Science Lab", image: Lab },
   { title: "Main School Block", image: Block },
@@ -170,7 +170,7 @@ function Home() {
       </h2>
       <p className="text-gray-700 text-lg mb-6">
         We focus on holistic development, academic excellence, and nurturing the creativity of every child.<br />
-        <span className="text-blue-700 font-semibold">Best school near me in Faridabad</span> Such an experience can only be found here!
+        <span className="text-blue-700 font-semibold">Best school in Faridabad</span> Such an experience can only be found here!
       </p>
       <Link to="/about">
         <button className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-full shadow-md transition-all duration-200">
@@ -197,7 +197,7 @@ function Home() {
               key={idx}
               className="bg-white/60 backdrop-blur-md rounded-3xl shadow-xl border border-blue-100 p-8"
             >
-              <p className="text-5xl font-extrabold text-blue-700 min-h-[60px]">
+              <p className="text-4xl font-extrabold text-blue-700 min-h-[60px]">
                 <span className="inline-block min-w-[100px] text-center">
                   {inView && <CountUp end={stat.value} duration={2} />}
                   {stat.suffix}
