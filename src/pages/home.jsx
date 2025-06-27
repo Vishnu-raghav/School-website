@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
 import Hero from "../component/Hero";
-import Img5 from "../assets/img5.jpg";
+import Img5 from "../assets/newone.jpg";
 import Top121 from "../assets/top121.png";
 import Top122 from "../assets/top122.png";
 import Top123 from "../assets/top123.png";
 import SmartClass from "../assets/SC.jpg";
-import Transport from "../assets/Trans.jpg";
 import Kindergarten from "../assets/Kindergarden.jpg";
-import Lab from "../assets/LLL.webp";
+import Lab from "../assets/computer-lab.jpg";
 import Block from "../assets/BB.jpg";
 import Mess from "../assets/Mess.jpg";
 import FooterImg from "../assets/f-2.jpg";
@@ -24,18 +23,17 @@ const toppers = [
 ];
 
 const stats = [
-  { label: "Students Enrolled", value: 1500, suffix: "+" },
-  { label: "Board Toppers", value: 60, suffix: "+" },
-  { label: "Certified Teachers", value: 80, suffix: "+" },
-  { label: "Years of Excellence", value: 20, suffix: "+" },
+  { label: "Students Enrolled", value: 900, suffix: "+" },
+  { label: "Board Toppers", value: 40, suffix: "+" },
+  { label: "Certified Teachers", value: 30, suffix: "+" },
+  { label: "Years of Excellence", value: 22, suffix: "+" },
 ];
 
 const infrastructure = [
-  { title: "School Transport", image: Transport },
   { title: "Smart Classrooms", image: SmartClass },
   { title: "Canteen", image: Mess },
   { title: "Kindergarten Block", image: Kindergarten },
-  { title: "Science Lab", image: Lab },
+  { title: "Computer Lab", image: Lab },
   { title: "Main School Block", image: Block },
 ];
 
@@ -113,7 +111,7 @@ function Home() {
 
       {/* Top Strip */}
       <div className="bg-blue-700 text-white py-3 text-sm text-center font-medium animate-pulse px-4">
-        🧑‍🏫 Certified Teachers | 💡 Smart Classes | 🚌 Safe Transport | 🏆 90%+ Results | 🌟 Personality Development
+        🧑‍🏫 Certified Teachers |💡 Smart Classes | 🏆 90%+ Results | 🌟 Personality Development
       </div>
 
       {/* <Hero /> */}
@@ -182,6 +180,7 @@ function Home() {
 </section>
 
 
+
       {/* Track Record */}
       <section
         ref={ref}
@@ -212,6 +211,9 @@ function Home() {
         <div className="absolute top-10 left-0 w-60 h-60 bg-blue-100 rounded-full blur-3xl opacity-30 -z-10"></div>
         <div className="absolute bottom-0 right-0 w-72 h-72 bg-cyan-100 rounded-full blur-3xl opacity-30 -z-10"></div>
       </section>
+
+
+
 
       {/* Toppers - Infinite Auto Scroll */}
       <section className="py-16 px-4 bg-blue-50 overflow-hidden">
@@ -255,6 +257,12 @@ function Home() {
           </div>
         </div>
       </section>
+
+
+
+
+
+      
 
       {/* Infrastructure */}
       <section className="py-20 px-4 bg-gradient-to-br from-[#dff4ff] via-[#eef9ff] to-[#f5fcff]">

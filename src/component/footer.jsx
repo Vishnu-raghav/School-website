@@ -20,13 +20,13 @@ function Footer() {
         <div>
           <h3 className="text-2xl font-semibold text-white mb-4">Krishna Public School</h3>
           <address className="not-italic leading-relaxed text-sm mb-4">
-            Galli No.5, Saraswati Colony, Sehatpur,<br />Faridabad, Haryana 121003
+            Sehatpur, Faridabad, Haryana 121003
           </address>
 
           <ul className="space-y-2 text-sm">
             <li className="flex items-center gap-2">
               <i className="fa-solid fa-phone text-sky-400" aria-hidden="true"></i>
-              <a href="tel:01292560378" className="hover:text-sky-400">9911733387</a>
+              <a href="tel:01292560378" className="hover:text-sky-400">+91-9911733387, +91-9958403241</a>
             </li>
             <li className="flex items-center gap-2">
               <i className="fa-solid fa-envelope text-sky-400" aria-hidden="true"></i>
@@ -55,11 +55,11 @@ function Footer() {
           <h3 className="text-2xl font-semibold text-white mb-4">Quick Links</h3>
           <ul className="space-y-3 text-sm">
             <li><CustomNavLink to="/" className="hover:text-sky-400 transition">🏠 Home</CustomNavLink></li>
+            <li><CustomNavLink to="/About" className="hover:text-sky-400 transition">📘 About</CustomNavLink></li>
             <li><CustomNavLink to="/Gallery" className="hover:text-sky-400 transition">📸 Gallery</CustomNavLink></li>
             <li><CustomNavLink to="/Admission" className="hover:text-sky-400 transition">🎓 Admission</CustomNavLink></li>
-            <li><CustomNavLink to="/Contact" className="hover:text-sky-400 transition">📞 Contact</CustomNavLink></li>
             <li><CustomNavLink to="/mandatory-disclosure" className="hover:text-sky-400 transition">📄 Disclosure</CustomNavLink></li>
-            <li><CustomNavLink to="/About" className="hover:text-sky-400 transition">📘 About</CustomNavLink></li>
+            <li><CustomNavLink to="/Contact" className="hover:text-sky-400 transition">📞 Contact</CustomNavLink></li>
           </ul>
         </div>
 
@@ -83,7 +83,7 @@ function Footer() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Vishnu Raghav
+          Vishnu
         </a>
       </div>
     </footer>

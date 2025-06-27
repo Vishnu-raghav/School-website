@@ -37,7 +37,7 @@ function Header() {
                 Krishna Public School
               </h1>
               <p className="text-gray-600 text-sm">
-                Galli No.5, Saraswati Colony, Sehatpur 
+                Sehatpur, Faridabad
               </p>
             </div>
           </div>
@@ -50,7 +50,7 @@ function Header() {
               </div>
               <div>
                 <p className="font-semibold text-blue-900 text-base">Call Us</p>
-                <p className="text-sm text-gray-700">9871918619, 9911733387</p>
+                <p className="text-sm text-gray-700">+91-9911733387,&nbsp; +91-9958403241</p>
               </div>
             </div>
             <div className="flex items-center gap-4 bg-blue-50 px-4 py-3 rounded shadow hover:bg-blue-100 hover:shadow-lg hover:rotate-[1deg] transition-all duration-300">
@@ -86,11 +86,11 @@ function Header() {
             {/* Desktop Nav */}
             <div className="hidden md:flex gap-6 font-medium text-sm">
               <CustomNavLink to="/" className="hover:text-yellow-300 transition">Home</CustomNavLink>
+              <CustomNavLink to="/About" className="hover:text-yellow-300 transition">About Us</CustomNavLink>
               <CustomNavLink to="/Gallery" className="hover:text-yellow-300 transition">Gallery</CustomNavLink>
               <CustomNavLink to="/Admission" className="hover:text-yellow-300 transition">Admission</CustomNavLink>
-              <CustomNavLink to="/Contact" className="hover:text-yellow-300 transition">Contact</CustomNavLink>
               <CustomNavLink to="/mandatory-disclosure" className="hover:text-yellow-300 transition">Disclosure</CustomNavLink>
-              <CustomNavLink to="/About" className="hover:text-yellow-300 transition">About</CustomNavLink>
+              <CustomNavLink to="/Contact" className="hover:text-yellow-300 transition">Contact Us</CustomNavLink>
             </div>
           </div>
 
@@ -145,11 +145,11 @@ function Header() {
         </div>
         <ul className="flex flex-col gap-4 p-4 text-sm">
           <CustomNavLink to="/" onClick={() => setOpen(false)} className="hover:text-yellow-200">Home</CustomNavLink>
+          <CustomNavLink to="/About" onClick={() => setOpen(false)} className="hover:text-yellow-200">About</CustomNavLink>
           <CustomNavLink to="/Gallery" onClick={() => setOpen(false)} className="hover:text-yellow-200">Gallery</CustomNavLink>
           <CustomNavLink to="/Admission" onClick={() => setOpen(false)} className="hover:text-yellow-200">Admission</CustomNavLink>
-          <CustomNavLink to="/Contact" onClick={() => setOpen(false)} className="hover:text-yellow-200">Contact</CustomNavLink>
           <CustomNavLink to="/mandatory-disclosure" onClick={() => setOpen(false)} className="hover:text-yellow-200">Disclosure</CustomNavLink>
-          <CustomNavLink to="/About" onClick={() => setOpen(false)} className="hover:text-yellow-200">About</CustomNavLink>
+          <CustomNavLink to="/Contact" onClick={() => setOpen(false)} className="hover:text-yellow-200">Contact</CustomNavLink>
           {isAdmin ? (
             <CustomNavLink to="/admin/dashboard" onClick={() => setOpen(false)} className="hover:text-yellow-200">Admin Dashboard</CustomNavLink>
           ) : (
