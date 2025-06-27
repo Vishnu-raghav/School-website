@@ -228,7 +228,7 @@ function Home() {
                   toppers.map((topper, i) => (
                     <div
                       key={i + Math.random()}
-                      className="inline-block w-64 mx-4 bg-white rounded-3xl shadow-lg p-6 transition-transform hover:-translate-y-2 hover:shadow-2xl duration-300"
+                      className="inline-block w-44 md:w-64 mx-2 md:mx-4 bg-white rounded-3xl shadow-lg p-4 md:p-6 transition-transform hover:-translate-y-2 hover:shadow-2xl duration-300"
                     >
                       <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-blue-600 shadow-md">
                         <img
