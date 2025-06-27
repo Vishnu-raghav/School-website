@@ -33,7 +33,7 @@ import Sport6 from "../assets/No-6.jpg";
 import Sport7 from "../assets/No-7.jpg";
 
 import Lab1 from "../assets/L1.jpg";
-import Lab2 from "../assets/CL1.JPEG";
+import Lab2 from "../assets/CL1.jpeg";
 import Lab3 from "../assets/CompL.jpg";
 
 const categories = {
