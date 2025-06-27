@@ -1,11 +1,3 @@
-import {
-  FaSchool,
-  FaFileAlt,
-  FaChartLine,
-  FaChalkboardTeacher,
-  FaUserTie,
-  FaTools,
-} from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
 
 const Table = ({ headers, rows }) => (
@@ -107,7 +99,7 @@ export default function MandatoryDisclosure() {
         </h1>
 
           {/* A. General Information */}
-        <Section icon={<FaSchool />} title="A. General Information">
+        <Section title="A. General Information">
           <Table
             headers={["S.No.", "Information", "Details"]}
             rows={[
@@ -124,7 +116,7 @@ export default function MandatoryDisclosure() {
         </Section>
 
 {/* B. Documents */}
-<Section icon={<FaFileAlt />} title="B. DOCUMENTS AND INFORMATION">
+<Section title="B. DOCUMENTS AND INFORMATION">
   <div className="w-full">
     <table className="w-full text-xs sm:text-sm border border-blue-300 table-auto">
       <thead className="bg-blue-100 text-blue-900">
@@ -173,11 +165,11 @@ export default function MandatoryDisclosure() {
   </div>
 </Section>
 
-<Section icon={<FaChartLine />} title="C. Result & Academics">
+<Section title="C. Result & Academics">
   <Table
     headers={["S.No.", "Information", "Download"]}
     rows={[
-      ["1", "Fee Structure", <a href="/docs/Fee-Structure .pdf" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">Click here</a>],
+      ["1", "Fee Structure", <a href="/docs/Fee-StructureN.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">Click here</a>],
       ["2", "Annual Academic Calendar", <a href="/docs/Annual-Calender .pdf" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">Click here</a>],
       ["3", "School Management Committee (SMC)", <a href="/docs/Krishna-SMC.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">Click here</a>],
       ["4", "PTA Members", <a href="/docs/C4_PTA.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">Click here</a>],
@@ -187,7 +179,7 @@ export default function MandatoryDisclosure() {
 </Section>
 
 {/* D. Staff (Teaching) */}
-<Section icon={<FaChalkboardTeacher />} title="D. STAFF (TEACHING)">
+<Section title="D. STAFF (TEACHING)">
   <Table
     headers={["S.No.", "INFORMATION", "DETAILS"]}
     rows={[
@@ -201,11 +193,7 @@ export default function MandatoryDisclosure() {
       ["5", "Details of Counsellor and Wellness Teacher", ""]
     ]}
   />
-</Section>
-
-
-{/* E. Results */}
-<Section icon={<FaUserTie />} title="E. Results (Class X & XII)">
+  
 {/* Result Class X */}
 <h3 className="font-semibold text-blue-900 mt-8 mb-3">RESULT CLASS: X</h3>
 <table className="w-full text-sm border border-blue-300 table-auto">
@@ -248,10 +236,13 @@ export default function MandatoryDisclosure() {
     </tr>
   </tbody>
 </table>
-
 </Section>
 
-<Section icon={<FaTools />} title="F. School Infrastructure">
+
+
+
+
+<Section title="E. School Infrastructure">
   <div className="w-full">
     <table className="w-full table-auto border border-gray-300 text-sm md:text-base">
       <thead className="bg-blue-100 text-blue-900">
@@ -278,7 +269,7 @@ export default function MandatoryDisclosure() {
             NO. AND SIZE OF LABORATORIES INCLUDING COMPUTER LABS (IN SQ MTR)
           </td>
           <td className="p-2 border border-gray-300 whitespace-pre-line leading-relaxed break-words">
-            Labs=03 Size=111 sq.M
+            Labs=03 Size= 111 sq.M
           </td>
         </tr>
         <tr>
@@ -294,7 +285,7 @@ export default function MandatoryDisclosure() {
         <tr>
           <td className="p-2 border border-gray-300 align-top">6</td>
           <td className="p-2 border border-gray-300">NO. OF BOYS TOILETS</td>
-          <td className="p-2 border border-gray-300">11 + 04 Urinals</td>
+          <td className="p-2 border border-gray-300">11 + 05 Urinals</td>
         </tr>
         <tr>
           <td className="p-2 border border-gray-300 align-top">7</td>
