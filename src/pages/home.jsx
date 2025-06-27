@@ -169,8 +169,8 @@ function Home() {
         Why Krishna Public School?
       </h2>
       <p className="text-gray-700 text-lg mb-6">
-        Hum focus karte hain holistic development, academic excellence aur har bachche ki creativity ko nurture karne par.<br />
-        <span className="text-blue-700 font-semibold">Best school near me in Kanpur</span> ka experience yahin milega!
+        We focus on holistic development, academic excellence, and nurturing the creativity of every child.<br />
+        <span className="text-blue-700 font-semibold">Best school near me in Faridabad</span> Such an experience can only be found here!
       </p>
       <Link to="/about">
         <button className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-full shadow-md transition-all duration-200">
