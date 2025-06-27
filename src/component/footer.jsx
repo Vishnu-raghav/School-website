@@ -26,11 +26,11 @@ function Footer() {
           <ul className="space-y-2 text-sm">
             <li className="flex items-center gap-2">
               <i className="fa-solid fa-phone text-sky-400" aria-hidden="true"></i>
-              <a href="tel:01292560378" className="hover:text-sky-400">0129-2560378</a>
+              <a href="tel:01292560378" className="hover:text-sky-400">9911733387</a>
             </li>
             <li className="flex items-center gap-2">
               <i className="fa-solid fa-envelope text-sky-400" aria-hidden="true"></i>
-              <a href="mailto:vishnur125@gmail.com" className="hover:text-sky-400">vishnur125@gmail.com</a>
+              <a href="mailto:vishnur125@gmail.com" className="hover:text-sky-400">Kps5358@gmail.com</a>
             </li>
             <li className="flex items-center gap-2">
               <i className="fa-solid fa-globe text-sky-400" aria-hidden="true"></i>

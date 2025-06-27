@@ -147,8 +147,8 @@ export default function MandatoryDisclosure() {
           <Table
             headers={["S.No.", "Information", "Download"]}
             rows={[
-              ["1", "Fee Structure", <a href="/docs/Fee-Structure.pdf" download className="text-blue-700 underline">Click here</a>],
-              ["2", "Annual Academic Calendar", <a href="/docs/Anual-Calender.pdf" download className="text-blue-700 underline">Click here</a>],
+              ["1", "Fee Structure", <a href="/docs/Fee-Structure .pdf" download className="text-blue-700 underline">Click here</a>],
+              ["2", "Annual Academic Calendar", <a href="/docs/Annual-Calender .pdf" download className="text-blue-700 underline">Click here</a>],
               ["3", "School Management Committee (SMC)", <a href="/docs/Krishna-SMC.pdf" download className="text-blue-700 underline">Click here</a>],
               ["4", "PTA Members", "-"],
               ["5", "Last 3 Year Board Result", <a href="/docs/Krishna-Result.pdf" download className="text-blue-700 underline">Click here</a>],

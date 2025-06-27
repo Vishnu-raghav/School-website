@@ -94,8 +94,8 @@ function Home() {
         "longitude": "77.3178"
       },
       "hasMap": "https://goo.gl/maps/xyz",
-      "telephone": "+91-9711208294",
-      "email": "vishnur1225@gmail.com",
+      "telephone": "+91-9911733387",
+      "email": "Kps5358@gmail.com",
       "founder": {
         "@type": "Person",
         "name": "Mr. Sunny Kumar Sharma"
@@ -294,7 +294,7 @@ function Home() {
           <p className="text-gray-700 text-lg italic">
             “Every child is a spark of potential. At Krishna Public School, we nurture that spark into brilliance.”
           </p>
-          <p className="mt-4 font-semibold text-blue-700">– Mr. S. Verma, Principal</p>
+          <p className="mt-4 font-semibold text-blue-700">– Mr. Sunny Kumar Sharma, Principal</p>
         </div>
       </section>
 

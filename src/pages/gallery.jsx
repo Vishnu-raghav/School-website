@@ -4,23 +4,43 @@ import { Helmet } from "react-helmet-async";
 import Campus1 from "../assets/campus.jpg";
 import Campus2 from "../assets/campus2.jpg";
 import Campus3 from "../assets/campus3.jpg";
+import Campus4 from "../assets/Sn-1.jpg";
+import Campus5 from "../assets/sn-2.jpg";
+import Campus6 from "../assets/sn-3.jpg";
+import Campus7 from "../assets/sn-4.jpg";
+import Campus8 from "../assets/sn-5.jpg";
+import Campus9 from "../assets/sn-10.jpg";
 import Class1 from "../assets/CR1.jpg";
 import Class2 from "../assets/CR1.jpg";
 import Event1 from "../assets/E1.jpg";
 import Event2 from "../assets/E2.jpg";
 import Event3 from "../assets/E3.jpg";
 import Event4 from "../assets/E4.jpg";
+import Event5 from "../assets/En-1.jpg";
+import Event6 from "../assets/En-2.jpg";
+import Event7 from "../assets/En-3.jpg";
+import Event8 from "../assets/En-4.jpg";
+import Event9 from "../assets/En-5.jpg";
+import Event10 from "../assets/En-6.jpg";
+import Event11 from "../assets/En-7.jpg";
+
 import Sport1 from "../assets/S1.jpg";
 import Sport2 from "../assets/s2.jpg";
+import Sport3 from "../assets/No-2.jpg";
+import Sport4 from "../assets/No-4.jpg";
+import Sport5 from "../assets/No-5.jpg";
+import Sport6 from "../assets/No-6.jpg";
+import Sport7 from "../assets/No-7.jpg";
+
 import Lab1 from "../assets/L1.jpg";
 import Lab2 from "../assets/CL1.JPEG";
 import Lab3 from "../assets/CompL.jpg";
 
 const categories = {
-  Campus: [Campus1, Campus2, Campus3],
+  Campus: [Campus1, Campus2, Campus3,Campus4,Campus5,Campus6,Campus7,Campus8,Campus9],
+  Events: [Event1, Event2, Event3, Event4 , Event5,Event6,Event7,Event8,Event9,Event10,Event11],
+  Sports: [Sport1, Sport2, Sport3,Sport4,Sport5,Sport6,Sport7],
   Classroom: [Class1, Class2],
-  Events: [Event1, Event2, Event3, Event4],
-  Sports: [Sport1, Sport2],
   Labs: [Lab1, Lab2, Lab3],
 };
 

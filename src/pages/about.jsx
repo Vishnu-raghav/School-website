@@ -15,7 +15,7 @@ function About() {
         "Education here is about building responsible individuals ready to lead the world with values and vision.",
     },
     {
-      name: "Chairman's Message",
+      name: " Vice-Chairman's Message",
       image: ChairmanImg,
       message:
         "We offer a space where each child feels valued and inspired to grow to their fullest potential.",
@@ -73,10 +73,10 @@ function About() {
             "sameAs": ["https://www.facebook.com/krishnapublicschool"],
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": "Sector XX",
+              "streetAddress": "Sarswati Colony Sehatpur",
               "addressLocality": "Faridabad",
               "addressRegion": "Haryana",
-              "postalCode": "121XXX",
+              "postalCode": "121003",
               "addressCountry": "IN"
             },
             "description": "Krishna Public School fosters academic excellence, leadership, and holistic development through value-based education.",

@@ -38,7 +38,7 @@ function Header() {
                 Krishna Public School
               </h1>
               <p className="text-gray-600 text-sm">
-                Empowering Future Generations
+                Galli No.5, Saraswati Colony, Sehatpur 
               </p>
             </div>
           </div>
@@ -51,7 +51,7 @@ function Header() {
               </div>
               <div>
                 <p className="font-semibold text-blue-900 text-base">Call Us</p>
-                <p className="text-sm text-gray-700">9711208294, 8860626419</p>
+                <p className="text-sm text-gray-700">9871918619, 9911733387</p>
               </div>
             </div>
             <div className="flex items-center gap-4 bg-blue-50 px-4 py-3 rounded shadow hover:bg-blue-100 hover:shadow-lg hover:rotate-[1deg] transition-all duration-300">
@@ -61,7 +61,7 @@ function Header() {
               <div>
                 <p className="font-semibold text-blue-900 text-base">Email</p>
                 <p className="text-sm break-all text-gray-700">
-                  vishnur1225@gmail.com
+                  Kps5358@gmail.com
                 </p>
               </div>
             </div>
