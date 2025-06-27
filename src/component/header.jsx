@@ -23,7 +23,6 @@ function Header() {
 
   return (
     <>
-      {/* Logo + Contact */}
       <header className="backdrop-blur-lg bg-white/70 border-b border-gray-200 px-4 sm:px-6 md:px-12 py-4 shadow z-50">
         <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
           {/* Logo + Title */}
