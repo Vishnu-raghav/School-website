@@ -1,28 +1,26 @@
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async"; 
 import SchoolImg from "../assets/schl.jpg";
-import PrincipalImg from "../assets/prin.jpg";
-import DirectorImg from "../assets/dir.jpg";
-import ChairmanImg from "../assets/chair.jpg";
+import DefaultAvatar from "../assets/img_avatar.png"; 
 import { FaBullseye, FaEye, FaLightbulb } from "react-icons/fa";
 
 function About() {
   const leaders = [
     {
       name: "Principal's Message",
-      image: PrincipalImg,
+      image: DefaultAvatar,
       message:
         "Education here is about building responsible individuals ready to lead the world with values and vision.",
     },
     {
-      name: " Vice-Chairman's Message",
-      image: ChairmanImg,
+      name: "Vice-Chairman's Message",
+      image: DefaultAvatar,
       message:
         "We offer a space where each child feels valued and inspired to grow to their fullest potential.",
     },
     {
       name: "Director's Message",
-      image: DirectorImg,
+      image: DefaultAvatar,
       message:
         "We empower students to become innovative thinkers, confident communicators, and ethical leaders.",
     },
@@ -143,7 +141,7 @@ function About() {
         </div>
       </section>
 
-      {/* 🎯 Mission Vision Aim Section */}
+      {/* Mission Vision Aim Section */}
       <section className="bg-white py-20 px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-10 text-center">
           <motion.div
@@ -194,4 +192,3 @@ function About() {
 }
 
 export default About;
-

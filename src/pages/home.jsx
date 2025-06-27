@@ -116,7 +116,9 @@ function Home() {
         🧑‍🏫 Certified Teachers | 💡 Smart Classes | 🚌 Safe Transport | 🏆 90%+ Results | 🌟 Personality Development
       </div>
 
-      <Hero />
+      {/* <Hero /> */}
+
+        <Hero />
 
       {/* Award */}
       <div className="bg-yellow-100 py-3 text-center text-blue-900 font-medium tracking-wide animate-fade-in px-4">
