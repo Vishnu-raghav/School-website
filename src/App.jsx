@@ -5,6 +5,8 @@ import Loader from './component/loader';
 import ScrollToTop from './component/ScrollToTop';
 import { useLoading } from './context/LoadingContext';
 import "./App.css";
+import Popup from "./component/PopUp.jsx";
+import WhatsAppButton from "./component/WhatsAppButton.jsx";
 
 function App() {
   const { isLoading } = useLoading();
@@ -12,16 +14,13 @@ function App() {
 
   return (
     <>
-      {/* Scroll to top on route change */}
       <ScrollToTop />
 
       {/* Global Site Header */}
       <Header />
 
-      {/* Show loader if app is fetching data */}
       {isLoading && <Loader />}
 
-      {/* Main Content Area with animation keying */}
       <main
         key={location.pathname}
         className="fade-enter min-h-[70vh] bg-white"
@@ -32,6 +31,8 @@ function App() {
 
       {/* Global Site Footer */}
       <Footer />
+       <Popup />
+      <WhatsAppButton />
     </>
   );
 }

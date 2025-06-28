@@ -23,7 +23,7 @@ function Header() {
 
   return (
     <>
-      <header className="backdrop-blur-lg bg-white/70 border-b border-gray-200 px-4 sm:px-6 md:px-12 py-4 shadow z-50">
+      <header className="backdrop-blur-lg bg-white/70 border-b border-gray-200 px-4 sm:px-6 md:px-12 py-4 shadow z-5">
         <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
           {/* Logo + Title */}
           <div className="flex items-center gap-4">
@@ -91,6 +91,7 @@ function Header() {
               <CustomNavLink to="/Admission" className="hover:text-yellow-300 transition">Admission</CustomNavLink>
               <CustomNavLink to="/mandatory-disclosure" className="hover:text-yellow-300 transition">Disclosure</CustomNavLink>
               <CustomNavLink to="/Contact" className="hover:text-yellow-300 transition">Contact Us</CustomNavLink>
+              <CustomNavLink to="/Career" className="hover:text-yellow-300 transition">Career</CustomNavLink>
             </div>
           </div>
 
@@ -150,6 +151,8 @@ function Header() {
           <CustomNavLink to="/Admission" onClick={() => setOpen(false)} className="hover:text-yellow-200">Admission</CustomNavLink>
           <CustomNavLink to="/mandatory-disclosure" onClick={() => setOpen(false)} className="hover:text-yellow-200">Disclosure</CustomNavLink>
           <CustomNavLink to="/Contact" onClick={() => setOpen(false)} className="hover:text-yellow-200">Contact</CustomNavLink>
+          <CustomNavLink to="/Career" className="hover:text-yellow-300 transition">Career</CustomNavLink>
+
           {isAdmin ? (
             <CustomNavLink to="/admin/dashboard" onClick={() => setOpen(false)} className="hover:text-yellow-200">Admin Dashboard</CustomNavLink>
           ) : (
@@ -162,3 +165,11 @@ function Header() {
 }
 
 export default Header;
+
+
+
+
+
+
+
+

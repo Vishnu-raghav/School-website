@@ -8,6 +8,8 @@ import Img1 from '../assets/h-1.jpg';
 import Img2 from '../assets/h-3.jpg';
 import Img3 from '../assets/h-6.jpg';
 import FooterImg from "../assets/f-2.jpg";
+// import Popup from "../component/PopUp.jsx";
+
 
 
 function Hero() {
@@ -20,6 +22,7 @@ function Hero() {
 
   return (
     <div className="w-full h-[75vh] sm:h-[90vh] md:h-[93vh]">
+      {/* <Popup/> */}
       <Swiper
         modules={[Pagination, Autoplay]}
         pagination={{ clickable: true }}
@@ -38,7 +41,7 @@ function Hero() {
               />
 
               {/* Overlay with Animated Text */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/10 flex items-center justify-center px-4">
+              <div className="absolute inset-0 bg-gradient-to-t  from-black/70 to-black/10 flex items-center justify-center px-4">
                 <motion.div
                   initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}

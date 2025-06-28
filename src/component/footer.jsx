@@ -1,5 +1,5 @@
 import Map from "./Map.jsx";
-import CustomNavLink from "./CustomNavLink.jsx";
+import CustomNavLink from "./CustomNavLink.jsx"; 
 
 function Footer() {
   const year = new Date().getFullYear();
@@ -60,6 +60,7 @@ function Footer() {
             <li><CustomNavLink to="/Admission" className="hover:text-sky-400 transition">🎓 Admission</CustomNavLink></li>
             <li><CustomNavLink to="/mandatory-disclosure" className="hover:text-sky-400 transition">📄 Disclosure</CustomNavLink></li>
             <li><CustomNavLink to="/Contact" className="hover:text-sky-400 transition">📞 Contact</CustomNavLink></li>
+            <li><CustomNavLink to="/Career" className="hover:text-yellow-300 transition">💼 Career</CustomNavLink></li>
           </ul>
         </div>
 
