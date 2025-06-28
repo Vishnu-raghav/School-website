@@ -30,7 +30,7 @@ function Footer() {
             </li>
             <li className="flex items-center gap-2">
               <i className="fa-solid fa-envelope text-sky-400" aria-hidden="true"></i>
-              <a href="mailto:vishnur125@gmail.com" className="hover:text-sky-400">Kps5358@gmail.com</a>
+              <a href="mailto:Kps5358@gmail.com" className="hover:text-sky-400">Kps5358@gmail.com</a>
             </li>
             <li className="flex items-center gap-2">
               <i className="fa-solid fa-globe text-sky-400" aria-hidden="true"></i>
@@ -75,17 +75,7 @@ function Footer() {
 
       {/* 🔚 Bottom Bar */}
       <div className="bg-[#0f172a] border-t border-gray-700 py-6 text-center text-gray-500 text-sm">
-        © {year} Krishna Public School. All rights reserved.{" "}
-        <br className="md:hidden" />
-        Website by{" "}
-        <a
-          href="https://www.linkedin.com/in/vishnu-raghav-093017261/"
-          className="text-sky-400 hover:text-sky-300 underline font-medium"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Vishnu
-        </a>
+        © {year} Krishna Public School. All rights reserved.
       </div>
     </footer>
   );
