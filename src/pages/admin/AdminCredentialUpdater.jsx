@@ -118,7 +118,6 @@
 // export default AdminCredentialUpdater;
 
 
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axiosInstance from "../../api/axiosInstance.js";
@@ -129,7 +128,7 @@ function AdminCredentialUpdater() {
   const [newPassword, setNewPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState(null);
-  const navigate = useNavigate(); // ✅ useNavigate added
+  const navigate = useNavigate(); // ✅ useNavigate
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -148,13 +147,18 @@ function AdminCredentialUpdater() {
         newPassword,
       });
 
+      // ✅ Clear tokens before navigating
+      localStorage.removeItem("accessToken");
+      localStorage.removeItem("refreshToken");
+      localStorage.removeItem("isAdmin");
+      localStorage.removeItem("adminEmail");
+
       setMessage({ type: "success", text: "Credentials updated! Redirecting..." });
 
-      localStorage.clear();
-
+      // ✅ Delay just to show success message then navigate
       setTimeout(() => {
-        navigate("/admin/login", { replace: true }); // ✅ redirect to login
-      }, 1500);
+        navigate("/admin/login", { replace: true });
+      }, 1000);
     } catch (err) {
       setMessage({
         type: "error",
