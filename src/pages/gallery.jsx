@@ -1,49 +1,34 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import { Helmet } from "react-helmet-async";
+import axiosInstance from "../api/axiosInstance.js";
 
-import Campus1 from "../assets/campus.jpg";
-import Campus2 from "../assets/campus2.jpg";
-import Campus3 from "../assets/campus3.jpg";
-import Campus4 from "../assets/Sn-1.jpg";
-import Campus5 from "../assets/sn-2.jpg";
-import Campus6 from "../assets/sn-3.jpg";
-import Campus7 from "../assets/sn-4.jpg";
-import Campus8 from "../assets/sn-5.jpg";
-import Campus9 from "../assets/newone.jpg";
-import Event1 from "../assets/E1.jpg";
-import Event2 from "../assets/E2.jpg";
-import Event3 from "../assets/E3.jpg";
-import Event4 from "../assets/E4.jpg";
-import Event5 from "../assets/En-1.jpg";
-import Event6 from "../assets/En-2.jpg";
-import Event7 from "../assets/En-3.jpg";
-import Event8 from "../assets/En-4.jpg";
-import Event9 from "../assets/En-5.jpg";
-import Event10 from "../assets/En-6.jpg";
-import Event11 from "../assets/En-7.jpg";
-
-import Sport1 from "../assets/S1.jpg";
-import Sport2 from "../assets/s2.jpg";
-import Sport3 from "../assets/No-2.jpg";
-import Sport4 from "../assets/No-4.jpg";
-import Sport5 from "../assets/No-5.jpg";
-import Sport6 from "../assets/No-6.jpg";
-import Sport7 from "../assets/No-7.jpg";
-
-const categories = {
-  Campus: [Campus1, Campus2, Campus3,Campus4,Campus5,Campus6,Campus7,Campus8,Campus9],
-  Events: [Event1, Event2, Event3, Event4 , Event5,Event6,Event7,Event8,Event9,Event10,Event11],
-  Sports: [Sport1, Sport2, Sport3,Sport4,Sport5,Sport6,Sport7],
-};
+const sectionNames = ["Campus", "Event", "Sport"];
 
 const Gallery = () => {
   const [activeTab, setActiveTab] = useState("Campus");
   const [fade, setFade] = useState(true);
+  const [galleryImages, setGalleryImages] = useState([]);
   const imagesRef = useRef(null);
 
   const [modalOpen, setModalOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(null);
   const [imageIndex, setImageIndex] = useState(0);
+
+  // 🔁 Fetch images for selected section
+  const fetchImages = async (section) => {
+    try {
+      const res = await axiosInstance.get("/gallery/section", {
+        params: { section },
+      });
+      setGalleryImages(res.data.data || []);
+    } catch (err) {
+      console.error("Failed to load gallery images", err);
+    }
+  };
+
+  useEffect(() => {
+    fetchImages(activeTab);
+  }, [activeTab]);
 
   const handleTabChange = (tab) => {
     if (tab === activeTab) return;
@@ -67,18 +52,22 @@ const Gallery = () => {
   }, []);
 
   const showNext = useCallback(() => {
-    const imgs = categories[activeTab];
-    const nextIndex = (imageIndex + 1) % imgs.length;
+    const nextIndex = (imageIndex + 1) % galleryImages.length;
     setImageIndex(nextIndex);
-    setCurrentImage(imgs[nextIndex]);
-  }, [activeTab, imageIndex]);
+    setCurrentImage(galleryImages[nextIndex]?.imageUrl);
+  }, [imageIndex, galleryImages]);
 
   const showPrev = useCallback(() => {
-    const imgs = categories[activeTab];
-    const prevIndex = (imageIndex - 1 + imgs.length) % imgs.length;
+    const prevIndex = (imageIndex - 1 + galleryImages.length) % galleryImages.length;
     setImageIndex(prevIndex);
-    setCurrentImage(imgs[prevIndex]);
-  }, [activeTab, imageIndex]);
+    setCurrentImage(galleryImages[prevIndex]?.imageUrl);
+  }, [imageIndex, galleryImages]);
+
+  useEffect(() => {
+    if (galleryImages.length > 0 && modalOpen) {
+      setCurrentImage(galleryImages[imageIndex]?.imageUrl);
+    }
+  }, [imageIndex, galleryImages, modalOpen]);
 
   useEffect(() => {
     if (imagesRef.current) {
@@ -98,70 +87,49 @@ const Gallery = () => {
 
   return (
     <div className="w-full px-6 py-12 bg-gradient-to-b from-[#e6f0ff] via-white to-[#d6e6f9] min-h-screen">
-      {/* ✅ SEO Helmet */}
-      <Helmet prioritizeSeoTags>
-        <title>Gallery | Krishna Public School - Campus, Events, Labs</title>
-        <meta
-          name="description"
-          content="Explore Krishna Public School's vibrant gallery featuring campus, classroom, lab, sports and event memories. View photos in full screen."
-        />
-        <meta
-          name="keywords"
-          content="Krishna Public School gallery, Faridabad school photos, campus pictures, school events, classroom images, lab gallery"
-        />
+      <Helmet>
+        <title>Gallery | Krishna Public School</title>
+        <meta name="description" content="Campus, events, labs & sports gallery of Krishna Public School." />
         <link rel="canonical" href="https://www.krishnapublicschool.in/gallery" />
-        <meta property="og:title" content="Krishna Public School - Photo Gallery" />
-        <meta property="og:description" content="Discover Krishna Public School's visual journey through events, sports, and labs." />
-        <meta property="og:image" content="https://cdn.pixabay.com/photo/2016/11/29/09/08/blur-1867321_1280.jpg" />
-        <meta property="og:url" content="https://www.krishnapublicschool.in/gallery" />
-        <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
 
       <div className="max-w-7xl mx-auto">
-
         {/* Tabs */}
         <div className="flex flex-wrap justify-center gap-4 mb-8">
-          {Object.keys(categories).map((category) => (
+          {sectionNames.map((section) => (
             <button
-              key={category}
-              onClick={() => handleTabChange(category)}
+              key={section}
+              onClick={() => handleTabChange(section)}
               className={`px-5 py-2 rounded-full font-medium border-2 transition-all duration-300 hover:scale-105 ${
-                activeTab === category
+                activeTab === section
                   ? "bg-blue-600 text-white border-blue-600 shadow-md"
                   : "bg-white text-blue-700 border-blue-300 hover:bg-blue-100"
               }`}
-              aria-pressed={activeTab === category}
-              aria-label={`Show ${category} photos`}
-              aria-controls={`gallery-${category}`}
             >
-              {category}
+              {section}
             </button>
           ))}
         </div>
 
-        {/* Images */}
+        {/* Image Grid */}
         <div
-          id={`gallery-${activeTab}`}
           ref={imagesRef}
           className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 transition-opacity duration-500 ${
             fade ? "opacity-100" : "opacity-0"
           }`}
         >
-          {categories[activeTab].map((img, index) => (
+          {galleryImages.map((img, idx) => (
             <div
-              key={index}
+              key={img._id}
+              onClick={() => openModal(img.imageUrl, idx)}
               className="relative group overflow-hidden rounded-xl shadow-md border border-blue-100 cursor-pointer"
-              onClick={() => openModal(img, index)}
-              role="button"
-              aria-label={`Open ${activeTab} image ${index + 1}`}
             >
               <img
-                loading="lazy"
-                src={img}
-                alt={`${activeTab} photo ${index + 1}`}
+                src={img.imageUrl}
+                alt={`Gallery ${img.section}`}
                 className="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500"
               />
-              <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white font-semibold text-lg">
+              <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-semibold text-lg">
                 View
               </div>
             </div>
@@ -169,12 +137,10 @@ const Gallery = () => {
         </div>
 
         {/* Modal */}
-        {modalOpen && (
+        {modalOpen && currentImage && (
           <div
             className="fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4"
             onClick={closeModal}
-            role="dialog"
-            aria-modal="true"
           >
             <div
               onClick={(e) => e.stopPropagation()}
@@ -183,29 +149,26 @@ const Gallery = () => {
               <button
                 onClick={closeModal}
                 className="absolute top-2 right-2 text-white text-3xl z-10"
-                aria-label="Close image"
               >
                 &times;
               </button>
 
               <button
                 onClick={showPrev}
-                className="absolute left-2 top-1/2 transform -translate-y-1/2 text-white text-4xl hover:scale-110 transition z-10"
-                aria-label="Previous image"
+                className="absolute left-2 top-1/2 -translate-y-1/2 text-white text-4xl z-10"
               >
                 ‹
               </button>
 
               <img
                 src={currentImage}
-                alt="Enlarged school memory"
+                alt="Enlarged gallery"
                 className="max-h-[80vh] w-full object-contain rounded"
               />
 
               <button
                 onClick={showNext}
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 text-white text-4xl hover:scale-110 transition z-10"
-                aria-label="Next image"
+                className="absolute right-2 top-1/2 -translate-y-1/2 text-white text-4xl z-10"
               >
                 ›
               </button>

@@ -1,71 +1,114 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axiosInstance from "../api/axiosInstance.js";
 
 function AdminLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState(null);
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
+    setErrorMsg(null);
+    setLoading(true);
 
-    // Main admin login (only you know)
-    if (email === "vishnur122@gmail.com" && password === "vishnu@1225") {
-      localStorage.setItem("isAdmin", "true");
-      localStorage.setItem("adminEmail", email);
-      navigate("/admin/dashboard");
+    try {
+      const res = await axiosInstance.post("/admin/login", { email, password });
+      const { accessToken, refreshToken, admin } = res.data.data;
+
+      if (accessToken && refreshToken) {
+        localStorage.setItem("accessToken", accessToken);
+        localStorage.setItem("refreshToken", refreshToken);
+        localStorage.setItem("isAdmin", "true");
+        localStorage.setItem("adminEmail", admin.email);
+        navigate("/admin/dashboard");
+      } else {
+        setErrorMsg("Token missing in response.");
+      }
+    } catch (err) {
+      setErrorMsg(err?.response?.data?.message || "Invalid credentials");
+    } finally {
+      setLoading(false);
     }
-    // Future: You can add else-if here for more users
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-blue-50 px-4">
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 px-4">
       <form
         onSubmit={handleLogin}
-        className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md space-y-5 border border-blue-100"
+        className="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md border border-gray-200 space-y-6 animate-fade-in"
         autoComplete="off"
       >
-        <h2 className="text-2xl font-bold text-center text-blue-800">
-          Admin Login
-        </h2>
+        <h2 className="text-3xl font-bold text-center text-blue-800">Admin Login</h2>
 
-        <div className="space-y-1">
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+        {errorMsg && (
+          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-2 rounded text-sm">
+            {errorMsg}
+          </div>
+        )}
+
+        <div>
+          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
             Email
           </label>
           <input
             type="email"
             id="email"
             name="email"
-            required
             autoComplete="off"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full px-4 py-2 rounded border border-gray-300 focus:ring-2 focus:ring-blue-400 outline-none"
+            required
+            className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 outline-none"
           />
         </div>
 
-        <div className="space-y-1">
-          <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+        <div>
+          <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
             Password
           </label>
           <input
             type="password"
             id="password"
             name="password"
-            required
             autoComplete="off"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full px-4 py-2 rounded border border-gray-300 focus:ring-2 focus:ring-blue-400 outline-none"
+            required
+            className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 outline-none"
           />
         </div>
 
         <button
           type="submit"
-          className="w-full bg-blue-600 text-white py-2 rounded font-semibold hover:bg-blue-700 transition"
+          disabled={loading}
+          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-lg transition flex items-center justify-center gap-2 disabled:opacity-50"
         >
-          Login
+          {loading && (
+            <svg
+              className="animate-spin h-5 w-5 text-white"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <circle
+                className="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                strokeWidth="4"
+              ></circle>
+              <path
+                className="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+              ></path>
+            </svg>
+          )}
+          {loading ? "Logging in..." : "Login"}
         </button>
       </form>
     </div>

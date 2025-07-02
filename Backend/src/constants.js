@@ -1,1 +1,1 @@
-export const DB_NAME= "school website"
+export const DB_NAME= "school-website"

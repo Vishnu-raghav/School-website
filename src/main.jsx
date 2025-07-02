@@ -12,8 +12,8 @@ import Contact from './pages/contact.jsx';
 import Gallery from './pages/gallery.jsx';
 import Admission from './pages/admission.jsx';
 import MandatoryDisclosure from './pages/MandatoryDisclosure.jsx';
-import AdminLogin from './pages/AdminLogin.jsx'; 
-import AdminDashboard from './pages/AdminDashboard.jsx'; 
+import AdminLogin from './pages/AdminLogin.jsx';
+import AdminDashboard from './pages/AdminDashboard.jsx';
 import CareerPage from './pages/CareerPage.jsx';
 
 const router = createBrowserRouter([
@@ -27,19 +27,17 @@ const router = createBrowserRouter([
       { path: 'gallery', element: <Gallery /> },
       { path: 'admission', element: <Admission /> },
       { path: 'mandatory-disclosure', element: <MandatoryDisclosure /> },
-      { path: 'admin/login', element: <AdminLogin /> },       
-      { path: 'admin/dashboard', element: <AdminDashboard /> } ,
-      { path: 'Career', element: <CareerPage/> } 
+      { path: 'Career', element: <CareerPage /> },
+      { path: 'admin-access-2025', element: <AdminLogin /> },
+      { path: 'admin/dashboard', element: <AdminDashboard /> },
     ],
   },
 ]);
 
 createRoot(document.getElementById('root')).render(
-
-    <HelmetProvider>
-      <LoadingProvider>
-        <RouterProvider router={router} />
-      </LoadingProvider>
-    </HelmetProvider>
-  
+  <HelmetProvider>
+    <LoadingProvider>
+      <RouterProvider router={router} />
+    </LoadingProvider>
+  </HelmetProvider>
 );

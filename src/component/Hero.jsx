@@ -1,47 +1,124 @@
+// import { useEffect, useState } from 'react';
+// import { Swiper, SwiperSlide } from 'swiper/react';
+// import 'swiper/css';
+// import 'swiper/css/pagination';
+// import { Pagination, Autoplay } from 'swiper/modules';
+// import { motion } from 'framer-motion';
+// import axiosInstance from '../api/axiosInstance.js';
+
+// function Hero() {
+//   const [images, setImages] = useState([]);
+
+//   useEffect(() => {
+//     const fetchHeroImages = async () => {
+//       try {
+//         const res = await axiosInstance.get('/static/section?section=HeroSection');
+//         setImages(res.data.data || []);
+//       } catch (err) {
+//         console.error('Failed to fetch hero images:', err);
+//       }
+//     };
+
+//     fetchHeroImages();
+//   }, []);
+
+//   return (
+//     <div className="w-full h-[75vh] sm:h-[90vh] md:h-[93vh]">
+//       <Swiper
+//         modules={[Pagination, Autoplay]}
+//         pagination={{ clickable: true }}
+//         autoplay={images.length > 1 ? { delay: 3000, disableOnInteraction: false } : undefined}
+//         loop={images.length > 1}
+//         className="h-full"
+//       >
+//         {images.map((img, index) => (
+//           <SwiperSlide key={index}>
+//             <div className="relative w-full h-full">
+//               <img
+//                 src={img.imageUrl}
+//                 alt={`Slide ${index + 1}`}
+//                 className="w-full h-full object-cover"
+//                 loading="lazy"
+//               />
+//               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/10 flex items-center justify-center px-4">
+//                 <motion.div
+//                   initial={{ opacity: 0, y: 40 }}
+//                   animate={{ opacity: 1, y: 0 }}
+//                   transition={{ duration: 1 }}
+//                   className="text-center px-2"
+//                 >
+//                   <h1 className="text-2xl sm:text-4xl md:text-6xl font-extrabold text-white drop-shadow-lg mb-2 sm:mb-4 leading-tight">
+//                     Krishna Public School
+//                   </h1>
+//                   <p className="text-sm sm:text-lg md:text-2xl text-blue-100 drop-shadow-md mb-4 sm:mb-6">
+//                     Think today, Change tomorrow
+//                   </p>
+//                 </motion.div>
+//               </div>
+//             </div>
+//           </SwiperSlide>
+//         ))}
+//       </Swiper>
+//     </div>
+//   );
+// }
+
+// export default Hero;
+
+
+
+
+
+
+
+
+
+
+
+import { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination, Autoplay } from 'swiper/modules';
 import { motion } from 'framer-motion';
-
-import Img1 from '../assets/h-1.jpg';
-import Img2 from '../assets/h-3.jpg';
-import Img3 from '../assets/h-6.jpg';
-import FooterImg from "../assets/f-2.jpg";
-// import Popup from "../component/PopUp.jsx";
-
-
+import axiosInstance from '../api/axiosInstance.js';
 
 function Hero() {
-  const images = [
-    { src: FooterImg, alt: 'School front building image' },
-    { src: Img2, alt: 'Students engaged in classroom learning' },
-    { src: Img3, alt: 'Annual sports event at school' },
-    { src: Img1, alt: 'Annual sports event at school' },
-  ];
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    const fetchHeroImages = async () => {
+      try {
+        const res = await axiosInstance.get('/static/section?section=HeroSection');
+        setImages(res.data.data || []);
+      } catch (err) {
+        console.error('Failed to fetch hero images:', err);
+      }
+    };
+
+    fetchHeroImages();
+  }, []);
 
   return (
-    <div className="w-full h-[75vh] sm:h-[90vh] md:h-[93vh]">
-      {/* <Popup/> */}
+    <div className="w-full   h-[75vh] sm:h-[90vh] md:h-[93vh]">
       <Swiper
+        key={images.length}
         modules={[Pagination, Autoplay]}
         pagination={{ clickable: true }}
-        autoplay={{ delay: 3000 }}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
         loop={true}
         className="h-full"
       >
         {images.map((img, index) => (
           <SwiperSlide key={index}>
-            <div className="relative w-full h-full">
+            <div className="w-full h-full">
               <img
-                src={img.src}
-                alt={img.alt}
+                src={img.imageUrl}
+                alt={`Slide ${index + 1}`}
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
-
-              {/* Overlay with Animated Text */}
-              <div className="absolute inset-0 bg-gradient-to-t  from-black/70 to-black/10 flex items-center justify-center px-4">
+              <div className="absolute inset-0  bg-gradient-to-t from-black/70 to-black/10 flex items-center justify-center px-4">
                 <motion.div
                   initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -64,5 +141,9 @@ function Hero() {
   );
 }
 
+
 export default Hero;
+
+
+
 

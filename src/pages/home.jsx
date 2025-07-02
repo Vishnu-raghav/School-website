@@ -1,43 +1,15 @@
 import { Link } from "react-router-dom";
 import Hero from "../component/Hero";
-import TopperCarousel from "../component/TopperCarousel .jsx"; // ✅ Import kiya
+import TopperCarousel from "../component/TopperCarousel.jsx";
 import Img5 from "../assets/newone.jpg";
-import Top121 from "../assets/12T-1.png";
-import Top122 from "../assets/12T-2.png";
-import Top123 from "../assets/12T-3.png";
-import Top124 from "../assets/12T-4.png";
-import Top125 from "../assets/12T-5.png";
 
-import Top101 from "../assets/10T-1.png";
-import Top102 from "../assets/10T-2.png";
-import Top103 from "../assets/10T-3.png";
-import Top104 from "../assets/10T-4.png";
-import Top105 from "../assets/10T-5.png";
-
-import SmartClass from "../assets/SC.jpg";
-import Kindergarten from "../assets/Kindergarden.jpg";
-import Lab from "../assets/computer-lab.jpg";
-import Block from "../assets/BB.jpg";
-import Mess from "../assets/Mess.jpg";
-import FooterImg from "../assets/f-2.jpg";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
 import "../App.css";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
-
-const toppers = [
-  { name: "Aman Kumar", class: "12th", score: "95%", image: Top121 },
-  { name: "Pratiksha Jha", class: "12th", score: "94%", image: Top122 },
-  { name: "Ashish Kumar", class: "12th", score: "93.2%", image: Top123 },
-  { name: "Roshni Meena", class: "12th", score: "92.6%", image: Top124 },
-  { name: "Chandni Kumari", class: "12th", score: "90.6%", image: Top125 },
-  { name: "Abhishek", class: "10th", score: "93%", image: Top101 },
-  { name: "Pradyumna", class: "10th", score: "92%", image: Top102 },
-  { name: "Rohit", class: "10th", score: "91.6%", image: Top103 },
-  { name: "Kamlesh", class: "10th", score: "91%", image: Top104 },
-  { name: "Ragini", class: "10th", score: "90.6%", image: Top105 },
-];
+import { useEffect, useState } from "react";
+import axiosInstance from "../api/axiosInstance.js";
 
 const stats = [
   { label: "Students Enrolled", value: 900, suffix: "+" },
@@ -46,16 +18,36 @@ const stats = [
   { label: "Years of Excellence", value: 22, suffix: "+" },
 ];
 
-const infrastructure = [
-  { title: "Smart Classrooms", image: SmartClass },
-  { title: "Canteen", image: Mess },
-  { title: "Kindergarten Block", image: Kindergarten },
-  { title: "Computer Lab", image: Lab },
-  { title: "Main School Block", image: Block },
-];
-
 function Home() {
   const { ref, inView } = useInView({ triggerOnce: true });
+
+  const [whyUsImage, setWhyUsImage] = useState(null);
+  const [footerImage, setFooterImage] = useState(null);
+  const [infrastructure, setInfrastructure] = useState([]);
+
+  // Fetch static images & infra
+  useEffect(() => {
+    const fetchImagesAndInfra = async () => {
+      try {
+        const [staticRes, infraRes] = await Promise.all([
+          axiosInstance.get("/static"),
+          axiosInstance.get("/infrastructure"),
+        ]);
+
+        const allImages = staticRes.data.data;
+        const whyUs = allImages.find((img) => img.section === "WhyUs");
+        const footer = allImages.find((img) => img.section === "FooterImage");
+        setWhyUsImage(whyUs?.imageUrl);
+        setFooterImage(footer?.imageUrl);
+
+        setInfrastructure(infraRes.data.data || []);
+      } catch (err) {
+        console.error("Home data load failed:", err);
+      }
+    };
+
+    fetchImagesAndInfra();
+  }, []);
 
   return (
     <div className="overflow-x-hidden">
@@ -69,19 +61,16 @@ function Home() {
         <link rel="canonical" href="https://krishnapublicschool.net/" />
       </Helmet>
 
-      {/* Top Strip */}
       <div className="bg-blue-700 text-white py-3 text-sm text-center font-medium animate-pulse px-4">
         🧑‍🏫 Certified Teachers |💡 Smart Classes | 🏆 90%+ Results | 🌟 Personality Development
       </div>
 
       <Hero />
 
-      {/* Award */}
       <div className="bg-yellow-100 py-3 text-center text-blue-900 font-medium tracking-wide px-4">
         🏅 Nationally Recognized School | 🥇 Best in City – 2024 | 🎓 100% Board Results
       </div>
 
-      {/* CTA */}
       <section className="bg-red-100 py-8 text-center px-4">
         <h2 className="text-2xl md:text-3xl font-bold text-red-700">
           🎯 Hurry! Admissions Closing Soon
@@ -94,7 +83,6 @@ function Home() {
         </Link>
       </section>
 
-      {/* Why Us Section */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
           <motion.div
@@ -105,7 +93,7 @@ function Home() {
             className="w-full md:w-1/2"
           >
             <img
-              src={Img5}
+              src={whyUsImage || Img5}
               alt="Why Krishna Public School"
               className="w-full h-auto rounded-2xl shadow-lg"
               loading="lazy"
@@ -135,7 +123,6 @@ function Home() {
         </div>
       </section>
 
-      {/* Track Record */}
       <section
         ref={ref}
         className="py-20 px-4 bg-gradient-to-br from-white to-blue-50 text-center relative"
@@ -162,8 +149,7 @@ function Home() {
         </div>
       </section>
 
-      {/* ✅ Topper Carousel */}
-      <TopperCarousel toppers={toppers} />
+      <TopperCarousel />
 
       {/* Infrastructure */}
       <section className="py-20 px-4 bg-gradient-to-br from-[#dff4ff] via-[#eef9ff] to-[#f5fcff]">
@@ -178,7 +164,7 @@ function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
             {infrastructure.map((item, idx) => (
               <div key={idx} className="bg-white rounded-3xl overflow-hidden shadow-md">
-                <img src={item.image} alt={item.title} className="w-full h-56 object-cover" />
+                <img src={item.imageUrl} alt={item.title} className="w-full h-56 object-cover" />
                 <div className="p-5 text-left">
                   <h3 className="text-xl font-bold text-blue-800 mb-1">{item.title}</h3>
                   <div className="w-12 h-1 bg-blue-500 rounded-full mt-2"></div>
@@ -189,7 +175,6 @@ function Home() {
         </div>
       </section>
 
-      {/* Principal Message */}
       <section className="bg-blue-50 py-14 text-center px-4">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold text-blue-800 mb-4">👨‍🏫 Message from Our Principal</h2>
@@ -200,10 +185,9 @@ function Home() {
         </div>
       </section>
 
-      {/* Final CTA */}
       <section
         className="relative bg-cover bg-center py-20 px-4 text-white"
-        style={{ backgroundImage: `url(${FooterImg})` }}
+        style={{ backgroundImage: `url(${footerImage})` }}
       >
         <div className="absolute inset-0 bg-black/60 z-0"></div>
         <div className="relative z-10 text-center max-w-2xl mx-auto">
@@ -221,13 +205,3 @@ function Home() {
 }
 
 export default Home;
-
-
-
-
-
-
-
-
-
-

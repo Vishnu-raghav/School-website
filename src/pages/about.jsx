@@ -1,20 +1,47 @@
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Helmet } from "react-helmet-async"; 
+import { Helmet } from "react-helmet-async";
 import SchoolImg from "../assets/schl.jpg";
-import DefaultAvatar from "../assets/img_avatar.png"; 
+import DefaultAvatar from "../assets/img_avatar.png";
 import { FaBullseye, FaEye, FaLightbulb } from "react-icons/fa";
-
+import axiosInstance from "../api/axiosInstance.js"; 
 function About() {
+  const [principalImage, setPrincipalImage] = useState(null);
+  const [directorImage, setDirectorImage] = useState(null);
+
+  useEffect(() => {
+    const fetchStaticImages = async () => {
+      try {
+        const res = await axiosInstance.get("/static");
+        const images = res.data.data;
+
+        const principal = images.find(
+          (img) => img.section?.toLowerCase() === "principleimage"
+        );
+        const director = images.find(
+          (img) => img.section?.toLowerCase() === "directorimage"
+        );
+
+        setPrincipalImage(principal?.imageUrl);
+        setDirectorImage(director?.imageUrl);
+      } catch (err) {
+        console.error("Error loading leadership images:", err);
+      }
+    };
+
+    fetchStaticImages();
+  }, []);
+
   const leaders = [
     {
       name: "Principal's Message",
-      image: DefaultAvatar,
+      image: principalImage || DefaultAvatar,
       message:
         "Education here is about building responsible individuals ready to lead the world with values and vision.",
     },
     {
       name: "Director's Message",
-      image: DefaultAvatar,
+      image: directorImage || DefaultAvatar,
       message:
         "We empower students to become innovative thinkers, confident communicators, and ethical leaders.",
     },

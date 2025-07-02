@@ -1,10 +1,31 @@
-import { useRef, useState, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import axiosInstance from "../api/axiosInstance.js";
 
-const TopperCarousel = ({ toppers }) => {
+const TopperCarousel = () => {
+  const [toppers, setToppers] = useState([]);
   const scrollRef = useRef(null);
   const [showLeft, setShowLeft] = useState(false);
   const [showRight, setShowRight] = useState(true);
+
+  const fetchToppers = async () => {
+    try {
+      const res = await axiosInstance.get("/topper");
+      const formatted = res.data.data.map((topper) => ({
+        name: topper.name,
+        class: topper.class,
+        score: `${topper.percentage}%`,
+        image: topper.imageUrl,
+      }));
+      setToppers(formatted);
+    } catch (err) {
+      console.error("Error fetching toppers:", err);
+    }
+  };
+
+  useEffect(() => {
+    fetchToppers();
+  }, []);
 
   const checkScroll = () => {
     const container = scrollRef.current;
@@ -35,7 +56,6 @@ const TopperCarousel = ({ toppers }) => {
           Meet Our Toppers
         </h2>
 
-        {/* Arrows */}
         {showLeft && (
           <button
             onClick={() => scroll("left")}
@@ -54,7 +74,6 @@ const TopperCarousel = ({ toppers }) => {
           </button>
         )}
 
-        {/* Cards */}
         <div
           ref={scrollRef}
           className="flex gap-3 md:gap-5 overflow-x-auto scroll-smooth no-scrollbar px-6"
@@ -76,7 +95,9 @@ const TopperCarousel = ({ toppers }) => {
                 {topper.name}
               </h3>
               <p className="text-sm text-gray-600 mt-1">Class {topper.class}</p>
-              <p className="text-base font-semibold text-blue-600 mt-1">{topper.score}</p>
+              <p className="text-base font-semibold text-blue-600 mt-1">
+                {topper.score}
+              </p>
 
               <div className="mt-3 w-8 h-1 bg-blue-500 mx-auto rounded-full"></div>
             </div>
@@ -88,3 +109,4 @@ const TopperCarousel = ({ toppers }) => {
 };
 
 export default TopperCarousel;
+

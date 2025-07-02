@@ -7,13 +7,10 @@ function Loader() {
       aria-label="Loading content"
     >
       <div className="relative w-16 h-16">
-        {/* Main Spinner */}
         <div
           className="absolute inset-0 rounded-full border-4 border-blue-600 border-t-transparent animate-spin"
           aria-hidden="true"
         ></div>
-
-        {/* Background Spinner Outline */}
         <div
           className="absolute inset-0 rounded-full border-4 border-blue-300 opacity-30"
           aria-hidden="true"

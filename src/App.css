@@ -1,18 +1,10 @@
-@keyframes fadeInBalanced {
+ @keyframes fadeInBalanced {
   from {
     opacity: 0;
   }
   to {
     opacity: 1;
   }
-}
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-.no-scrollbar {
-  -ms-overflow-style: none; 
-  scrollbar-width: none; 
 }
 
 .fade-enter {
@@ -35,35 +27,65 @@
   animation: scroll-left 20s linear infinite;
 }
 
-
-/* Hide scrollbars (cross-browser) */
-.scrollbar-hide {
-  -ms-overflow-style: none;       
-  scrollbar-width: none;          
-}
-
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;                 
-}
-
-html {
+/* Enable scrollbars (default behavior) */
+html, body {
   scroll-behavior: smooth;
+  overflow: auto;  /* Ensure scroll is not disabled */
 }
 
+/* Animations */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
 @keyframes zoomIn {
   from { transform: scale(0.95); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
+
 .animate-fadeIn {
   animation: fadeIn 0.3s ease-out;
 }
+
 .animate-zoomIn {
   animation: zoomIn 0.4s ease-out;
 }
+
+
+/* Add in your CSS */
+.no-scrollbar {
+  -ms-overflow-style: none; 
+  scrollbar-width: none;    
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;            
+}
+
+
+
+
+
+
+
+
+
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+.animate-slideDown {
+  animation: slideDown 0.4s ease forwards;
+}
+
+
+
 
 
 
