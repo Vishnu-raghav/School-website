@@ -29,7 +29,7 @@ axiosInstance.interceptors.response.use(
         const refreshToken = localStorage.getItem("refreshToken");
 
         const res = await axios.post(
-          "https://school-website-backend-ybs4.onrender.com",
+          "https://school-website-backend-ybs4.onrender.com/api/v1",
           {},
           {
             headers: {
