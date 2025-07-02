@@ -29,7 +29,7 @@ axiosInstance.interceptors.response.use(
         const refreshToken = localStorage.getItem("refreshToken");
 
         const res = await axios.post(
-          "http://localhost:5000/api/v1/admin/refresh-token",
+          "https://school-website-backend-ybs4.onrender.com",
           {},
           {
             headers: {
