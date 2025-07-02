@@ -92,7 +92,7 @@ axiosInstance.interceptors.response.use(
         const refreshToken = localStorage.getItem("refreshToken");
 
         const res = await axios.post(
-          "https://school-website-backend-ybs4.onrender.com/api/v1/auth/refresh-token", // ✅ Use your actual refresh route
+          "https://school-website-backend-ybs4.onrender.com/api/v1/auth/refresh-token", 
           {},
           {
             headers: {
@@ -107,7 +107,9 @@ axiosInstance.interceptors.response.use(
         localStorage.setItem("accessToken", newAccessToken);
 
         originalRequest.headers.Authorization = `Bearer ${newAccessToken}`;
-        return axiosInstance(originalRequest); // 🔁 Retry original request
+
+
+        return axiosInstance(originalRequest); 
       } catch (err) {
         console.error("Refresh token failed:", err);
         localStorage.clear();
