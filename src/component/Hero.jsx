@@ -23,24 +23,25 @@
 //   }, []);
 
 //   return (
-//     <div className="w-full h-[75vh] sm:h-[90vh] md:h-[93vh]">
+//     <div className="w-full   h-[75vh] sm:h-[90vh] md:h-[93vh]">
 //       <Swiper
+//         key={images.length}
 //         modules={[Pagination, Autoplay]}
 //         pagination={{ clickable: true }}
-//         autoplay={images.length > 1 ? { delay: 3000, disableOnInteraction: false } : undefined}
-//         loop={images.length > 1}
+//         autoplay={{ delay: 3000, disableOnInteraction: false }}
+//         loop={true}
 //         className="h-full"
 //       >
 //         {images.map((img, index) => (
 //           <SwiperSlide key={index}>
-//             <div className="relative w-full h-full">
+//             <div className="w-full h-full">
 //               <img
 //                 src={img.imageUrl}
 //                 alt={`Slide ${index + 1}`}
 //                 className="w-full h-full object-cover"
 //                 loading="lazy"
 //               />
-//               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/10 flex items-center justify-center px-4">
+//               <div className="absolute inset-0  bg-gradient-to-t from-black/70 to-black/10 flex items-center justify-center px-4">
 //                 <motion.div
 //                   initial={{ opacity: 0, y: 40 }}
 //                   animate={{ opacity: 1, y: 0 }}
@@ -63,62 +64,44 @@
 //   );
 // }
 
+
 // export default Hero;
 
 
 
 
-
-
-
-
-
-
-
-import { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination, Autoplay } from 'swiper/modules';
 import { motion } from 'framer-motion';
-import axiosInstance from '../api/axiosInstance.js';
+
+import Hero1 from '../assets/h-3.jpg';
+import Hero2 from '../assets/h-1.jpg';
+import Hero3 from '../assets/h-66.jpg';
+
+const heroImages = [Hero1, Hero2, Hero3];
 
 function Hero() {
-  const [images, setImages] = useState([]);
-
-  useEffect(() => {
-    const fetchHeroImages = async () => {
-      try {
-        const res = await axiosInstance.get('/static/section?section=HeroSection');
-        setImages(res.data.data || []);
-      } catch (err) {
-        console.error('Failed to fetch hero images:', err);
-      }
-    };
-
-    fetchHeroImages();
-  }, []);
-
   return (
-    <div className="w-full   h-[75vh] sm:h-[90vh] md:h-[93vh]">
+    <div className="w-full h-[75vh] sm:h-[90vh] md:h-[93vh]">
       <Swiper
-        key={images.length}
         modules={[Pagination, Autoplay]}
         pagination={{ clickable: true }}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
         loop={true}
         className="h-full"
       >
-        {images.map((img, index) => (
+        {heroImages.map((img, index) => (
           <SwiperSlide key={index}>
-            <div className="w-full h-full">
+            <div className="w-full h-full relative">
               <img
-                src={img.imageUrl}
+                src={img}
                 alt={`Slide ${index + 1}`}
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
-              <div className="absolute inset-0  bg-gradient-to-t from-black/70 to-black/10 flex items-center justify-center px-4">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/10 flex items-center justify-center px-4">
                 <motion.div
                   initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -141,9 +124,4 @@ function Hero() {
   );
 }
 
-
 export default Hero;
-
-
-
-

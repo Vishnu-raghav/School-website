@@ -1,5 +1,4 @@
 // import { useRef, useState, useEffect } from "react";
-// import emailjs from "@emailjs/browser";
 // import { Helmet } from "react-helmet-async";
 // import { useLoading } from "../context/LoadingContext.jsx";
 // import axiosInstance from "../api/axiosInstance.js";
@@ -23,27 +22,25 @@
 //     fetchContactInfo();
 //   }, []);
 
-//   const handleSubmit = (e) => {
+//   const handleSubmit = async (e) => {
 //     e.preventDefault();
 //     setIsLoading(true);
 
-//     emailjs
-//       .sendForm(
-//         "service_n5cw0kg",
-//         "template_ma511ie",
-//         form.current,
-//         "oAawwwXpnjugqovvl"
-//       )
-//       .then(() => {
-//         setStatus("success");
-//         form.current.reset();
-//         setTimeout(() => setStatus(null), 4000);
-//       })
-//       .catch(() => {
-//         setStatus("error");
-//         setTimeout(() => setStatus(null), 4000);
-//       })
-//       .finally(() => setIsLoading(false));
+//     try {
+//       const formData = new FormData(form.current);
+//       formData.append("formType", "admission");
+
+//       await axiosInstance.post("/form/submit", formData);
+
+//       setStatus("success");
+//       form.current.reset();
+//     } catch (error) {
+//       console.error("Admission form submission failed", error);
+//       setStatus("error");
+//     } finally {
+//       setIsLoading(false);
+//       setTimeout(() => setStatus(null), 4000);
+//     }
 //   };
 
 //   return (
@@ -60,7 +57,10 @@
 //         />
 //         <meta name="robots" content="index, follow" />
 //         <meta property="og:title" content="Admission - Krishna Public School, Kanpur" />
-//         <meta property="og:description" content="Online admission open for classes Nursery to 10th at Krishna Public School, Kanpur." />
+//         <meta
+//           property="og:description"
+//           content="Online admission open for classes Nursery to 10th at Krishna Public School, Kanpur."
+//         />
 //         <meta property="og:type" content="website" />
 //         <meta property="og:url" content="https://krishnapublicschool.in/admission" />
 //         <meta property="og:image" content="/logo192.png" />
@@ -97,18 +97,14 @@
 //             </li>
 //             <li><strong>Fee Structure:</strong> Available at Office</li>
 //             <li>
-//               <strong>Address:</strong>{" "}
-//               {contactInfo?.address || "Sehatpur, Faridabad"}
+//               <strong>Address:</strong> {contactInfo?.address || "Sehatpur, Faridabad"}
 //             </li>
 //             <li>
 //               <strong>Contact:</strong>{" "}
-//               {contactInfo?.phone
-//                 ? `+91-${contactInfo.phone}`
-//                 : "+91-9911733387, +91-9958403241"}
+//               {contactInfo?.phone ? `+91-${contactInfo.phone}` : "+91-9911733387, +91-9958403241"}
 //             </li>
 //             <li>
-//               <strong>Email:</strong>{" "}
-//               {contactInfo?.email || "kps5358@gmail.com"}
+//               <strong>Email:</strong> {contactInfo?.email || "kps5358@gmail.com"}
 //             </li>
 //           </ul>
 //         </section>
@@ -121,11 +117,13 @@
 //           <h2 className="text-2xl font-semibold text-blue-700 mb-2">Online Admission Form</h2>
 
 //           {status && (
-//             <p className={`px-4 py-2 rounded-xl border font-medium ${
-//               status === "success"
-//                 ? "bg-green-100 text-green-800 border-green-300"
-//                 : "bg-red-100 text-red-800 border-red-300"
-//             }`}>
+//             <p
+//               className={`px-4 py-2 rounded-xl border font-medium ${
+//                 status === "success"
+//                   ? "bg-green-100 text-green-800 border-green-300"
+//                   : "bg-red-100 text-red-800 border-red-300"
+//               }`}
+//             >
 //               {status === "success"
 //                 ? "Form submitted successfully! We'll contact you soon."
 //                 : "Something went wrong. Please try again."}
@@ -203,6 +201,8 @@
 
 
 
+
+
 import { useRef, useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { useLoading } from "../context/LoadingContext.jsx";
@@ -212,15 +212,16 @@ function Admission() {
   const form = useRef();
   const { setIsLoading } = useLoading();
   const [status, setStatus] = useState(null);
-  const [contactInfo, setContactInfo] = useState(null);
+  const [email, setEmail] = useState("");
 
   useEffect(() => {
     const fetchContactInfo = async () => {
       try {
         const res = await axiosInstance.get("/contact");
-        setContactInfo(res.data.data);
+        setEmail(res.data.data?.email || "kps5358@gmail.com");
       } catch (error) {
-        console.error("Failed to fetch contact info", error);
+        console.error("Failed to fetch email", error);
+        setEmail("kps5358@gmail.com");
       }
     };
 
@@ -301,16 +302,9 @@ function Admission() {
               </ul>
             </li>
             <li><strong>Fee Structure:</strong> Available at Office</li>
-            <li>
-              <strong>Address:</strong> {contactInfo?.address || "Sehatpur, Faridabad"}
-            </li>
-            <li>
-              <strong>Contact:</strong>{" "}
-              {contactInfo?.phone ? `+91-${contactInfo.phone}` : "+91-9911733387, +91-9958403241"}
-            </li>
-            <li>
-              <strong>Email:</strong> {contactInfo?.email || "kps5358@gmail.com"}
-            </li>
+            <li><strong>Address:</strong> Sehatpur, Faridabad</li>
+            <li><strong>Contact:</strong> +91-9911733387, +91-9958403241</li>
+            <li><strong>Email:</strong> {email}</li>
           </ul>
         </section>
 

@@ -1,20 +1,20 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import StaticImageManager from "./admin/StaticImageManager.jsx";
+// import StaticImageManager from "./admin/StaticImageManager.jsx";
 import GalleryImageManager from "./admin/GalleryImageManager.jsx";
-import TopperManager from "./admin/TopperManager.jsx";
-import InfastructureImageManager from "./admin/InfastructureImageManager.jsx";
+// import TopperManager from "./admin/TopperManager.jsx";
+// import InfastructureImageManager from "./admin/InfastructureImageManager.jsx";
 import PopUpImageManager from "./admin/PopUpImageManager.jsx";
-import ContactDetailManager from "./admin/ContactDetailManager.jsx";
+// import ContactDetailManager from "./admin/ContactDetailManager.jsx";
 import AdminCredentialUpdater from "./admin/AdminCredentialUpdater.jsx";
 
 const sections = [
-  { key: "static", title: "Static Image Manager", Component: StaticImageManager },
+  // { key: "static", title: "Static Image Manager", Component: StaticImageManager },
   { key: "gallery", title: "Gallery Image Manager", Component: GalleryImageManager },
-  { key: "topper", title: "Topper Manager", Component: TopperManager },
-  { key: "infra", title: "Infrastructure Image Manager", Component: InfastructureImageManager },
+  // { key: "topper", title: "Topper Manager", Component: TopperManager },
+  // { key: "infra", title: "Infrastructure Image Manager", Component: InfastructureImageManager },
   { key: "popup", title: "Popup Image Manager", Component: PopUpImageManager },
-  { key: "contact", title: "Contact Detail Manager", Component: ContactDetailManager },
+  // { key: "contact", title: "Contact Detail Manager", Component: ContactDetailManager },
   { key: "admin", title: "Admin Credential Manager", Component: AdminCredentialUpdater },
 ];
 
