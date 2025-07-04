@@ -241,15 +241,15 @@ const footerImage = Img6;
 const infrastructure = [
   {
     imageUrl: Infra1,
-    title: "Smart Classrooms",
+    title: "Canteen",
   },
   {
     imageUrl: Infra2,
-    title: "Science Labs",
+    title: "Computer Lab",
   },
   {
     imageUrl: Infra3,
-    title: "Library & Resource Center",
+    title: "School Play Area",
   },
 ];
 

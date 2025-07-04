@@ -117,60 +117,58 @@
 import { useRef, useState, useEffect } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-// import Topper1 from "../assets/10T.png";
-// import Topper2 from "../assets/top121.png";
-// import Topper3 from "../assets/top123.png";
-import Topper1 from "../assets/10T-1.png";
-import Topper2 from "../assets/top121.png";
-import Topper3 from "../assets/top123.png";
-import Topper4 from "../assets/10T-1.png";
+import Topper1 from "../assets/12T-2.png";
+import Topper2 from "../assets/12T-1.png";
+import Topper3 from "../assets/12T-3.png";
+import Topper4 from "../assets/top124.png";
 import Topper5 from "../assets/top121.png";
 import Topper6 from "../assets/top123.png";
-import Topper7 from "../assets/top123.png";
+import Topper7 from "../assets/top122.png";
 
 const toppers = [
   {
-    name: "Anjali Sharma",
+    name: "Dev Singh",
     class: "12th",
-    score: "96.4%",
-    image: Topper1,
-  },
-  {
-    name: "Rahul Verma",
-    class: "10th",
-    score: "94.7%",
-    image: Topper2,
-  },
-  {
-    name: "Neha Singh",
-    class: "12th",
-    score: "95.8%",
-    image: Topper3,
-  },
-  {
-    name: "Neha Singh",
-    class: "12th",
-    score: "95.8%",
-    image: Topper4,
-  },
-  {
-    name: "Neha Singh",
-    class: "12th",
-    score: "95.8%",
+    score: "86.2%",
     image: Topper5,
   },
   {
-    name: "Neha Singh",
+    name: "Payal",
     class: "12th",
-    score: "95.8%",
+    score: "86%",
+    image: Topper7,
+  },
+  {
+    name: "Gaurav Latwal",
+    class: "12th",
+    score: "84.2%",
     image: Topper6,
   },
   {
-    name: "Neha Singh",
-    class: "12th",
-    score: "95.8%",
-    image: Topper7,
+    name: "Pratiksha Jha",
+    class: "10th",
+    score: "96%",
+    image: Topper1,
   },
+  {
+    name: "Aman Kumar",
+    class: "10th",
+    score: "95%",
+    image: Topper2,
+  },
+  {
+    name: "Ashish Kumar",
+    class: "10th",
+    score: "93.2%",
+    image: Topper3,
+  },
+  {
+    name: "Jasmin",
+    class: "12th",
+    score: "77.4%",
+    image: Topper4,
+  },
+
 ];
 
 const TopperCarousel = () => {
