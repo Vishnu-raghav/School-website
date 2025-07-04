@@ -1,26 +1,134 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useEffect, useState } from "react";
+// import { useNavigate } from "react-router-dom";
 // import StaticImageManager from "./admin/StaticImageManager.jsx";
-import GalleryImageManager from "./admin/GalleryImageManager.jsx";
+// import GalleryImageManager from "./admin/GalleryImageManager.jsx";
 // import TopperManager from "./admin/TopperManager.jsx";
 // import InfastructureImageManager from "./admin/InfastructureImageManager.jsx";
-import PopUpImageManager from "./admin/PopUpImageManager.jsx";
+// import PopUpImageManager from "./admin/PopUpImageManager.jsx";
 // import ContactDetailManager from "./admin/ContactDetailManager.jsx";
+// import AdminCredentialUpdater from "./admin/AdminCredentialUpdater.jsx";
+
+// const sections = [
+//   { key: "static", title: "Static Image Manager", Component: StaticImageManager },
+//   { key: "gallery", title: "Gallery Image Manager", Component: GalleryImageManager },
+//   { key: "topper", title: "Topper Manager", Component: TopperManager },
+//   { key: "infra", title: "Infrastructure Image Manager", Component: InfastructureImageManager },
+//   { key: "popup", title: "Popup Image Manager", Component: PopUpImageManager },
+//   { key: "contact", title: "Contact Detail Manager", Component: ContactDetailManager },
+//   { key: "admin", title: "Admin Credential Manager", Component: AdminCredentialUpdater },
+// ];
+
+// function AdminDashboard() {
+//   const navigate = useNavigate();
+//   const [activeSection, setActiveSection] = useState("static");
+//   const [sidebarOpen, setSidebarOpen] = useState(false);
+
+//   useEffect(() => {
+//     const isAdmin = localStorage.getItem("isAdmin");
+//     if (isAdmin !== "true") navigate("/admin/login");
+//   }, [navigate]);
+
+//   const handleLogout = () => {
+//     localStorage.clear();
+//     navigate("/admin-access-2025"); 
+//   };
+
+//   const active = sections.find((s) => s.key === activeSection);
+
+//   return (
+//     <div className="min-h-screen flex flex-col md:flex-row bg-gray-100">
+//       <div className={`fixed md:static z-30 bg-white shadow-lg md:shadow-none w-64 h-full p-6 transform transition-transform duration-300 ${
+//         sidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
+//       }`}>
+//         <h2 className="text-2xl font-bold text-blue-800 mb-6">Admin Panel</h2>
+//         <ul className="space-y-4">
+//           {sections.map((section) => (
+//             <li key={section.key}>
+//               <button
+//                 onClick={() => {
+//                   setActiveSection(section.key);
+//                   setSidebarOpen(false);
+//                 }}
+//                 className={`w-full text-left px-4 py-2 rounded-lg font-medium ${
+//                   activeSection === section.key
+//                     ? "bg-blue-600 text-white"
+//                     : "text-gray-700 hover:bg-gray-100"
+//                 }`}
+//               >
+//                 {section.title}
+//               </button>
+//             </li>
+//           ))}
+//           <li>
+//             <button
+//               onClick={handleLogout}
+//               className="w-full text-left px-4 py-2 rounded-lg font-medium bg-red-500 text-white hover:bg-red-600 mt-4"
+//             >
+//               Logout
+//             </button>
+//           </li>
+//         </ul>
+//       </div>
+
+//       {/* Overlay for mobile sidebar */}
+//       {sidebarOpen && (
+//         <div
+//           className="fixed inset-0 bg-black opacity-30 z-20 md:hidden"
+//           onClick={() => setSidebarOpen(false)}
+//         />
+//       )}
+
+//       {/* Main content */}
+//       <div className="flex-1 p-4 md:p-8 overflow-y-auto w-full">
+//         {/* Topbar for mobile */}
+//         <div className="md:hidden flex items-center justify-between mb-4">
+//           <h1 className="text-xl font-bold text-blue-800">Admin Panel</h1>
+//           <button
+//             onClick={() => setSidebarOpen(!sidebarOpen)}
+//             className="text-blue-600 text-2xl focus:outline-none"
+//           >
+//             ☰
+//           </button>
+//         </div>
+
+//         {/* Welcome message */}
+//         <div className="mb-6">
+//           <h2 className="text-2xl font-semibold text-blue-900 mb-1">{active.title}</h2>
+//           <p className="text-gray-600 text-sm">
+//             Logged in as{" "}
+//             <span className="font-medium">{localStorage.getItem("adminEmail")}</span>
+//           </p>
+//         </div>
+
+//         {/* Active Component */}
+//         <div className="bg-white border shadow-md rounded-xl p-4 md:p-6">
+//           <active.Component />
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default AdminDashboard;
+
+
+
+
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import GalleryImageManager from "./admin/GalleryImageManager.jsx";
+import PopUpImageManager from "./admin/PopUpImageManager.jsx";
 import AdminCredentialUpdater from "./admin/AdminCredentialUpdater.jsx";
 
 const sections = [
-  // { key: "static", title: "Static Image Manager", Component: StaticImageManager },
   { key: "gallery", title: "Gallery Image Manager", Component: GalleryImageManager },
-  // { key: "topper", title: "Topper Manager", Component: TopperManager },
-  // { key: "infra", title: "Infrastructure Image Manager", Component: InfastructureImageManager },
   { key: "popup", title: "Popup Image Manager", Component: PopUpImageManager },
-  // { key: "contact", title: "Contact Detail Manager", Component: ContactDetailManager },
   { key: "admin", title: "Admin Credential Manager", Component: AdminCredentialUpdater },
 ];
 
 function AdminDashboard() {
   const navigate = useNavigate();
-  const [activeSection, setActiveSection] = useState("static");
+  const [activeSection, setActiveSection] = useState("gallery"); // ✅ updated
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
@@ -30,16 +138,18 @@ function AdminDashboard() {
 
   const handleLogout = () => {
     localStorage.clear();
-    navigate("/admin-access-2025"); 
+    navigate("/admin-access-2025");
   };
 
-  const active = sections.find((s) => s.key === activeSection);
+  const active = sections.find((s) => s.key === activeSection) || sections[0]; // ✅ safe fallback
 
   return (
     <div className="min-h-screen flex flex-col md:flex-row bg-gray-100">
-      <div className={`fixed md:static z-30 bg-white shadow-lg md:shadow-none w-64 h-full p-6 transform transition-transform duration-300 ${
-        sidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
-      }`}>
+      <div
+        className={`fixed md:static z-30 bg-white shadow-lg md:shadow-none w-64 h-full p-6 transform transition-transform duration-300 ${
+          sidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
+        }`}
+      >
         <h2 className="text-2xl font-bold text-blue-800 mb-6">Admin Panel</h2>
         <ul className="space-y-4">
           {sections.map((section) => (
@@ -70,7 +180,6 @@ function AdminDashboard() {
         </ul>
       </div>
 
-      {/* Overlay for mobile sidebar */}
       {sidebarOpen && (
         <div
           className="fixed inset-0 bg-black opacity-30 z-20 md:hidden"
@@ -78,9 +187,7 @@ function AdminDashboard() {
         />
       )}
 
-      {/* Main content */}
       <div className="flex-1 p-4 md:p-8 overflow-y-auto w-full">
-        {/* Topbar for mobile */}
         <div className="md:hidden flex items-center justify-between mb-4">
           <h1 className="text-xl font-bold text-blue-800">Admin Panel</h1>
           <button
@@ -91,7 +198,6 @@ function AdminDashboard() {
           </button>
         </div>
 
-        {/* Welcome message */}
         <div className="mb-6">
           <h2 className="text-2xl font-semibold text-blue-900 mb-1">{active.title}</h2>
           <p className="text-gray-600 text-sm">
@@ -100,7 +206,6 @@ function AdminDashboard() {
           </p>
         </div>
 
-        {/* Active Component */}
         <div className="bg-white border shadow-md rounded-xl p-4 md:p-6">
           <active.Component />
         </div>
