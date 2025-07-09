@@ -14,7 +14,7 @@ const Gallery = () => {
   const [currentImage, setCurrentImage] = useState(null);
   const [imageIndex, setImageIndex] = useState(0);
 
-  // 🔁 Fetch images for selected section
+  // Fetch images for selected section
   const fetchImages = async (section) => {
     try {
       const res = await axiosInstance.get("/gallery/section", {

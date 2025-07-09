@@ -12,7 +12,7 @@ const adminSchema = new Schema(
     password: {
       type: String,
       required: true,
-      select: false, // hides password by default
+      select: false, 
     },
     refreshToken: {
       type: String,
