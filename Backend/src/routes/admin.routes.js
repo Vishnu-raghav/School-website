@@ -15,10 +15,8 @@ router.post("/login", loginAdmin);
 router.post("/logout", verifyJWT, logoutAdmin);
 router.post("/refresh-token", refreshAccessToken);
 
-// Update Credentials (email/password)
 router.post("/change-credentials", verifyJWT, updateAdminCredentials);
 
-// Get Current Admin
 router.get("/current-admin", verifyJWT, getCurrentAdmin);
 
 export default router;

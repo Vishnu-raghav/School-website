@@ -27,19 +27,18 @@ const adminSchema = new Schema(
   }
 );
 
-// 🔒 Hash password before save
+
 adminSchema.pre("save", async function (next) {
   if (!this.isModified("password")) return next();
   this.password = await bcrypt.hash(this.password, 10);
   next();
 });
 
-// 🔐 Check password correctness
+
 adminSchema.methods.isPasswordCorrect = async function (password) {
   return await bcrypt.compare(password, this.password);
 };
 
-// 🔑 Generate access token
 adminSchema.methods.generateAccessToken = function () {
   return jwt.sign(
     {
@@ -53,7 +52,6 @@ adminSchema.methods.generateAccessToken = function () {
   );
 };
 
-// 🔁 Generate refresh token
 adminSchema.methods.generateRefreshToken = function () {
   return jwt.sign(
     {

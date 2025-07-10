@@ -45,7 +45,6 @@ export const handleFormSubmission = asyncHandler(async (req, res) => {
       <p><strong>Notice Period:</strong> ${req.body.notice}</p>
     `;
 
-    // ✅ Only handle single resume file
     if (req.file) {
       attachments.push({
         filename: req.file.originalname,

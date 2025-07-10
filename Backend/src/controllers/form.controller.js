@@ -53,7 +53,6 @@ export const handleFormSubmission = asyncHandler(async (req, res) => {
         <p><strong>Notice:</strong> ${req.body.notice}</p>
       `;
 
-      // Only include the resume field
       if (req.file) {
         attachments.push({
           filename: req.file.originalname,

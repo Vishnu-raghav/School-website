@@ -27,13 +27,13 @@
   animation: scroll-left 20s linear infinite;
 }
 
-/* Enable scrollbars (default behavior) */
+
 html, body {
   scroll-behavior: smooth;
-  overflow: auto;  /* Ensure scroll is not disabled */
+  overflow: auto;  
 }
 
-/* Animations */
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -52,8 +52,6 @@ html, body {
   animation: zoomIn 0.4s ease-out;
 }
 
-
-/* Add in your CSS */
 .no-scrollbar {
   -ms-overflow-style: none; 
   scrollbar-width: none;    

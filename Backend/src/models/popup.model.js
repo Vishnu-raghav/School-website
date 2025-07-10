@@ -13,7 +13,7 @@ const popupImageSchema = new Schema(
     },
     isActive: {
       type: Boolean,
-      default: true, // true = show popup, false = don't show
+      default: true, 
     },
   },
   { timestamps: true }

@@ -4,7 +4,6 @@ import { ApiResponse } from "../utils/ApiResponse.js";
 import { uploadOnCloudinary, deleteFromCloudinary } from "../utils/cloudinary.js";
 import { PopUpImage } from "../models/popup.model.js";
 
-// ✅ Upload Pop-up Image
 const uploadPopupImage = asyncHandler(async (req, res) => {
   if (!req.file) throw new ApiError(400, "Image file is required");
 
@@ -22,7 +21,6 @@ const uploadPopupImage = asyncHandler(async (req, res) => {
     .json(new ApiResponse(201, popup, "Popup image uploaded successfully"));
 });
 
-// ❌ Delete Pop-up Image
 const deletePopupImage = asyncHandler(async (req, res) => {
   const { id } = req.params;
 
@@ -37,7 +35,6 @@ const deletePopupImage = asyncHandler(async (req, res) => {
     .json(new ApiResponse(200, {}, "Popup image deleted successfully"));
 });
 
-// 🔁 Toggle Popup Visibility
 const togglePopupStatus = asyncHandler(async (req, res) => {
   const { id } = req.params;
 
@@ -52,7 +49,6 @@ const togglePopupStatus = asyncHandler(async (req, res) => {
     .json(new ApiResponse(200, popup, `Popup status updated to ${popup.isActive}`));
 });
 
-// 📤 Get All Pop-up Images
 const getAllPopupImages = asyncHandler(async (req, res) => {
   const popups = await PopUpImage.find().sort({ createdAt: -1 });
 

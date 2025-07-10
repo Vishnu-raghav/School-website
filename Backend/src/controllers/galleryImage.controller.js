@@ -4,7 +4,6 @@ import { ApiResponse } from "../utils/ApiResponse.js";
 import { uploadOnCloudinary, deleteFromCloudinary } from "../utils/cloudinary.js";
 import { GalleryImage } from "../models/galleryImages.model.js";
 
-// 🖼️ Upload Gallery Image
 const uploadGalleryImage = asyncHandler(async (req, res) => {
   const { section } = req.body;
   if (!req.file || !section?.trim()) {
@@ -25,7 +24,6 @@ const uploadGalleryImage = asyncHandler(async (req, res) => {
     .json(new ApiResponse(201, image, "Gallery image uploaded successfully"));
 });
 
-// ❌ Delete Gallery Image
 const deleteGalleryImage = asyncHandler(async (req, res) => {
   const { id } = req.params;
 
@@ -40,7 +38,6 @@ const deleteGalleryImage = asyncHandler(async (req, res) => {
     .json(new ApiResponse(200, {}, "Gallery image deleted successfully"));
 });
 
-// 📤 Get All Gallery Images
 const getAllGalleryImages = asyncHandler(async (req, res) => {
   const images = await GalleryImage.find().sort({ createdAt: -1 });
 
@@ -49,7 +46,6 @@ const getAllGalleryImages = asyncHandler(async (req, res) => {
     .json(new ApiResponse(200, images, "All gallery images fetched"));
 });
 
-// 📤 Get Gallery Images by Section
 const getGalleryImagesBySection = asyncHandler(async (req, res) => {
   const { section } = req.query;
 

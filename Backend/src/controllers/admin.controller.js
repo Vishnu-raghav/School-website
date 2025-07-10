@@ -4,7 +4,6 @@ import { ApiResponse } from "../utils/ApiResponse.js";
 import jwt from "jsonwebtoken";
 import { Admin } from "../models/Admin.model.js";
 
-// 🔐 Generate Tokens
 const generateAccessAndRefreshToken = async (adminId) => {
   try {
     const admin = await Admin.findById(adminId);
@@ -20,7 +19,6 @@ const generateAccessAndRefreshToken = async (adminId) => {
   }
 };
 
-// ✅ Admin Login
 const loginAdmin = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
 
@@ -50,7 +48,6 @@ const loginAdmin = asyncHandler(async (req, res) => {
     );
 });
 
-// 🔄 Logout Admin
 const logoutAdmin = asyncHandler(async (req, res) => {
   await Admin.findByIdAndUpdate(
     req.user._id,
@@ -70,7 +67,6 @@ const logoutAdmin = asyncHandler(async (req, res) => {
     .json(new ApiResponse(200, {}, "Admin logged out successfully"));
 });
 
-// 🔁 Refresh Access Token
 const refreshAccessToken = asyncHandler(async (req, res) => {
   const incomingRefreshToken = req.cookies?.refreshToken || req.body?.refreshToken;
 
@@ -104,7 +100,6 @@ const refreshAccessToken = asyncHandler(async (req, res) => {
   }
 });
 
-// 🔐 Update Email/Password
 const updateAdminCredentials = asyncHandler(async (req, res) => {
   const { currentPassword, newEmail, newPassword } = req.body;
 
@@ -123,7 +118,6 @@ const updateAdminCredentials = asyncHandler(async (req, res) => {
   return res.status(200).json(new ApiResponse(200, {}, "Admin credentials updated successfully"));
 });
 
-// 🔍 Get Current Admin
 const getCurrentAdmin = asyncHandler(async (req, res) => {
   return res.status(200).json(new ApiResponse(200, req.user, "Admin fetched successfully"));
 });

@@ -1,4 +1,5 @@
 // import { useState } from "react";
+// import { useNavigate } from "react-router-dom";
 // import axiosInstance from "../../api/axiosInstance.js";
 
 // function AdminCredentialUpdater() {
@@ -7,6 +8,7 @@
 //   const [newPassword, setNewPassword] = useState("");
 //   const [loading, setLoading] = useState(false);
 //   const [message, setMessage] = useState(null);
+//   const navigate = useNavigate(); 
 
 //   const handleSubmit = async (e) => {
 //     e.preventDefault();
@@ -25,11 +27,16 @@
 //         newPassword,
 //       });
 
+//       localStorage.removeItem("accessToken");
+//       localStorage.removeItem("refreshToken");
+//       localStorage.removeItem("isAdmin");
+//       localStorage.removeItem("adminEmail");
+
 //       setMessage({ type: "success", text: "Credentials updated! Redirecting..." });
-//       localStorage.clear();
+
 //       setTimeout(() => {
-//         window.location.href = "/admin/login";
-//       }, 1500);
+//         navigate("/admin/login", { replace: true });
+//       }, 1000);
 //     } catch (err) {
 //       setMessage({
 //         type: "error",
@@ -116,10 +123,7 @@
 // }
 
 // export default AdminCredentialUpdater;
-
-
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import axiosInstance from "../../api/axiosInstance.js";
 
 function AdminCredentialUpdater() {
@@ -128,7 +132,6 @@ function AdminCredentialUpdater() {
   const [newPassword, setNewPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState(null);
-  const navigate = useNavigate(); // ✅ useNavigate
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -147,22 +150,21 @@ function AdminCredentialUpdater() {
         newPassword,
       });
 
-      // ✅ Clear tokens before navigating
+      // Remove tokens so user gets logged out
       localStorage.removeItem("accessToken");
       localStorage.removeItem("refreshToken");
       localStorage.removeItem("isAdmin");
       localStorage.removeItem("adminEmail");
 
-      setMessage({ type: "success", text: "Credentials updated! Redirecting..." });
+      setMessage({
+        type: "success",
+        text: "Credentials updated successfully! Please log in again with new credentials.",
+      });
 
-      // ✅ Delay just to show success message then navigate
-      setTimeout(() => {
-        navigate("/admin/login", { replace: true });
-      }, 1000);
     } catch (err) {
       setMessage({
         type: "error",
-        text: err?.response?.data?.message || "Failed to update credentials.",
+        text: err?.response?.data?.message || " Failed to update credentials.",
       });
     } finally {
       setLoading(false);

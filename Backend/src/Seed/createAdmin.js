@@ -23,10 +23,10 @@ const createDefaultAdmin = async () => {
       hasUpdatedCredentials: false,
     });
 
-    console.log("✅ Default admin created");
+    console.log("Default admin created");
     process.exit(0);
   } catch (err) {
-    console.log("❌ Error creating admin:", err.message);
+    console.log("Error creating admin:", err.message);
     process.exit(1);
   }
 };

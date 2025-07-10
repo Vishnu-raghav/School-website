@@ -1,7 +1,7 @@
 import { ApiError } from "../utils/ApiError.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 import jwt from "jsonwebtoken";
-import { Admin } from "../models/Admin.model.js"; // 👈 admin model use hoga
+import { Admin } from "../models/Admin.model.js"; 
 
 export const verifyJWT = asyncHandler(async (req, _, next) => {
   try {
@@ -22,7 +22,7 @@ export const verifyJWT = asyncHandler(async (req, _, next) => {
       throw new ApiError(401, "Invalid Access Token");
     }
 
-    req.user = admin; // 👈 req.user me admin store hoga
+    req.user = admin; 
     next();
   } catch (error) {
     throw new ApiError(401, error?.message || "Invalid access token");
