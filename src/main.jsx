@@ -28,9 +28,22 @@ const router = createBrowserRouter([
       { path: 'admission', element: <Admission /> },
       { path: 'mandatory-disclosure', element: <MandatoryDisclosure /> },
       { path: 'Career', element: <CareerPage /> },
-      { path: 'admin-access-2025', element: <AdminLogin /> },
-      { path: 'admin/dashboard', element: <AdminDashboard /> },
     ],
+  },
+
+  {
+    path: '/admin-access-2025',
+    element: <AdminLogin />,
+  },
+
+  {
+    path: '/admin/dashboard',
+    element: <AdminDashboard />,
+  },
+
+  {
+    path: '*',
+    element: <div className="text-center text-xl mt-10">404 - Page Not Found</div>,
   },
 ]);
 
