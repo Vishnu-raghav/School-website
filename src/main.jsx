@@ -17,7 +17,7 @@ import AdminDashboard from './pages/AdminDashboard.jsx';
 import CareerPage from './pages/CareerPage.jsx';
 
 const router = createBrowserRouter([
-  // Public layout with App
+
   {
     path: '/',
     element: <App />,
@@ -32,20 +32,19 @@ const router = createBrowserRouter([
     ],
   },
 
-  // 🔐 Admin login and dashboard - outside App layout
   {
     path: '/admin-access-2025',
     element: <AdminLogin />,
   },
+
   {
     path: '/admin/dashboard',
     element: <AdminDashboard />,
   },
 
-  // Fallback
   {
     path: '*',
-    element: <div>404 Page Not Found</div>,
+    element: <div className="text-center text-xl mt-10">404 - Page Not Found</div>,
   },
 ]);
 
