@@ -10,9 +10,9 @@ function Footer() {
     phone: "+91-9911733387, +91-9958403241",
     email: "kps5358@gmail.com",
     website: "https://krishnapublicschool.net",
-    facebook: "https://www.facebook.com/krishnapublicschool",
-    instagram: "https://www.instagram.com/krishnapublicschool",
-    youtube: "https://www.youtube.com/@krishnapublicschool",
+    // facebook: "https://www.facebook.com/krishnapublicschool",
+    // instagram: "https://www.instagram.com/krishnapublicschool",
+    // youtube: "https://www.youtube.com/@krishnapublicschool",
   };
 
   return (
@@ -62,7 +62,7 @@ function Footer() {
             </li>
           </ul>
 
-          <div className="mt-6">
+          {/* <div className="mt-6">
             <p className="font-semibold mb-2 text-white">Follow Us</p>
             <div className="flex gap-4 text-xl">
               <a
@@ -87,7 +87,9 @@ function Footer() {
                 <i className="fa-brands fa-youtube"></i>
               </a>
             </div>
-          </div>
+          </div> */}
+
+
         </div>
 
         {/* Navigation Links */}
