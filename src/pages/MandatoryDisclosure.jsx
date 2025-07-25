@@ -134,14 +134,14 @@ export default function MandatoryDisclosure() {
       </thead>
       <tbody>
         {[
-          ["1", "Self-Certification", "/docs/GetSelfCertification.pdf"],
-          ["2", "Water, Health & Sanitation", "/docs/Water_Health.pdf"],
-          ["3", "Building Fitness Certificate (PWD)", "/docs/BFC_PWD.pdf"],
-          ["4", "Fire Safety Certificate", "/docs/Fire-Certificate.pdf"],
-          ["5", "Recognition Certificate", "/docs/Recognition.pdf"],
-          ["6", "NOC from State Government", "/docs/NOC.pdf"],
-          ["7", "Society Registration Certificate", "/docs/Krishna-society_RC.pdf"],
-          ["8", "Affiliation Certificate", "/docs/Affiliation.pdf"],
+          ["1", "Affiliation Certificate", "/docs/Affiliation.pdf"],
+          ["2", "Society Registration Certificate", "/docs/Krishna-society_RC.pdf"],
+          ["3", "NOC from State Government", "/docs/NOC.pdf"],
+          ["4", "Recognition Certificate", "/docs/Recognition.pdf"],
+          ["5", "Building Fitness Certificate (PWD)", "/docs/KSafety.pdf"],
+          ["6", "Fire Safety Certificate", "/docs/Fire-Certificate.pdf"],
+          ["7", "Self-Certification", "/docs/GetSelfCertification.pdf"],
+          ["8", "Water, Health & Sanitation", "/docs/Water_Health.pdf"],
         ].map(([sn, title, link], index) => (
           <tr key={index} className={index % 2 === 0 ? "bg-white" : "bg-blue-50"}>
             <td className="border border-blue-300 px-2 sm:px-4 py-1 sm:py-2 text-blue-900">{sn}</td>
