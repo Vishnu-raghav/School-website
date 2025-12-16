@@ -106,7 +106,7 @@ export default function MandatoryDisclosure() {
               ["1", "Name of School", "Krishna Public School"],
               ["2", "Affiliation No. (If Applicable)", "Not Applicable"],
               ["3", "School Code (If Applicable)", "Not Applicable"],
-              ["4", "Complete Address", "SARASWATI COLONY, SEHATPUR, FARIDABAD, HARYANA-121013"],
+              ["4", "Complete Address", "SEHATPUR, FARIDABAD, HARYANA-121013"],
               ["5", "Principal Name", "Mr. Sunny Kumar Sharma"],
               ["6", "Principal Qualification", "M.A., B.Ed."],
               ["7", "School Email ID", "Kps5358@gmail.com"],
