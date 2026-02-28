@@ -188,7 +188,7 @@ export default function MandatoryDisclosure() {
       ["", "PGT", "06"],
       ["", "TGT", "15"],
       ["", "PRT", "15"],
-      ["3", "Teachers Section Ratio", "1:1.50"],
+      ["3", "Teachers Section Ratio", "1:1:35"],
       ["4", "Details of Special Educator", "Madhu"],
       ["5", "Details of Counsellor and Wellness Teacher", "Binu Sharma"]
     ]}
