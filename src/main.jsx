@@ -15,6 +15,8 @@ import MandatoryDisclosure from './pages/MandatoryDisclosure.jsx';
 import AdminLogin from './pages/AdminLogin.jsx';
 import AdminDashboard from './pages/AdminDashboard.jsx';
 import CareerPage from './pages/CareerPage.jsx';
+// import Affidavit from './pages/Affidavit.jsx';
+
 
 const router = createBrowserRouter([
   {
@@ -27,6 +29,7 @@ const router = createBrowserRouter([
       { path: 'gallery', element: <Gallery /> },
       { path: 'admission', element: <Admission /> },
       { path: 'mandatory-disclosure', element: <MandatoryDisclosure /> },
+      // { path: 'affidavit', element: <Affidavit /> },
       { path: 'Career', element: <CareerPage /> },
       { path: 'admin-access-2025', element: <AdminLogin /> },
       { path: 'admin/dashboard', element: <AdminDashboard /> },

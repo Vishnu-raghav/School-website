@@ -239,9 +239,6 @@ export default function MandatoryDisclosure() {
 </Section>
 
 
-
-
-
 <Section title="E. School Infrastructure">
   <div className="w-full">
     <table className="w-full table-auto border border-gray-300 text-sm md:text-base">
@@ -287,13 +284,39 @@ export default function MandatoryDisclosure() {
           <td className="p-2 border border-gray-300">NO. OF BOYS TOILETS</td>
           <td className="p-2 border border-gray-300">11 + 05 Urinals</td>
         </tr>
+     <tr>
+  <td className="p-2 border border-gray-300 align-top">7</td>
+
+  <td className="p-2 border border-gray-300">
+    LINK OF YOUTUBE VIDEO OF THE INSPECTION OF SCHOOL COVERING THE INFRASTRUCTURE OF THE SCHOOL
+  </td>
+
+  <td className="p-2 border border-gray-300">
+    <a
+      href="https://www.youtube.com/watch?v=0jnpNmO0LpI"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-blue-600 underline hover:text-blue-800"
+    >
+      Click here to view video
+    </a>
+  </td>
+</tr>
+
         <tr>
-          <td className="p-2 border border-gray-300 align-top">7</td>
+          <td className="p-2 border border-gray-300 align-top">8</td>
           <td className="p-2 border border-gray-300">
-            LINK OF YOUTUBE VIDEO OF THE INSPECTION OF SCHOOL COVERING THE INFRASTRUCTURE OF THE SCHOOL
+            Teacher Details
           </td>
           <td className="p-2 border border-gray-300">
-          
+            <a
+             href="/docs/TEACHERS_details.pdf"
+             target="_blank"
+             rel="noopener noreferrer"
+             className="text-blue-600 underline hover:text-blue-800"
+           >   
+           View Teacher Details
+           </a>
           </td>
         </tr>
       </tbody>

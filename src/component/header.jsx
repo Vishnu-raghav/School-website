@@ -3,6 +3,7 @@ import CustomNavLink from "./CustomNavLink.jsx";
 
 function Header() {
   const [open, setOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(false);
 
   const contact = {
     phone: "+91-9911733387, +91-9958403241",
@@ -66,7 +67,40 @@ function Header() {
               <CustomNavLink to="/About" className="hover:text-yellow-300">About Us</CustomNavLink>
               <CustomNavLink to="/Gallery" className="hover:text-yellow-300">Gallery</CustomNavLink>
               <CustomNavLink to="/Admission" className="hover:text-yellow-300">Admission</CustomNavLink>
-              <CustomNavLink to="/mandatory-disclosure" className="hover:text-yellow-300">Disclosure</CustomNavLink>
+              {/* <CustomNavLink to="/mandatory-disclosure" className="hover:text-yellow-300">Disclosure</CustomNavLink> */}
+              <div className="relative group">
+  <span className="cursor-pointer hover:text-yellow-300">
+    Disclosure
+  </span>
+
+  <div className="absolute top-full left-0 bg-white text-black rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 min-w-[180px] z-50">
+    
+    <CustomNavLink
+      to="/mandatory-disclosure"
+      className="block px-4 py-4 hover:bg-gray-100"
+    >
+      Disclosure
+    </CustomNavLink>
+
+    {/* <CustomNavLink
+      to="/affidavit"
+      className="block px-4 py-2 hover:bg-gray-100"
+    >
+      Affidavit
+    </CustomNavLink> */}
+
+     <a
+      href="/docs/Affidavit.pdf" 
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block px-4 py-4 hover:bg-gray-100"
+    >
+      Affidavit
+    </a>
+
+
+  </div>
+</div>
               <CustomNavLink to="/Career" className="hover:text-yellow-300">Career</CustomNavLink>
               <CustomNavLink to="/Contact" className="hover:text-yellow-300">Contact Us</CustomNavLink>
             </div>
@@ -99,7 +133,38 @@ function Header() {
           <CustomNavLink to="/About" onClick={() => setOpen(false)}>About</CustomNavLink>
           <CustomNavLink to="/Gallery" onClick={() => setOpen(false)}>Gallery</CustomNavLink>
           <CustomNavLink to="/Admission" onClick={() => setOpen(false)}>Admission</CustomNavLink>
-          <CustomNavLink to="/mandatory-disclosure" onClick={() => setOpen(false)}>Disclosure</CustomNavLink>
+          <li>
+  <div
+    onClick={() => setOpenDropdown(!openDropdown)}
+    className="flex justify-between items-center cursor-pointer"
+  >
+    <span>Disclosure</span>
+    <i
+      className={`fa-solid fa-chevron-down text-xs transition-transform ${
+        openDropdown ? "rotate-180" : ""
+      }`}
+    ></i>
+  </div>
+
+  {openDropdown && (
+    <div className="ml-4 mt-2 flex flex-col gap-2 text-sm">
+      
+      <CustomNavLink to="/mandatory-disclosure" onClick={() => setOpen(false)}>
+        Disclosure
+      </CustomNavLink>
+
+      <a
+        href="/docs/Affidavit.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={() => setOpen(false)}
+      >
+        Affidavit
+      </a>
+
+    </div>
+  )}
+</li>
           <CustomNavLink to="/Contact" onClick={() => setOpen(false)}>Contact</CustomNavLink>
           <CustomNavLink to="/Career" onClick={() => setOpen(false)}>Career</CustomNavLink>
         </ul>
