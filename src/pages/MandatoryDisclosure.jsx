@@ -184,7 +184,7 @@ export default function MandatoryDisclosure() {
     headers={["S.No.", "INFORMATION", "DETAILS"]}
     rows={[
       ["1","Principal","MR. Sunny Kumar Sharma"],
-      ["2", "Total Number of Teachers", "27"],
+      ["2", "Total Number of Teachers", "36"],
       ["", "PGT", "06"],
       ["", "TGT", "15"],
       ["", "PRT", "15"],
