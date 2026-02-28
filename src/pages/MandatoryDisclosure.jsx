@@ -140,7 +140,7 @@ export default function MandatoryDisclosure() {
           ["4", "Recognition Certificate", "/docs/Recognition.pdf"],
           ["5", "Building Fitness Certificate (PWD)", "/docs/KSafety.pdf"],
           ["6", "Fire Safety Certificate", "/docs/Fire-Certificate.pdf"],
-          ["7", "Self-Certification", "/docs/GetSelfCertification.pdf"],
+          ["7", "Self-Certification", "/docs/selfcertificate.pdf"],
           ["8", "Water, Health & Sanitation", "/docs/Water_Health.pdf"],
         ].map(([sn, title, link], index) => (
           <tr key={index} className={index % 2 === 0 ? "bg-white" : "bg-blue-50"}>
@@ -185,12 +185,12 @@ export default function MandatoryDisclosure() {
     rows={[
       ["1","Principal","MR. Sunny Kumar Sharma"],
       ["2", "Total Number of Teachers", "27"],
-      ["", "PGT", "05"],
-      ["", "TGT", "10"],
-      ["", "PRT", "12"],
+      ["", "PGT", "06"],
+      ["", "TGT", "15"],
+      ["", "PRT", "15"],
       ["3", "Teachers Section Ratio", "1:1.50"],
-      ["4", "Details of Special Educator", ""],
-      ["5", "Details of Counsellor and Wellness Teacher", ""]
+      ["4", "Details of Special Educator", "Madhu"],
+      ["5", "Details of Counsellor and Wellness Teacher", "Binu Sharma"]
     ]}
   />
   
