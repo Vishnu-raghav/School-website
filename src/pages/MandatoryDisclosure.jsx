@@ -242,14 +242,9 @@ export default function MandatoryDisclosure() {
       [
         "1",
         "Fee Structure",
-        <a
-          href="/docs/Fee-StructureN.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-700 underline hover:text-blue-900"
-        >
+        <span className="text-gray-400 underline cursor-not-allowed">
           Click here
-        </a>,
+        </span>,
       ],
 
       [
