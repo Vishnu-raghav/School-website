@@ -116,7 +116,7 @@ export default function MandatoryDisclosure() {
         </Section>
 
 {/* B. Documents */}
-<Section title="B. DOCUMENTS AND INFORMATION">
+{/* <Section title="B. DOCUMENTS AND INFORMATION">
   <div className="w-full">
     <table className="w-full text-xs sm:text-sm border border-blue-300 table-auto">
       <thead className="bg-blue-100 text-blue-900">
@@ -163,9 +163,66 @@ export default function MandatoryDisclosure() {
       </tbody>
     </table>
   </div>
-</Section>
+</Section> */}
 
-<Section title="C. Result & Academics">
+
+
+<Section title="B. DOCUMENTS AND INFORMATION">
+  <div className="w-full">
+    <table className="w-full text-xs sm:text-sm border border-blue-300 table-auto">
+      <thead className="bg-blue-100 text-blue-900">
+        <tr>
+          <th className="border border-blue-300 px-2 sm:px-4 py-1 sm:py-2 text-left font-semibold">
+            S.No.
+          </th>
+          <th className="border border-blue-300 px-2 sm:px-4 py-1 sm:py-2 text-left font-semibold">
+            DOCUMENTS/INFORMATION
+          </th>
+          <th className="border border-blue-300 px-2 sm:px-4 py-1 sm:py-2 text-left font-semibold">
+            LINKS OF UPLOADED ON YOUR SCHOOL'S WEBSITE
+          </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {[
+          ["1", "Affiliation Certificate"],
+          ["2", "Society Registration Certificate"],
+          ["3", "NOC from State Government"],
+          ["4", "Recognition Certificate"],
+          ["5", "Building Fitness Certificate (PWD)"],
+          ["6", "Fire Safety Certificate"],
+          ["7", "Self-Certification"],
+          ["8", "Water, Health & Sanitation"],
+        ].map(([sn, title], index) => {
+          return (
+            <tr key={index} className={index % 2 === 0 ? "bg-white" : "bg-blue-50"}>
+              
+              <td className="border border-blue-300 px-2 sm:px-4 py-1 sm:py-2 text-blue-900">
+                {sn}
+              </td>
+
+              <td className="border border-blue-300 px-2 sm:px-4 py-1 sm:py-2 text-blue-900 break-words">
+                {title}
+              </td>
+
+              <td className="border border-blue-300 px-2 sm:px-4 py-1 sm:py-2 break-words">
+                <span
+                  className="text-gray-400 underline cursor-not-allowed"
+                  title="Coming Soon"
+                >
+                  Click here
+                </span>
+              </td>
+
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+  </div>
+</Section>
+{/* <Section title="C. Result & Academics">
   <Table
     headers={["S.No.", "Information", "Download"]}
     rows={[
@@ -176,7 +233,60 @@ export default function MandatoryDisclosure() {
       ["5", "Last 3 Year Board Result", <a href="/docs/Krishna-Result.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">Click here</a>],
     ]}
   />
+</Section> */}
+
+<Section title="C. Result & Academics">
+  <Table
+    headers={["S.No.", "Information", "Download"]}
+    rows={[
+      [
+        "1",
+        "Fee Structure",
+        <a
+          href="/docs/Fee-StructureN.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-700 underline hover:text-blue-900"
+        >
+          Click here
+        </a>,
+      ],
+
+      [
+        "2",
+        "Annual Academic Calendar",
+        <span className="text-gray-400 underline cursor-not-allowed">
+          Click here
+        </span>,
+      ],
+
+      [
+        "3",
+        "School Management Committee (SMC)",
+        <span className="text-gray-400 underline cursor-not-allowed">
+          Click here
+        </span>,
+      ],
+
+      [
+        "4",
+        "PTA Members",
+        <span className="text-gray-400 underline cursor-not-allowed">
+          Click here
+        </span>,
+      ],
+
+      [
+        "5",
+        "Last 3 Year Board Result",
+        <span className="text-gray-400 underline cursor-not-allowed">
+          Click here
+        </span>,
+      ],
+    ]}
+  />
 </Section>
+
 
 {/* D. Staff (Teaching) */}
 <Section title="D. STAFF (TEACHING)">
@@ -239,7 +349,7 @@ export default function MandatoryDisclosure() {
 </Section>
 
 
-<Section title="E. School Infrastructure">
+{/* <Section title="E. School Infrastructure">
   <div className="w-full">
     <table className="w-full table-auto border border-gray-300 text-sm md:text-base">
       <thead className="bg-blue-100 text-blue-900">
@@ -319,6 +429,94 @@ export default function MandatoryDisclosure() {
            </a>
           </td>
         </tr>
+      </tbody>
+    </table>
+  </div>
+</Section> */}
+
+<Section title="E. School Infrastructure">
+  <div className="w-full">
+    <table className="w-full table-auto border border-gray-300 text-sm md:text-base">
+      <thead className="bg-blue-100 text-blue-900">
+        <tr>
+          <th className="p-2 border border-gray-300 text-left align-top w-[10%]">S.No.</th>
+          <th className="p-2 border border-gray-300 text-left align-top w-[45%]">Information</th>
+          <th className="p-2 border border-gray-300 text-left align-top w-[45%]">Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td className="p-2 border border-gray-300 align-top">1</td>
+          <td className="p-2 border border-gray-300">TOTAL CAMPUS AREA OF THE SCHOOL (IN SQ MTR)</td>
+          <td className="p-2 border border-gray-300">8093.44 Sq.M.</td>
+        </tr>
+
+        <tr>
+          <td className="p-2 border border-gray-300 align-top">2</td>
+          <td className="p-2 border border-gray-300">NO. AND SIZE OF THE CLASS ROOMS (IN SQ MTR)</td>
+          <td className="p-2 border border-gray-300">No. of class Rooms: 19 Size: 44 Sq.M.</td>
+        </tr>
+
+        <tr>
+          <td className="p-2 border border-gray-300 align-top">3</td>
+          <td className="p-2 border border-gray-300">
+            NO. AND SIZE OF LABORATORIES INCLUDING COMPUTER LABS (IN SQ MTR)
+          </td>
+          <td className="p-2 border border-gray-300 whitespace-pre-line leading-relaxed break-words">
+            Labs=03 Size= 111 sq.M
+          </td>
+        </tr>
+
+        <tr>
+          <td className="p-2 border border-gray-300 align-top">4</td>
+          <td className="p-2 border border-gray-300">INTERNET FACILITY</td>
+          <td className="p-2 border border-gray-300">Yes</td>
+        </tr>
+
+        <tr>
+          <td className="p-2 border border-gray-300 align-top">5</td>
+          <td className="p-2 border border-gray-300">NO. OF GIRLS TOILETS</td>
+          <td className="p-2 border border-gray-300">9</td>
+        </tr>
+
+        <tr>
+          <td className="p-2 border border-gray-300 align-top">6</td>
+          <td className="p-2 border border-gray-300">NO. OF BOYS TOILETS</td>
+          <td className="p-2 border border-gray-300">11 + 05 Urinals</td>
+        </tr>
+
+        <tr>
+          <td className="p-2 border border-gray-300 align-top">7</td>
+          <td className="p-2 border border-gray-300">
+            LINK OF YOUTUBE VIDEO OF THE INSPECTION OF SCHOOL COVERING THE INFRASTRUCTURE OF THE SCHOOL
+          </td>
+          <td className="p-2 border border-gray-300">
+            <a
+              href="https://www.youtube.com/watch?v=0jnpNmO0LpI"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 underline hover:text-blue-800"
+            >
+              Click here to view video
+            </a>
+          </td>
+        </tr>
+
+        <tr>
+          <td className="p-2 border border-gray-300 align-top">8</td>
+          <td className="p-2 border border-gray-300">
+            Teacher Details
+          </td>
+          <td className="p-2 border border-gray-300">
+            <span
+              className="text-gray-400 underline cursor-not-allowed"
+              title="Coming Soon"
+            >
+              View Teacher Details
+            </span>
+          </td>
+        </tr>
+
       </tbody>
     </table>
   </div>

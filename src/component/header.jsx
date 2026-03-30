@@ -89,14 +89,17 @@ function Header() {
       Affidavit
     </CustomNavLink> */}
 
-     <a
+     {/* <a
       href="/docs/Affidavit.pdf" 
       target="_blank"
       rel="noopener noreferrer"
       className="block px-4 py-4 hover:bg-gray-100"
     >
       Affidavit
-    </a>
+    </a> */}
+    <span className="block px-4 py-4 text-gray-400 cursor-not-allowed">
+     Affidavit
+    </span>
 
 
   </div>
@@ -153,14 +156,22 @@ function Header() {
         Disclosure
       </CustomNavLink>
 
-      <a
+      {/* <a
         href="/docs/Affidavit.pdf"
         target="_blank"
         rel="noopener noreferrer"
         onClick={() => setOpen(false)}
       >
         Affidavit
-      </a>
+      </a> */}
+
+
+      <span
+  className="text-gray-400 cursor-not-allowed"
+  onClick={() => setOpen(false)}
+>
+  Affidavit
+</span>
 
     </div>
   )}
