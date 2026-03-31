@@ -207,12 +207,13 @@ export default function MandatoryDisclosure() {
               </td>
 
               <td className="border border-blue-300 px-2 sm:px-4 py-1 sm:py-2 break-words">
-                <span
-                  className="text-gray-400 underline cursor-not-allowed"
-                  title="Coming Soon"
-                >
-                  Click here
-                </span>
+                 <a
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-700 underline"
+              >
+                Click here
+              </a>
               </td>
 
             </tr>
@@ -222,6 +223,7 @@ export default function MandatoryDisclosure() {
     </table>
   </div>
 </Section>
+
 {/* <Section title="C. Result & Academics">
   <Table
     headers={["S.No.", "Information", "Download"]}
@@ -250,33 +252,49 @@ export default function MandatoryDisclosure() {
       [
         "2",
         "Annual Academic Calendar",
-        <span className="text-gray-400 underline cursor-not-allowed">
-          Click here
-        </span>,
+         <a
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-700 underline"
+              >
+                Click here
+              </a>
       ],
 
       [
         "3",
         "School Management Committee (SMC)",
-        <span className="text-gray-400 underline cursor-not-allowed">
-          Click here
-        </span>,
+         <a
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-700 underline"
+              >
+                Click here
+              </a>
       ],
 
       [
         "4",
         "PTA Members",
-        <span className="text-gray-400 underline cursor-not-allowed">
-          Click here
-        </span>,
+        <a
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-700 underline"
+              >
+                Click here
+              </a>
       ],
 
       [
         "5",
         "Last 3 Year Board Result",
-        <span className="text-gray-400 underline cursor-not-allowed">
-          Click here
-        </span>,
+        <a
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-700 underline"
+              >
+                Click here
+              </a>
       ],
     ]}
   />

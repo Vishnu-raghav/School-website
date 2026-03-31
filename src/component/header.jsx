@@ -97,9 +97,13 @@ function Header() {
     >
       Affidavit
     </a> */}
-    <span className="block px-4 py-4 text-gray-400 cursor-not-allowed">
-     Affidavit
-    </span>
+    <a
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block px-4 py-4 hover:bg-gray-100"
+    >
+      Affidavit
+    </a> 
 
 
   </div>
@@ -166,12 +170,13 @@ function Header() {
       </a> */}
 
 
-      <span
-  className="text-gray-400 cursor-not-allowed"
-  onClick={() => setOpen(false)}
->
-  Affidavit
-</span>
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={() => setOpen(false)}
+      >
+        Affidavit
+      </a>
 
     </div>
   )}
