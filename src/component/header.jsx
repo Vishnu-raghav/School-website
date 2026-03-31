@@ -98,6 +98,7 @@ function Header() {
       Affidavit
     </a> */}
     <a
+     href="/docs/Affidavit.pdf"
       target="_blank"
       rel="noopener noreferrer"
       className="block px-4 py-4 hover:bg-gray-100"
@@ -171,6 +172,7 @@ function Header() {
 
 
       <a
+        href="/docs/Affidavit.pdf"
         target="_blank"
         rel="noopener noreferrer"
         onClick={() => setOpen(false)}

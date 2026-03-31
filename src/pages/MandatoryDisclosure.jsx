@@ -116,7 +116,7 @@ export default function MandatoryDisclosure() {
         </Section>
 
 {/* B. Documents */}
-{/* <Section title="B. DOCUMENTS AND INFORMATION">
+<Section title="B. DOCUMENTS AND INFORMATION">
   <div className="w-full">
     <table className="w-full text-xs sm:text-sm border border-blue-300 table-auto">
       <thead className="bg-blue-100 text-blue-900">
@@ -163,11 +163,11 @@ export default function MandatoryDisclosure() {
       </tbody>
     </table>
   </div>
-</Section> */}
+</Section>
 
 
 
-<Section title="B. DOCUMENTS AND INFORMATION">
+{/* <Section title="B. DOCUMENTS AND INFORMATION">
   <div className="w-full">
     <table className="w-full text-xs sm:text-sm border border-blue-300 table-auto">
       <thead className="bg-blue-100 text-blue-900">
@@ -208,6 +208,7 @@ export default function MandatoryDisclosure() {
 
               <td className="border border-blue-300 px-2 sm:px-4 py-1 sm:py-2 break-words">
                  <a
+                 href={link}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-700 underline"
@@ -222,7 +223,7 @@ export default function MandatoryDisclosure() {
       </tbody>
     </table>
   </div>
-</Section>
+</Section> */}
 
 {/* <Section title="C. Result & Academics">
   <Table
@@ -244,15 +245,14 @@ export default function MandatoryDisclosure() {
       [
         "1",
         "Fee Structure",
-        <span className="text-gray-400 underline cursor-not-allowed">
-          Click here
-        </span>,
+        <a target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">Click here</a>
       ],
 
       [
         "2",
         "Annual Academic Calendar",
          <a
+                href="/docs/Annual-Calender .pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-700 underline"
@@ -264,19 +264,14 @@ export default function MandatoryDisclosure() {
       [
         "3",
         "School Management Committee (SMC)",
-         <a
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-700 underline"
-              >
-                Click here
-              </a>
+         <a href="/docs/Krishna-SMC.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">Click here</a>
       ],
 
       [
         "4",
         "PTA Members",
         <a
+                href="/docs/C4_PTA.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-700 underline"
@@ -289,6 +284,7 @@ export default function MandatoryDisclosure() {
         "5",
         "Last 3 Year Board Result",
         <a
+                href="/docs/Krishna-Result.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-700 underline"
@@ -521,12 +517,14 @@ export default function MandatoryDisclosure() {
             Teacher Details
           </td>
           <td className="p-2 border border-gray-300">
-            <span
-              className="text-gray-400 underline cursor-not-allowed"
-              title="Coming Soon"
-            >
-              View Teacher Details
-            </span>
+            <a
+             target="_blank"
+             rel="noopener noreferrer"
+             className="text-blue-600 underline hover:text-blue-800"
+           >   
+           View Teacher Details
+           </a>
+
           </td>
         </tr>
 
