@@ -7,7 +7,6 @@ import Infra1 from "../assets/Mess.jpg";
 import Infra2 from "../assets/computer-lab.jpg";
 import Infra3 from "../assets/No-2.jpg";
 
-import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
 import "../App.css";
 import CountUp from "react-countup";
