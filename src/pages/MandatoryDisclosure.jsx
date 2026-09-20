@@ -56,30 +56,30 @@ export default function MandatoryDisclosure() {
           content="Krishna Public School Mandatory Disclosure, school certificates, school results, CBSE school documents, school infrastructure Faridabad"
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://krishnapublicschool.net/mandatory-disclosure" />
+        <link rel="canonical" href="https://krishnapublicschool.net.in/mandatory-disclosure" />
         <meta property="og:title" content="Mandatory Public Disclosure | Krishna Public School Faridabad" />
         <meta property="og:description" content="Explore the mandatory public disclosure section of Krishna Public School. Find certificates, results, staff, and infrastructure details." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://krishnapublicschool.net/mandatory-disclosure" />
-        <meta property="og:image" content="https://krishnapublicschool.net/preview.jpg" />
+        <meta property="og:url" content="https://krishnapublicschool.net.in/mandatory-disclosure" />
+        <meta property="og:image" content="https://krishnapublicschool.net.in/preview.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Mandatory Disclosure - Krishna Public School" />
         <meta name="twitter:description" content="All CBSE required disclosures: certificates, results, infrastructure, and staff info from Krishna Public School, Faridabad." />
-        <meta name="twitter:image" content="https://krishnapublicschool.net/preview.jpg" />
+        <meta name="twitter:image" content="https://krishnapublicschool.net.in/preview.jpg" />
         <script type="application/ld+json">{`
           {
             "@context": "https://schema.org",
             "@type": "WebPage",
             "name": "Mandatory Public Disclosure",
-            "url": "https://krishnapublicschool.net/mandatory-disclosure",
+            "url": "https://krishnapublicschool.net.in/mandatory-disclosure",
             "description": "This page displays the official mandatory public disclosures of Krishna Public School including CBSE-required documents, infrastructure, and academic information.",
             "publisher": {
               "@type": "EducationalOrganization",
               "name": "Krishna Public School",
-              "url": "https://krishnapublicschool.net",
+              "url": "https://krishnapublicschool.net.in",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://krishnapublicschool.net/logo.png"
+                "url": "https://krishnapublicschool.net.in/logo.png"
               },
               "address": {
                 "@type": "PostalAddress",
@@ -104,13 +104,13 @@ export default function MandatoryDisclosure() {
             headers={["S.No.", "Information", "Details"]}
             rows={[
               ["1", "Name of School", "Krishna Public School"],
-              ["2", "Affiliation No. (If Applicable)", "Not Applicable"],
-              ["3", "School Code (If Applicable)", "Not Applicable"],
+              ["2", "Affiliation No.", "532320"],
+              ["3", "School Code", "42380"],
               ["4", "Complete Address", "SEHATPUR, FARIDABAD, HARYANA-121013"],
               ["5", "Principal Name", "Mr. Sunny Kumar Sharma"],
               ["6", "Principal Qualification", "M.A., B.Ed."],
               ["7", "School Email ID", "Kps5358@gmail.com"],
-              ["8", "Contact Details", "9871918619"],
+              ["8", "Contact Details", "9958403241"],
             ]}
           />
         </Section>
@@ -134,7 +134,7 @@ export default function MandatoryDisclosure() {
       </thead>
       <tbody>
         {[
-          ["1", "Affiliation Certificate", "/docs/Affiliation.pdf"],
+          ["1", "Affiliation Certificate", "/docs/Grant_Letter_2026.pdf"],
           ["2", "Society Registration Certificate", "/docs/Krishna-society_RC.pdf"],
           ["3", "NOC from State Government", "/docs/NOC.pdf"],
           ["4", "Recognition Certificate", "/docs/Recognition.pdf"],

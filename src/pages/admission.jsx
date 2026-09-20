@@ -92,7 +92,7 @@ function Admission() {
               <ul className="list-disc list-inside text-gray-700 ml-2 space-y-1">
                 <li>Birth Certificate</li>
                 <li>2 Passport Size Photos</li>
-                <li>Aadhar Card</li>
+                <li> Aadhaar Card</li>
                 <li>Previous Report Card</li>
               </ul>
             </li>

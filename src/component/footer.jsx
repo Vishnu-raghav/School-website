@@ -9,7 +9,7 @@ function Footer() {
     address: "Sehatpur, Faridabad, Haryana 121003",
     phone: "+91-9911733387, +91-9958403241",
     email: "kps5358@gmail.com",
-    website: "https://krishnapublicschool.net",
+    website: "https://krishnapublicschool.net.in",
     // facebook: "https://www.facebook.com/krishnapublicschool",
     // instagram: "https://www.instagram.com/krishnapublicschool",
     // youtube: "https://www.youtube.com/@krishnapublicschool",

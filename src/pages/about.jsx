@@ -25,7 +25,7 @@ function About() {
           name="description"
           content="Krishna Public School fosters leadership, values, and academic excellence in Faridabad. Meet our principal, chairman, and director."
         />
-        <link rel="canonical" href="https://krishnapublicschool.net/About" />
+        <link rel="canonical" href="https://krishnapublicschool.net.in/About" />
         {/* Other SEO tags same as before */}
       </Helmet>
 

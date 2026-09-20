@@ -50,7 +50,7 @@ function Home() {
           content="Krishna Public School, the best CBSE school in Faridabad, offers smart classes, experienced teachers, safe transport, and overall student development. Enroll now for 2025–26 session."
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://krishnapublicschool.net/" />
+        <link rel="canonical" href="https://krishnapublicschool.net.in/" />
       </Helmet>
 
       <div className="bg-blue-700 text-white py-3 text-sm text-center font-medium animate-pulse px-4">

@@ -11,7 +11,7 @@ import formRoutes from "./routes/form.routes.js";
 
 const app = express();
 
-const allowedOrigin = process.env.CORS_ORIGIN || "https://krishnapublicschool.net";
+const allowedOrigin = process.env.CORS_ORIGIN || "https://krishnapublicschool.net.in";
 
 app.use(cors({
   origin: allowedOrigin,
